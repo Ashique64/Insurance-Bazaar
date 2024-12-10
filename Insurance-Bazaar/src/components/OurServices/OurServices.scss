@@ -152,7 +152,77 @@
                         }
 
                         .icon {
-                            animation: bounce 0.6s ease-in-out; 
+                            animation: bounce 0.6s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        .services_item3 {
+            margin: 60px -10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .item3_col {
+                padding: 0px 10px;
+
+                .get_qoutes {
+                    background-color: #132038;
+                    padding: 30px 15px;
+                    border-radius: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h4 {
+                        font-size: 22px;
+                        color: var(--tp-common-white);
+                        margin-bottom: 14px;
+                    }
+
+                    .items {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 70%;
+                        margin-bottom: 20px;
+
+                        select {
+                            padding: 12px 20px;
+                            width: 40%;
+                            margin: 0px 30px;
+                            border-radius: 6px;
+                            border: none;
+                            font-size: 14px;
+                            outline: none;
+                            color: #747474;
+                            transition: 0.3s ease-in-out;
+
+                            option {
+                                color: #747474;
+                                background-color: var(--tp-common-black);
+                            }
+
+                            &:focus {
+                                outline: 3px solid var(--tp-theme-2);
+                            }
+                        }
+
+                        button {
+                            padding: 10px;
+                            background-color: var(--tp-theme-2);
+                            padding: 10px 40px;
+                            border-radius: 6px;
+                            color: var(--tp-common-white);
+                            font-weight: 700;
+
+                            &:hover {
+                                background-color: var(--tp-theme-1);
+                                
+                            }
                         }
                     }
                 }
@@ -162,17 +232,17 @@
 }
 
 @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0); 
+    0%,
+    100% {
+        transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px); 
+        transform: translateY(-10px);
     }
-  }
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
     .our-services {
-
         .container {
             margin: 0;
 
@@ -188,4 +258,4 @@
             }
         }
     }
-  }
+}
