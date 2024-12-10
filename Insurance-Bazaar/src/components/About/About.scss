@@ -1,0 +1,161 @@
+.about {
+    padding-bottom: 130px;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        margin: 0px 20px;
+        padding: 0px 12px;
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px 15px;
+
+            .item1 {
+                padding: 0px 15px;
+                display: flex;
+                justify-content: center;
+                .about_image {
+                    img {
+                        object-fit: cover;
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .item2 {
+                padding: 0px 15px;
+
+                .about_content {
+                    margin-bottom: 40px;
+
+                    .subtitle {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: var(--tp-theme-2);
+                        display: inline-block;
+                        letter-spacing: -0.02em;
+
+                        &::before {
+                            content: "";
+                            height: 12px;
+                            width: 12px;
+                            background-color: var(--tp-theme-2);
+                            display: inline-block;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .title {
+                        color: var(--tp-common-black);
+                        display: block;
+                        font-size: 45px;
+                        font-weight: 600;
+                        letter-spacing: -0.01em;
+                        line-height: 1.1;
+                        padding-bottom: 20px;
+                        font-family: var(--tp-ff-heading);
+                        margin-bottom: 8px;
+
+                        span {
+                            color: rgb(44, 162, 251);
+                        }
+
+                    }
+
+                    .para1 {
+                        padding-bottom: 15px;
+                        margin-bottom: 15px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 26px;
+                        color: #747474;
+                        font-family: var(--tp-ff-p);
+                    }
+
+                    .para2 {
+                        font-weight: 400;
+                        line-height: 26px;
+                        color: #747474;
+                        font-family: var(--tp-ff-p);
+                        margin-bottom: 15px;
+
+                    }
+                }
+
+                .about_button {
+                    display: flex;
+                    align-items: center;
+
+                    button {
+                        padding: 16px 30px;
+                        display: inline-block;
+                        font-weight: 700;
+                        color: var(--tp-common-white);
+                        background: var(--tp-theme-1);
+                        text-align: center;
+                        border-radius: 91px;
+                        text-transform: uppercase;
+                        transition: 0.3s ease-in-out;
+                        border: none;
+                        outline: none;
+
+                        &:hover {
+                            background: var(--tp-theme-2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+
+    .about {
+        .container {
+            margin: 0;
+
+            .row {
+                margin: 0;
+
+                .item1 {
+                    .about_image {
+                        img {
+                            margin-bottom: 40px;
+
+                        }
+                    }
+                }
+
+                .item2 {
+
+                    .about_content {
+
+                        .subtitle {
+                            margin-bottom: 20px;
+
+                        }
+
+                        .title {
+                            font-size: 30px;
+                            letter-spacing: -0.3px;
+                            line-height: 33px;
+                            
+                        }
+                    }
+
+                    .about_button {
+
+                        button {
+                            transform: scale(0.9);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
