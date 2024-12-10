@@ -7,7 +7,7 @@ import "./NavBar.scss";
 
 const NavBar = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" className="bg-transparent">
+        <Navbar collapseOnSelect expand="lg" className="bg-transparent nav">
             <Container>
                 <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
