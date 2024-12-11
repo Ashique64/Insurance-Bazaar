@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./GetInsurance.scss";
 
 const GetInsurance = () => {
-    const [active, setActive] = useState(null);
+    const [active, setActive] = useState(0);
+    const [formTitle, setFormTitle] = useState("Home Insurance");
 
     const tabItems = [
         {
@@ -25,6 +26,7 @@ const GetInsurance = () => {
 
     const handleItemClick = (index) => {
         setActive(index);
+        setFormTitle(tabItems[index].title);
     };
 
     return (
@@ -64,13 +66,14 @@ const GetInsurance = () => {
                         <div className="form_section">
                             <div className="tabs_form">
                                 <div className="title_section">
-                                    <h4 className="title">Home Insurance</h4>
+                                    <h4 className="title">{formTitle}</h4>
                                 </div>
 
                                 <div className="contact_form">
                                     <form action="#">
                                         <div className="form_input">
                                             <input type="text" placeholder="Enter Name" />
+                                            
                                         </div>
                                         <div className="form_input">
                                             <input type="text" placeholder="Enter Mail" />
