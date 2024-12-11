@@ -6,9 +6,14 @@
     display: flex;
     justify-content: center;
 
-    .services_shape {
+    .services_shape1 {
         position: absolute;
         top: 0;
+        left: 0;
+    }
+    .services_shape2 {
+        position: absolute;
+        bottom: 0;
         left: 0;
     }
 
@@ -191,6 +196,7 @@
                         margin-bottom: 20px;
 
                         select {
+                            display: inline-block;
                             padding: 12px 20px;
                             width: 40%;
                             margin: 0px 30px;
@@ -221,7 +227,6 @@
 
                             &:hover {
                                 background-color: var(--tp-theme-1);
-                                
                             }
                         }
                     }
@@ -252,6 +257,36 @@
                         .title {
                             font-size: 30px;
                             padding: 0;
+                        }
+                    }
+                }
+            }
+
+            .services_item3 {
+                margin: 40px -10px;
+
+                .item3_col {
+                    .get_qoutes {
+                        padding: 20px;
+
+                        h4 {
+                            font-size: 20px;
+                        }
+
+                        .items {
+                            width: 100%;
+                            margin-bottom: 10px;
+
+                            select {
+                            display: block;
+                            width: 100%;
+                            margin: 0 15px;
+                            }
+
+                            button {
+                            padding: 6px 15px;
+                            font-size: 12px;
+                            }
                         }
                     }
                 }

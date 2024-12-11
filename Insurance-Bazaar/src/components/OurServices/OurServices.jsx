@@ -55,8 +55,11 @@ const OurServices = () => {
 
     return (
         <div className="our-services">
-            <div className="services_shape">
+            <div className="services_shape1">
                 <img src="/images/slider/02_Shape.png" alt="" />
+            </div>
+            <div className="services_shape2">
+                <img src="/images/slider/03_Shape.png" alt="" />
             </div>
 
             <div className="container">
