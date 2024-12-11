@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero'
 import About from './components/About/About'
 import OurServices from './components/OurServices/OurServices'
 import './App.css'
+import GetInsurance from './components/GetInsurance/GetInsurance'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <TrustedBrands/>
       <About/>
       <OurServices/>
+      <GetInsurance/>
     </>
   )
 }
