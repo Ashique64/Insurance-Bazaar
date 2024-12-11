@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./GetInsurance.scss";
 
 const GetInsurance = () => {
-
-    const [active, setActive] = useState(null)
+    const [active, setActive] = useState(null);
 
     const tabItems = [
         {
@@ -25,8 +24,8 @@ const GetInsurance = () => {
     ];
 
     const handleItemClick = (index) => {
-        setActive(index)
-    }
+        setActive(index);
+    };
 
     return (
         <div className="get-insurance">
@@ -44,7 +43,11 @@ const GetInsurance = () => {
                                 <div className="items">
                                     <ul>
                                         {tabItems.map((item, index) => (
-                                            <li key={index} className={active === index ? "active" : ""} onClick={() => handleItemClick(index)}>
+                                            <li
+                                                key={index}
+                                                className={active === index ? "active" : ""}
+                                                onClick={() => handleItemClick(index)}
+                                            >
                                                 <div className="item">
                                                     <i className={item.icon}></i>
                                                     <span>{item.title}</span>
@@ -57,7 +60,43 @@ const GetInsurance = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-xl-6 col-lg-6 col-md-12 item2"></div>
+                    <div className="col-xl-6 col-lg-6 col-md-12 item2">
+                        <div className="form_section">
+                            <div className="tabs_form">
+                                <div className="title_section">
+                                    <h4 className="title">Home Insurance</h4>
+                                </div>
+
+                                <div className="contact_form">
+                                    <form action="#">
+                                        <div className="form_input">
+                                            <input type="text" placeholder="Enter Name" />
+                                        </div>
+                                        <div className="form_input">
+                                            <input type="text" placeholder="Enter Mail" />
+                                        </div>
+                                        <div className="form_select">
+                                            <select>
+                                                <option value="" disabled selected>
+                                                    Property Type
+                                                </option>
+                                                <option value="home">Home Insurance</option>
+                                                <option value="car">Car Insurance</option>                                                <option value="bike">Bike Insurance</option>
+                                                <option value="health">Health Insurance</option>
+                                                <option value="education">Education Insurance</option>
+                                            </select>
+                                        </div>
+                                        <div className="form_textarea">
+                                            <textarea name="" rows={3} placeholder="Enter Message" id=""></textarea>
+                                        </div>
+                                        <div className="form_button">
+                                            <button type="submit">Get a Quote now</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

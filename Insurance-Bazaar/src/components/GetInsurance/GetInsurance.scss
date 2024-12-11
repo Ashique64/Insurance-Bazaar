@@ -1,5 +1,7 @@
 .get-insurance {
     padding: 130px 0;
+    display: flex;
+    justify-content: center;
 
     .container {
         margin: 0 50px;
@@ -86,6 +88,166 @@
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+
+            .item2 {
+                padding: 0 15px;
+                .form_section {
+                    margin-bottom: 50px;
+
+                    .tabs_form {
+                        margin-left: 10px;
+                        padding-left: 80px;
+                        border-left: 1px solid var(--tp-border-1);
+
+                        .title_section {
+                            .title {
+                                font-size: 30px;
+                                font-weight: 600;
+                                color: var(--tp-common-black);
+                                padding-bottom: 40px;
+                            }
+                        }
+
+                        .contact_form {
+                            form {
+                                .form_input {
+                                    input {
+                                        width: 100%;
+                                        border-radius: 10px;
+                                        border: 1px solid var(--tp-border-1);
+                                        padding: 25px 20px;
+                                        background-color: #F0F0F0;
+                                        margin-bottom: 10px;
+                                        font-size: 15px;
+                                        font-weight: 400;
+                                        text-transform: capitalize;
+                                        color: var(--tp-common-black);
+                                        outline: none;
+
+                                    }
+                                }
+                                .form_select {
+                                    select {
+                                        width: 100%;
+                                        border-radius: 10px;
+                                        border: 1px solid var(--tp-border-1);
+                                        padding: 25px 20px;
+                                        background-color: #F0F0F0;
+                                        margin-bottom: 10px;
+                                        font-size: 15px;
+                                        font-weight: 400;
+                                        text-transform: capitalize;
+                                        outline: none;
+                                        color: #747474;
+
+                                        option {
+                                            color: #747474;
+                                        }
+                                        
+                                    }
+                                }
+                                .form_textarea {
+                                    textarea {
+                                        width: 100%;
+                                        height: 165px;
+                                        border-radius: 10px;
+                                        border: 1px solid var(--tp-border-1);
+                                        padding: 25px 20px;
+                                        background-color: #F0F0F0;
+                                        margin-bottom: 10px;
+                                        font-size: 15px;
+                                        font-weight: 400;
+                                        text-transform: capitalize;
+                                        outline: none;
+                                        color: #747474;
+
+                                        &::placeholder {
+                                            color: #747474;
+                                        }
+                                    }
+                                }
+
+                                .form_button {
+                                    button {
+                                        width: 100%;
+                                        display: inline-block;
+                                        height: 65px;
+                                        font-size: 15px;
+                                        font-weight: 700;
+                                        color: var(--tp-common-white);
+                                        background-color: var(--tp-theme-2);
+                                        padding: 0 50px;
+                                        overflow: hidden;
+                                        border-radius: 10px;
+                                        text-transform: uppercase;
+                                        border: none;
+                                        outline: none;
+                                        transition: 0.3s ease-in-out;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:991px) {
+    .get-insurance {
+        .container {
+            margin: 0;
+
+            .insurance_row {
+                .item1 {
+                    .title_section {
+                        .title {
+                            font-size: 30px;
+                        }
+                    }
+
+                    .insurance_tab_section {
+                        .tabs {
+                            .items {
+                                margin-right: 0;
+
+                                ul {
+                                    li {
+                                        .item {
+
+                                            i {
+                                                font-size: 25px;
+                                                margin-right: 15px;
+                                            }
+
+                                            span {
+                                                font-size: 20px;
+                                            }
+                                        }
+
+                                        i {
+                                            font-size: 17px;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .item2 {
+                    .form_section {
+                        margin: 50px 0px;
+                        .tabs_form {
+                            margin-left: 0;
+                            padding-left: 0;
                         }
                     }
                 }
