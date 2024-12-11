@@ -7,6 +7,7 @@ import OurServices from './components/OurServices/OurServices'
 import './App.css'
 import GetInsurance from './components/GetInsurance/GetInsurance'
 import Feedback from './components/Feedback/Feedback'
+import OurBlog from './components/OurBlog/OurBlog'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <OurServices/>
       <GetInsurance/>
       <Feedback/>
+      <OurBlog/>
     </>
   )
 }
