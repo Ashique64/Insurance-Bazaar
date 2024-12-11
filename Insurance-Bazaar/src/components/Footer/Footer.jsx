@@ -2,6 +2,29 @@ import React from "react";
 import "./Footer.scss";
 
 const Footer = () => {
+
+    const socialIcons = [
+        {
+            icon: "bx bxl-facebook",
+            link: "https://www.facebook.com/",
+        },
+        {
+            icon: "bx bxl-twitter",
+            link: "https://twitter.com/",
+        },
+        {
+            icon: "bx bxl-instagram",
+            link: "https://www.instagram.com/",
+        },
+        {
+            icon: "bx bxl-youtube",
+            link: "https://www.youtube.com/",
+        },
+        {
+            icon: "bx bxl-linkedin",
+            link: "https://www.linkedin.com/",
+        },
+    ]
     return (
         <div className="footer">
             <div className="footer-shape">
@@ -18,21 +41,11 @@ const Footer = () => {
                                 </a>
                             </div>
                             <div className="social">
-                                <a href="">
-                                    <i className="bx bxl-facebook"></i>
-                                </a>
-                                <a href="">
-                                    <i className="bx bxl-twitter"></i>
-                                </a>
-                                <a href="">
-                                    <i className="bx bxl-instagram"></i>
-                                </a>
-                                <a href="">
-                                    <i className="bx bxl-youtube"></i>
-                                </a>
-                                <a href="">
-                                    <i className="bx bxl-linkedin"></i>
-                                </a>
+                                {socialIcons.map((item, index) => (
+                                    <a href={item.link} key={index}>
+                                        <i className={item.icon}></i>
+                                    </a>
+                                ))}
                             </div>
                         </div>
                     </div>
