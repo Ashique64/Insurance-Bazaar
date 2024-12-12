@@ -41,7 +41,7 @@ const OurBlog = () => {
 
                 <div className="row blog_content_row">
                     {blogItems.map((item, index) => (
-                        <div className="col-xl-6 col-lg-6 col-md-12 blog_content">
+                        <div key={index} className="col-xl-6 col-lg-6 col-md-12 blog_content">
                             <div className="blog_content_section">
                                 <div className="blog_img">
                                     <a href="">

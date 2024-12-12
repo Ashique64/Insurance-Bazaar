@@ -47,7 +47,7 @@ const Feedback = () => {
 
                 <div className="row feedback_row2">
                     {cardItems.map((item, index) => (
-                        <div className="col-xl-4 col-lg-6 col-md-12 card_section">
+                        <div key={index} className="col-xl-4 col-lg-6 col-md-12 card_section">
                             <div className="card">
                                 <div className="icons">
                                     <span>

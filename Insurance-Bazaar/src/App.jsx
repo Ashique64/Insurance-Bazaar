@@ -1,31 +1,19 @@
-import { useState } from 'react'
-import NavBar from './components/NavBar/NavBar'
-import TrustedBrands from './components/TrustedBrands/TrustedBrands'
-import Hero from './components/Hero/Hero'
-import About from './components/About/About'
-import OurServices from './components/OurServices/OurServices'
-import GetInsurance from './components/GetInsurance/GetInsurance'
-import Feedback from './components/Feedback/Feedback'
-import OurBlog from './components/OurBlog/OurBlog'
-import Footer from './components/Footer/Footer'
-import './App.css'
-
+import React from "react";
+import "./App.css";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Form from "./components/Form/Form";
 
 function App() {
 
-  return (
-    <>
-      <NavBar />      
-      <Hero/>
-      <TrustedBrands/>
-      <About/>
-      <OurServices/>
-      <GetInsurance/>
-      <Feedback/>
-      <OurBlog/>
-      <Footer/>
-    </>
-  )
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/form" element={<Form />} />
+            </Routes>
+        </Router>
+    );
 }
 
-export default App
+export default App;

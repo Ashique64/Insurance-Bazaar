@@ -69,7 +69,7 @@ const Footer = () => {
                     <div className="footer_content">
                         <div className="row footer_content_row">
                             {footerItems.map((item, index) => (
-                                <div className="col-lg-3 col-md-4 footer_content_col">
+                                <div key={index} className="col-lg-3 col-md-4 footer_content_col">
                                     <div className="items">
                                         <div className="title">
                                             <h4>{item.title}</h4>

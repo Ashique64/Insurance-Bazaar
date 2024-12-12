@@ -1,7 +1,14 @@
 import React from "react";
 import "./OurServices.scss";
+import { useNavigate } from "react-router-dom";
 
 const OurServices = () => {
+    const navigate = useNavigate();
+
+    const handleCardClick = (title) => {
+        navigate("/form", { state: { title } });
+    };
+
     const cardItems = [
         {
             title: "Car",
@@ -80,6 +87,7 @@ const OurServices = () => {
                             className="col-xl-3 col-lg-4 col-md-6 item2_col"
                             key={index}
                             style={{ "--card-color": item.color }}
+                            onClick={() => handleCardClick(item.title)}
                         >
                             <div className="card">
                                 <div
