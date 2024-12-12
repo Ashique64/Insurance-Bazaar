@@ -1,3 +1,138 @@
-.nav {
-    z-index: 2;
+.navbars {
+    padding: 0 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 333;
+
+    .container-fluid {
+        padding: 0 12px;
+
+        .nav_row {
+            display: flex;
+            align-items: center;
+
+            .nav_col1 {
+                .logo {
+                    a {
+                        color: inherit;
+                        outline: none;
+                        border: none;
+                        background: transparent;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .nav_col2 {
+                .nav_menu {
+                    #mobile_menu {
+                        ul {
+                            margin-left: 20px;
+                            margin-bottom: 0;
+                            padding: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+
+                            li {
+                                list-style: none;
+                                margin: 0 10px;
+                                display: inline-block;
+
+                                a {
+                                    color: var(--tp-common-white);
+                                    font-weight: 600;
+                                    font-size: 15px;
+                                    line-height: 16px;
+                                    letter-spacing: 0.05em;
+                                    text-transform: uppercase;
+                                    margin-right: 6px;
+                                    padding: 40px 0px;
+                                    display: inline-block;
+                                    position: relative;
+                                    text-decoration: none;
+                                    transition: 0.4s ease-in-out;
+
+                                    &::after {
+                                        content: "";
+                                        width: 0%;
+                                        height: 4px;
+                                        background-color: #00abf0;
+                                        position: absolute;
+                                        bottom: 0px;
+                                        left: 0px;
+                                        transition: 0.4s ease-in-out;
+                                    }
+
+                                    &:hover {
+                                        color: var(--tp-theme-1);
+                                        transition: 0.4s ease-in-out;
+
+                                        &::after {
+                                            width: 100%;
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav_col3 {
+                .items {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .call_us {
+                        display: flex;
+                        align-items: center;
+                        i {
+                            color: var(--tp-common-white);
+                            font-weight: 600;
+                            font-size: 18px;
+                            margin: 0 7px;
+                        }
+                        p {
+                            color: var(--tp-common-white);
+                            font-weight: 600;
+                            font-size: 15px;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .nav_button {
+                        button {
+                            font-size: 15px;
+                            height: 55px;
+                            line-height: 55px;
+                            padding: 0 35px;
+                            display: inline-block;
+                            font-weight: 700;
+                            color: var(--tp-common-white);
+                            background: var(--tp-theme-1);
+                            text-align: center;
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 90px;
+                            text-transform: uppercase;
+                            transition: 0.3s ease-in-out;
+
+                            &:hover {
+                                background: var(--tp-theme-2);
+                            }
+                        }
+                    }
+
+                    .mobile_icon {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
