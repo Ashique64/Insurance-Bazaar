@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NavBar.scss";
 
 const NavBar = () => {
     const [menuIcon, setMenuicon] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
 
     const handleMenuIcon = () => {
         setMenuicon(!menuIcon);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    
+
     return (
-        <div className="navbars">
+        <div className={`navbars ${isSticky ? "sticky" : ""}`}>
             <div className="container-fluid">
                 <div className="row nav_row">
                     <div className="col-xl-2 col-lg-2 col-6 nav_col1">

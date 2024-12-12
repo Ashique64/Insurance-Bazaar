@@ -1,10 +1,16 @@
 .navbars {
     padding: 0 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 333;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+
+    &.sticky {
+        background-color: var(--tp-common-black);
+    }
 
     .container-fluid {
         padding: 0 12px;
@@ -334,11 +340,14 @@
                         }
 
                         .nav_button {
+                            display: flex;
+                            align-items: center;
                             button {
                                 font-size: 12px;
                                 height: 35px;
                                 line-height: 35px;
                                 padding: 0 20px;
+                                margin-bottom: 0;
                             }
                         }
 
