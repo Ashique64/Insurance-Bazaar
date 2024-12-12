@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NavBar.scss";
 
 const NavBar = () => {
+    const [menuIcon, setMenuicon] = useState(false);
+
+    const handleMenuIcon = () => {
+        setMenuicon(!menuIcon);
+    };
+
     return (
         <div className="navbars">
             <div className="container-fluid">
                 <div className="row nav_row">
-                    <div className="col-xl-2 col-lg-2 col-md-6 nav_col1">
+                    <div className="col-xl-2 col-lg-2 col-6 nav_col1">
                         <div className="logo">
                             <a href="">
                                 LOGO
@@ -14,30 +20,29 @@ const NavBar = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="col-xl-6 col-lg-8 d-none d-lg-block nav_col2">
-                        <div className="nav_menu">
-                            <div id="mobile_menu">
-                                <ul>
-                                    <li>
-                                        <a href="">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="">service</a>
-                                    </li>
-                                    <li>
-                                        <a href="">companies</a>
-                                    </li>
-                                    <li>
-                                        <a href="">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="">privacy policy</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div className="col-xl-6 col-lg-8 nav_col2">
+                        <div id="mobile_menu">
+                            <ul className={menuIcon ? "show" : ""}>
+                                <li>
+                                    <a href="">Home</a>
+                                </li>
+                                <li>
+                                    <a href="">service</a>
+                                </li>
+                                <li>
+                                    <a href="">companies</a>
+                                </li>
+                                <li>
+                                    <a href="">About us</a>
+                                </li>
+                                <li>
+                                    <a href="">privacy policy</a>
+                                </li>
+                                <i className={menuIcon ? "bx bx-x" : ""} onClick={handleMenuIcon}></i>
+                            </ul>
                         </div>
                     </div>
-                    <div className="col-xl-4 col-lg-2 col-md-6 nav_col3">
+                    <div className="col-xl-4 col-lg-2 col-6  nav_col3">
                         <div className="items">
                             <div className="call_us">
                                 <i className="bx bxs-phone-call"></i>
@@ -46,10 +51,8 @@ const NavBar = () => {
                             <div className="nav_button">
                                 <button>get started</button>
                             </div>
-                            <div className="mobile_icon">
-                                <a href="">
-                                    <i className="bx bx-menu"></i>
-                                </a>
+                            <div className="mobile_icon" onClick={handleMenuIcon}>
+                                <i className={menuIcon ? "" : "bx bx-menu"}></i>
                             </div>
                         </div>
                     </div>
