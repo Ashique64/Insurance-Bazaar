@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import "./Form.scss";
 
 const Form = () => {
+    const [successMessage, setSuccessMessage] = useState("");
     const location = useLocation();
     const { title } = location.state || { title: "No Title" };
 
@@ -26,6 +28,41 @@ const Form = () => {
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
     const genders = ["Male", "Female", "Other"];
 
+    const [formData, setFormData] = useState({
+        fullName: "",
+        nationality: "",
+        day: "",
+        month: "",
+        year: "",
+        email: "",
+        phone: "",
+        gender: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form data:", formData);
+        // setSuccessMessage("Form submitted successfully!");
+
+        setFormData({
+            fullName: "",
+            nationality: "",
+            day: "",
+            month: "",
+            year: "",
+            email: "",
+            phone: "",
+            gender: "",
+        });
+
+        setTimeout(() => setSuccessMessage(""), 3000);
+    };
+
     return (
         <div className="form">
             <div className="container-fluid">
@@ -36,6 +73,7 @@ const Form = () => {
                         </h1>
                     </div>
                 </div>
+                {/* {successMessage && <p className="success-message">{successMessage}</p>} */}
                 <div className="form_section">
                     <div className="form_content">
                         <div className="form_title">
@@ -43,14 +81,26 @@ const Form = () => {
                             <h4>Tell us about yourself</h4>
                         </div>
                         <div className="container">
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className="row form_row">
                                     <div className="col-lg-6 item">
-                                        <input type="text" placeholder="Your full name" />
+                                        <input
+                                            type="text"
+                                            name="fullName"
+                                            placeholder="Your full name"
+                                            value={formData.fullName}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                     <div className="col-lg-6 item">
-                                        <select>
-                                            <option value="" disabled selected>
+                                        <select
+                                            name="nationality"
+                                            value={formData.nationality}
+                                            onChange={handleChange}
+                                            required
+                                        >
+                                            <option value="" disabled>
                                                 Your nationality
                                             </option>
                                             {nationalities.map((nation, index) => (
@@ -64,8 +114,8 @@ const Form = () => {
                                 <div className="row form_row">
                                     <div className="col-lg-6 item">
                                         <div className="birth">
-                                            <select>
-                                                <option value="" disabled selected>
+                                            <select name="day" value={formData.day} onChange={handleChange} required>
+                                                <option value="" disabled>
                                                     Day
                                                 </option>
                                                 {days.map((day, index) => (
@@ -74,8 +124,8 @@ const Form = () => {
                                                     </option>
                                                 ))}
                                             </select>
-                                            <select>
-                                                <option value="" disabled selected>
+                                            <select name="month" value={formData.month} onChange={handleChange} required>
+                                                <option value="" disabled>
                                                     Month
                                                 </option>
                                                 {months.map((month, index) => (
@@ -84,8 +134,8 @@ const Form = () => {
                                                     </option>
                                                 ))}
                                             </select>
-                                            <select>
-                                                <option value="" disabled selected>
+                                            <select name="year" value={formData.year} onChange={handleChange} required>
+                                                <option value="" disabled>
                                                     Year
                                                 </option>
                                                 {years.map((year, index) => (
@@ -97,16 +147,30 @@ const Form = () => {
                                         </div>
                                     </div>
                                     <div className="col-lg-6 item">
-                                        <input type="text" placeholder="Your email" />
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="Your email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                 </div>
                                 <div className="row form_row">
                                     <div className="col-lg-6 item">
-                                        <input type="text" placeholder="Your Phone no" />
+                                        <input
+                                            type="text"
+                                            name="phone"
+                                            placeholder="Your Phone no"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </div>
                                     <div className="col-lg-6 item">
-                                        <select>
-                                            <option value="" disabled selected>
+                                        <select name="gender" value={formData.gender} onChange={handleChange} required>
+                                            <option value="" disabled>
                                                 Gender
                                             </option>
                                             {genders.map((gender, index) => (
@@ -119,7 +183,7 @@ const Form = () => {
                                 </div>
                                 <div className="row form_row">
                                     <div className="col-xl-2 col-lg-3 col-12 item">
-                                        <button>Submit</button>
+                                        <button type="submit">Submit</button>
                                     </div>
                                 </div>
                             </form>
