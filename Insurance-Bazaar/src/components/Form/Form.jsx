@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import emailjs from "@emailjs/browser";
 import "./Form.scss";
 
 const Form = () => {
