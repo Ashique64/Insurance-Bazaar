@@ -98,7 +98,10 @@ const Form = () => {
                         </h1>
                     </div>
                 </div>
-                {successMessage && <p className={`success-message ${getMessageClass()}`}>{successMessage}</p>}
+                <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
+                    {successMessage || " "}
+                </p>
+
                 <div className="form_section">
                     <div className="form_content">
                         <div className="form_title">

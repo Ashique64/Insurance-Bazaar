@@ -31,25 +31,34 @@
         }
 
         .success-message {
-            position: absolute;
-            left: 360px;
+            
+            position: static;
             padding: 20px;
             border-radius: 8px;
-            width: 40%;
+            width: 90%;
+            margin: 0 auto;
             text-align: center;
             font-size: 18px;
             color: var(--tp-common-black);
+            visibility: hidden;
+            opacity: 0; 
+            transition: opacity 0.3s ease-in-out;
+
+            &.show {
+                visibility: visible;
+                opacity: 1; 
+            }
 
             &.warning {
                 background-color: #0dcaf0;
                 color: var(--tp-common-white);
             }
-        
+
             &.success {
                 background-color: #198754;
                 color: var(--tp-common-white);
             }
-        
+
             &.error {
                 background-color: #dc3545;
                 color: var(--tp-common-white);
@@ -67,7 +76,7 @@
                 padding: 30px;
                 border: 1px solid var(--tp-border-1);
                 border-radius: 20px;
-                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1),0px 0px 0px rgba(0, 0, 0, 0.1);
+                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
                 transition: box-shadow 0.3s ease-in-out;
 
                 &:hover {
@@ -169,7 +178,6 @@
     }
 }
 
-
 @media (max-width: 567px) {
     .form {
         .container-fluid {
@@ -181,6 +189,12 @@
                         font-size: 30px;
                     }
                 }
+            }
+
+            .success-message {
+                position: static;
+                width: 90%;
+                margin: 0 auto;
             }
 
             .form_section {
@@ -202,13 +216,26 @@
                     .container {
                         .form_row {
                             .item {
-                                input, select {
+                                input,
+                                select {
                                     font-size: 12px;
                                 }
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .form {
+        .container-fluid {
+            .success-message {
+                position: static;
+                width: 90%;
+                margin: 0 auto;
             }
         }
     }
