@@ -8,6 +8,7 @@ import GetInsurance from "../components/GetInsurance/GetInsurance";
 import Feedback from "../components/Feedback/Feedback";
 import OurBlog from "../components/OurBlog/OurBlog";
 import Footer from "../components/Footer/Footer";
+import ScrollToTopButton from "../components/ScrollToTopButton/ScrollToTopButton";
 
 const Home = () => {
     return (
@@ -21,6 +22,7 @@ const Home = () => {
             <Feedback />
             <OurBlog />
             <Footer />
+            <ScrollToTopButton/>
         </>
     );
 };
