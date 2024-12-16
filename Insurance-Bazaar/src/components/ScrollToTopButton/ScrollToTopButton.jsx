@@ -30,7 +30,7 @@ const ScrollToTopButton = () => {
             className={`scroll-to-top ${isVisible ? "visible" : ""}`}
             onClick={scrollToTop}
         >
-            ↑
+            <i className='bx bx-chevrons-up'></i>
         </button>
     );
 };

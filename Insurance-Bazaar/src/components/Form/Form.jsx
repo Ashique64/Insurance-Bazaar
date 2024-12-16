@@ -43,23 +43,42 @@ const Form = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Form data:", formData);
-        // setSuccessMessage("Form submitted successfully!");
+        
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/send-email/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+            
+            if (response.ok) {
+                setSuccessMessage("Form submitted successfully!");
+                // alert("Form submitted successfully!");
+                setFormData({
+                    fullName: "",
+                    nationality: "",
+                    day: "",
+                    month: "",
+                    year: "",
+                    email: "",
+                    phone: "",
+                    gender: "",
+                });
+                setTimeout(() => setSuccessMessage(""), 3000);
+            } else {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.error}`);
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Something went wrong!");
+        } 
 
-        setFormData({
-            fullName: "",
-            nationality: "",
-            day: "",
-            month: "",
-            year: "",
-            email: "",
-            phone: "",
-            gender: "",
-        });
-
-        setTimeout(() => setSuccessMessage(""), 3000);
     };
 
     return (
@@ -72,7 +91,7 @@ const Form = () => {
                         </h1>
                     </div>
                 </div>
-                {/* {successMessage && <p className="success-message">{successMessage}</p>} */}
+                {successMessage && <p className="success-message">{successMessage}</p>}
                 <div className="form_section">
                     <div className="form_content">
                         <div className="form_title">
