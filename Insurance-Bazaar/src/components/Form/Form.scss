@@ -30,6 +30,32 @@
             }
         }
 
+        .success-message {
+            position: absolute;
+            left: 360px;
+            padding: 20px;
+            border-radius: 8px;
+            width: 40%;
+            text-align: center;
+            font-size: 18px;
+            color: var(--tp-common-black);
+
+            &.warning {
+                background-color: #0dcaf0;
+                color: var(--tp-common-white);
+            }
+        
+            &.success {
+                background-color: #198754;
+                color: var(--tp-common-white);
+            }
+        
+            &.error {
+                background-color: #dc3545;
+                color: var(--tp-common-white);
+            }
+        }
+
         .form_section {
             display: flex;
             justify-content: center;

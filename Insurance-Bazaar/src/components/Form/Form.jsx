@@ -46,7 +46,8 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Form data:", formData);
-        
+        setSuccessMessage("Submitting your form...");
+
         try {
             const response = await fetch("http://127.0.0.1:8000/api/send-email/", {
                 method: "POST",
@@ -55,10 +56,9 @@ const Form = () => {
                 },
                 body: JSON.stringify(formData),
             });
-            
+
             if (response.ok) {
                 setSuccessMessage("Form submitted successfully!");
-                // alert("Form submitted successfully!");
                 setFormData({
                     fullName: "",
                     nationality: "",
@@ -69,16 +69,23 @@ const Form = () => {
                     phone: "",
                     gender: "",
                 });
-                setTimeout(() => setSuccessMessage(""), 3000);
             } else {
                 const errorData = await response.json();
-                alert(`Error: ${errorData.error}`);
+                setSuccessMessage(`Error: ${errorData.error}`);
             }
         } catch (error) {
             console.error("Error submitting form:", error);
-            alert("Something went wrong!");
-        } 
+            setSuccessMessage("Something went wrong!");
+        } finally {
+            setTimeout(() => setSuccessMessage(""), 3000);
+        }
+    };
 
+    const getMessageClass = () => {
+        if (successMessage.includes("Submitting")) return "warning";
+        if (successMessage.includes("successfully")) return "success";
+        if (successMessage.includes("Error") || successMessage.includes("wrong")) return "error";
+        return "";
     };
 
     return (
@@ -91,7 +98,7 @@ const Form = () => {
                         </h1>
                     </div>
                 </div>
-                {successMessage && <p className="success-message">{successMessage}</p>}
+                {successMessage && <p className={`success-message ${getMessageClass()}`}>{successMessage}</p>}
                 <div className="form_section">
                     <div className="form_content">
                         <div className="form_title">
