@@ -9,6 +9,7 @@ import Feedback from "../components/Feedback/Feedback";
 import OurBlog from "../components/OurBlog/OurBlog";
 import Footer from "../components/Footer/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton/ScrollToTopButton";
+import WhatsAppButton from "../components/WhatsappButton/WhatsappButton";
 
 const Home = () => {
     return (
@@ -23,6 +24,7 @@ const Home = () => {
             <OurBlog />
             <Footer />
             <ScrollToTopButton/>
+            <WhatsAppButton/>
         </>
     );
 };

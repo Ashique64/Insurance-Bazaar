@@ -4,10 +4,9 @@ import "./ScrollToTopButton.scss";
 const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Show or hide the button based on scroll position
     useEffect(() => {
         const toggleVisibility = () => {
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 500) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
