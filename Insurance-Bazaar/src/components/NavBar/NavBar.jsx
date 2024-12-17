@@ -42,7 +42,7 @@ const NavBar = () => {
                         <div id="mobile_menu">
                             <ul className={menuIcon ? "show" : ""}>
                                 <li>
-                                    <a href="">Home</a>
+                                    <a href="#home">Home</a>
                                 </li>
                                 <li>
                                     <a href="">service</a>
@@ -51,7 +51,7 @@ const NavBar = () => {
                                     <a href="">companies</a>
                                 </li>
                                 <li>
-                                    <a href="">About us</a>
+                                    <a href="#about">About us</a>
                                 </li>
                                 <li>
                                     <a href="">privacy policy</a>

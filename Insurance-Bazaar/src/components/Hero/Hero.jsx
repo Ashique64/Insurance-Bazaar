@@ -35,7 +35,7 @@ const Hero = () => {
 
 
     return (
-        <div className="hero">
+        <div id="home" className="hero">
             <div className="carousel">
                 <div className="carousel-inner">
                     {slides.map((slide, index) => (
