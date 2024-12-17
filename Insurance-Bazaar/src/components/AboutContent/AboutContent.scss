@@ -1,0 +1,104 @@
+.about_content {
+    padding: 130px 0;
+
+    .container {
+        padding: 0 12px;
+
+        .about_content_row {
+            margin: 0 -15px;
+
+            .item1 {
+                padding: 0 15px;
+
+                .content_section {
+                    h3 {
+                        font-weight: 600;
+                        font-size: 50px;
+                        line-height: 105.5%;
+                        letter-spacing: -0.01em;
+                        line-height: 1.1;
+                        padding-bottom: 20px;
+                        margin-bottom: 8px;
+                    }
+
+                    .paragraphs {
+                        .para1 {
+                            font-family: var(--tp-ff-p);
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: var(--tp-text-p);
+                            margin-bottom: 15px;
+                            line-height: 27px;
+                            padding-right: 105px;
+                            padding-bottom: 20px;
+                            text-wrap: wrap;
+                        }
+
+                        .para2 {
+                            font-family: var(--tp-ff-p);
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: var(--tp-text-p);
+                            margin-bottom: 15px;
+                            line-height: 27px;
+                            padding-right: 105px;
+                            text-wrap: wrap;
+                        }
+                    }
+                }
+
+                .content_list {
+                    ul {
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                            font-weight: 500;
+                            font-size: 16px;
+                            color: var(--tp-common-black);
+                            position: relative;
+                            padding-left: 40px;
+                            margin-bottom: 15px;
+
+                            i {
+                                position: absolute;
+                                left: 0;
+                                top: 2px;
+                                height: 24px;
+                                width: 24px;
+                                border-radius: 50%;
+                                background-color: var(--tp-theme-1);
+                                line-height: 24px;
+                                color: var(--tp-common-white);
+                                font-size: 12px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .item2 {
+                padding: 0 15px;
+
+                .content_image {
+                    margin-left: 110px;
+                    position: relative;
+
+                    .image1 {
+                        img {
+                            border-radius: 15px;
+                        }
+                    }
+
+                    .image2 {
+                        position: absolute;
+                        top: 50%;
+                        left: -100px;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+}

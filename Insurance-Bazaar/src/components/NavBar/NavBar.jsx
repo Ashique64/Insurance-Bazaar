@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./NavBar.scss";
 import { Link } from "react-router-dom";
+import "./NavBar.scss";
 
 const NavBar = ({page}) => {
     const [menuIcon, setMenuicon] = useState(false);
