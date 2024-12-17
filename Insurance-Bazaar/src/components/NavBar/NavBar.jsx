@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./NavBar.scss";
+import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({page}) => {
     const [menuIcon, setMenuicon] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
 
@@ -24,10 +25,8 @@ const NavBar = () => {
         };
     }, []);
 
-    
-
     return (
-        <div className={`navbars ${isSticky ? "sticky" : ""}`}>
+        <div className={`navbars ${isSticky ? "sticky" : ""} ${page === "about" ? "blue-bg" : ""}`}>
             <div className="container-fluid">
                 <div className="row nav_row">
                     <div className="col-xl-2 col-lg-2 col-6 nav_col1">
@@ -42,7 +41,7 @@ const NavBar = () => {
                         <div id="mobile_menu">
                             <ul className={menuIcon ? "show" : ""}>
                                 <li>
-                                    <a href="#home">Home</a>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li>
                                     <a href="">service</a>

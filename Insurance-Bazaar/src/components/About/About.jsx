@@ -1,7 +1,16 @@
 import React from 'react'
 import './About.scss'
+import { useNavigate } from 'react-router-dom'
 
 const About = () => {
+
+    const navigate = useNavigate();
+
+    const handleAbout = () => {
+        navigate('/about')
+    }
+      
+
   return (
     <div id='about' className='about'>
       <div className="container">
@@ -29,7 +38,7 @@ const About = () => {
                     quat.Exerci tation ullamcorper suscipit loborti </p>
                 </div>
                 <div className="about_button">
-                    <button>ABOUT US</button>
+                    <button onClick={handleAbout}>ABOUT US</button>
                 </div>
             </div>
         </div>
