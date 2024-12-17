@@ -89,3 +89,40 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    .about_hero {
+        padding: 120px 0;
+
+        .circle_one,
+        .circle_two {
+            display: none;
+        }
+
+        .container {
+            .row {
+                .about_hero_col {
+                    .about_hero_wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        .about_hero_content {
+                            h3 {
+                                font-size: 45px;
+                                margin-bottom: 20px;
+                            }
+                        }
+
+                        .about_hero_button {
+                            button {
+                                height: 50px;
+                                line-height: 50px;
+                                padding: 0 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
