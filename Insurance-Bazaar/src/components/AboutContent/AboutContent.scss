@@ -102,3 +102,44 @@
         }
     }
 }
+
+@media (max-width: 992px) {
+    .about_content {
+        .container {
+            .about_content_row {
+                .item1 {
+                    .content_section {
+                        h3 {
+                            font-size: 30px;
+                        }
+
+                        .paragraphs {
+                            padding-bottom: 25px;
+
+                            .para1,
+                            .para2 {
+                                padding-right: 0 !important;
+                            }
+                        }
+                    }
+
+                    .content_list {
+                        margin-bottom: 30px;
+
+                    }
+                }
+
+                .item2 {
+
+                    .content_image {
+                        margin-left: 0;
+
+                        .image2 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
