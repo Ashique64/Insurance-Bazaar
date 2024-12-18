@@ -1,0 +1,100 @@
+.about-us-section {
+    padding: 100px 0;
+
+    .container {
+        padding: 0 12px;
+
+        .about_section_row {
+            margin: 0 -15px;
+
+            .item1 {
+                padding: 0 15px;
+
+                .about_section_image {
+                    padding-left: 90px;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .item2 {
+                padding: 0 15px;
+
+                .about_section_content {
+                    padding-left: 50px;
+
+                    .subtitle {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: var(--tp-theme-2);
+                        text-transform: capitalize;
+                        letter-spacing: 2px;
+                        margin-bottom: 20px;
+                        display: inline-block;
+                        letter-spacing: -0.02em;
+
+                        &::before {
+                            content: "";
+                            height: 12px;
+                            width: 12px;
+                            background-color: var(--tp-theme-2);
+                            display: inline-block;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .title {
+                        font-weight: 600;
+                        font-size: 55px;
+                        line-height: 105.5%;
+                        letter-spacing: -0.01em;
+                        line-height: 1.1;
+                        padding-bottom: 20px;
+                        margin-bottom: 8px;
+                    }
+
+                    .para {
+                        font-weight: 400;
+                        font-size: 15px;
+                        line-height: 26px;
+                        color: var(--tp-text-p);
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:991px) {
+    .about-us-section {
+        .container {
+            .about_section_row {
+                .item1 {
+                    .about_section_image {
+                        padding: 0;
+
+                        img {
+                            margin-bottom: 50px;
+                        }
+                    }
+                }
+
+                .item2 {
+
+                    .about_section_content {
+                        padding: 0;
+
+                        .title {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
