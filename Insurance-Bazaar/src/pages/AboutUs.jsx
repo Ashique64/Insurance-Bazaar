@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer'
 import AboutHero from '../components/AboutHero/AboutHero'
 import AboutContent from '../components/AboutContent/AboutContent'
 import AboutUsSection from '../components/AboutUsSection/AboutUsSection'
+import AboutUsExpert from '../components/AboutUsExperts/AboutUsExpert'
 
 const AboutUs = () => {
   return (
@@ -12,7 +13,8 @@ const AboutUs = () => {
     <AboutHero/>
     <AboutContent/>
     <AboutUsSection/>
-    {/* <Footer/> */}
+    <AboutUsExpert/>
+    <Footer/>
     </>
   )
 }
