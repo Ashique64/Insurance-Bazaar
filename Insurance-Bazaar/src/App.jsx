@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Form from "./components/Form/Form";
 import AboutUs from "./pages/AboutUs";
-import AdminLogin from "./pages/AdminLogin";
+import AdminLogin from "./pages/AdminLogin/AdminLogin";
 import "./App.css";
 import AdminPanel from "./pages/AdminPanel";
 
