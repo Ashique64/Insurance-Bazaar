@@ -6,7 +6,6 @@ from django.conf import settings
 
 def send_email(data, subject, fields):
     try:
-        # Generate the email table
         rows = "".join(f"""
         <tr>
             <td>{field}</td>
@@ -14,7 +13,6 @@ def send_email(data, subject, fields):
         </tr>
         """ for field, key in fields.items())
 
-        # Email content
         message = f"""
         <html>
         <head>
@@ -50,7 +48,6 @@ def send_email(data, subject, fields):
         </html>
         """
 
-        # Send email
         from_email = settings.EMAIL_HOST_USER
         recipient_list = [settings.EMAIL_HOST_USER]
         email = EmailMessage(subject, message, from_email, recipient_list)
@@ -109,4 +106,19 @@ def life_send_email(request):
             "Tenure of Cover": "tenure",
         }
         return send_email(data, "New Life Form Submission", fields)
+    return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+@csrf_exempt
+def business_send_email(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        fields = {
+            "First Name": "firstName",
+            "Last Name": "lastName",
+            "Company Name": "companyName",
+            "Phone Number": "phoneNumber",
+            "Type of Insurance": "insuranceType",
+        }
+        return send_email(data, "New Business Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
