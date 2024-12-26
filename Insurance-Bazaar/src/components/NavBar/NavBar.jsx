@@ -44,11 +44,11 @@ const NavBar = ({page}) => {
                                     <Link to="/">Home</Link>
                                 </li>
                                 <li>
-                                    <a href="">service</a>
+                                    <a href="#service">service</a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a href="">companies</a>
-                                </li>
+                                </li> */}
                                 <li>
                                     <a href="#about">About us</a>
                                 </li>
@@ -66,7 +66,9 @@ const NavBar = ({page}) => {
                                 <p>+91 1234567890</p>
                             </div>
                             <div className="nav_button">
+                                <a href="#service">
                                 <button>get started</button>
+                                </a>
                             </div>
                             <div className="mobile_icon" onClick={handleMenuIcon}>
                                 <i className={menuIcon ? "" : "bx bx-menu"}></i>

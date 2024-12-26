@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 const OurServices = () => {
     const navigate = useNavigate();
 
+
     const handleCardClick = (title) => {
-        navigate("/form", { state: { title } });
+        navigate(`/form/${title.toLowerCase()}`);
     };
 
     const cardItems = [
@@ -61,7 +62,7 @@ const OurServices = () => {
     ];
 
     return (
-        <div className="our-services">
+        <div id="service" className="our-services">
             <div className="services_shape1">
                 <img src="/images/slider/02_Shape.png" alt="" />
             </div>
