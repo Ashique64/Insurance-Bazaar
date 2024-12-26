@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.conf import settings
 
+
 def send_email(data, subject, fields):
     try:
         rows = "".join(f"""
@@ -58,6 +59,7 @@ def send_email(data, subject, fields):
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
 
+
 @csrf_exempt
 def car_send_email(request):
     if request.method == "POST":
@@ -76,6 +78,7 @@ def car_send_email(request):
         return send_email(data, "New Car Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
+
 @csrf_exempt
 def bike_send_email(request):
     if request.method == "POST":
@@ -93,6 +96,7 @@ def bike_send_email(request):
         }
         return send_email(data, "New Bike Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
+
 
 @csrf_exempt
 def life_send_email(request):
@@ -121,4 +125,25 @@ def business_send_email(request):
             "Type of Insurance": "insuranceType",
         }
         return send_email(data, "New Business Form Submission", fields)
+    return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+@csrf_exempt
+def pet_send_email(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        fields = {
+            "First Name": "firstName",
+            "Last Name": "lastName",
+            "E-mail": 'email',
+            "Phone Number": "phoneNumber",
+            "Type of Pet": "petType",
+            "Age of Pet": "petAge",
+            "Breed of Pet": "petBreed",
+            "Gender of Pet": "petGender",
+            "Neutered": "neutered",
+            "Mixed Breed": "mixedBreed",
+            "Injury History": "injury",
+        }
+        return send_email(data, "New Pet Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)

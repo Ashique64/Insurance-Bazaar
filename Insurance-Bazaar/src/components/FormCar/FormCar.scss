@@ -123,6 +123,19 @@
                                 outline: none;
                             }
 
+                            label {
+                                display: flex;
+                                align-items: center;
+                                font-size: 16px;
+
+                                input {
+                                    margin: 0;
+                                    width: 5%;
+                                    height: 15%;
+                                    margin-right: 10px;
+                                }
+                            }
+
                             select {
                                 width: 100%;
                                 border-radius: 10px;
