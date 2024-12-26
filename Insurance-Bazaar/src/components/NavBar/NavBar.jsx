@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 
-const NavBar = ({page}) => {
+const NavBar = ({ page }) => {
     const [menuIcon, setMenuicon] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
 
@@ -43,14 +43,14 @@ const NavBar = ({page}) => {
                                 <li>
                                     <Link to="/">Home</Link>
                                 </li>
-                                <li>
-                                    <a href="#service">service</a>
-                                </li>
                                 {/* <li>
                                     <a href="">companies</a>
-                                </li> */}
+                                    </li> */}
                                 <li>
                                     <a href="#about">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#service">service</a>
                                 </li>
                                 <li>
                                     <a href="">privacy policy</a>
@@ -67,7 +67,7 @@ const NavBar = ({page}) => {
                             </div>
                             <div className="nav_button">
                                 <a href="#service">
-                                <button>get started</button>
+                                    <button>get started</button>
                                 </a>
                             </div>
                             <div className="mobile_icon" onClick={handleMenuIcon}>
