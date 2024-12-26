@@ -248,6 +248,18 @@ const FormCar = () => {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
 
+    
+    const emiratesOfRegistration = [
+        "Abu Dhabi",
+        "Dubai",
+        "Sharjah",
+        "Ajman",
+        "Ras Al Khaimah",
+        "Fujairah",
+        "Umm Al Quwain",
+    ];
+    const licenceHeldOptions = ["Less than 1 year", "1-2 years", "2-3 years", "3-5 years", "5-10 years", "10+ years"];
+    
     const [formData, setFormData] = useState({
         carDetails: "",
         modelYear: "",
@@ -261,18 +273,6 @@ const FormCar = () => {
         emirateRegistered: "",
         uaeLicenceHeld: "",
     });
-
-    const emiratesOfRegistration = [
-        "Abu Dhabi",
-        "Dubai",
-        "Sharjah",
-        "Ajman",
-        "Ras Al Khaimah",
-        "Fujairah",
-        "Umm Al Quwain",
-    ];
-    const licenceHeldOptions = ["Less than 1 year", "1-2 years", "2-3 years", "3-5 years", "5-10 years", "10+ years"];
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
