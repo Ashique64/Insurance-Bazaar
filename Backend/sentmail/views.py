@@ -5,20 +5,22 @@ import json
 from django.conf import settings
 
 @csrf_exempt
-def send_email(request):
+def car_send_email(request):
     if request.method == "POST":
-        try:
-            
+        try:            
             data = json.loads(request.body)
+            carDetails = data.get("carDetails", "")
+            modelYear = data.get("modelYear", "")
             full_name = data.get("fullName", "")
             nationality = data.get("nationality", "")
             birth_date = f"{data.get('day', '')} {data.get('month', '')}, {data.get('year', '')}"
             email = data.get("email", "")
             phone = data.get("phone", "")
-            gender = data.get("gender", "")
+            emirateRegistered = data.get("emirateRegistered", "")
+            uaeLicenceHeld = data.get("uaeLicenceHeld", "")
 
             
-            subject = "New Form Submission"
+            subject = "New Car Form Submission"
             message = f"""
             <html>
             <head>
@@ -42,11 +44,19 @@ def send_email(request):
                 </style>
             </head>
             <body>
-                <h2>New Form Submission</h2>
+                <h2>New Car Form Submission</h2>
                 <table>
                     <tr>
                         <th>Field</th>
                         <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Car Details</td>
+                        <td>{carDetails}</td>
+                    </tr>
+                    <tr>
+                        <td>Model Year</td>
+                        <td>{modelYear}</td>
                     </tr>
                     <tr>
                         <td>Name</td>
@@ -69,8 +79,12 @@ def send_email(request):
                         <td>{phone}</td>
                     </tr>
                     <tr>
-                        <td>Gender</td>
-                        <td>{gender}</td>
+                        <td>Emirate Registered</td>
+                        <td>{emirateRegistered}</td>
+                    </tr>
+                    <tr>
+                        <td>UAE Licence Held</td>
+                        <td>{uaeLicenceHeld}</td>
                     </tr>
                 </table>
             </body>
