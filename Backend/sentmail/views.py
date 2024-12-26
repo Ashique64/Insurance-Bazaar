@@ -147,3 +147,19 @@ def pet_send_email(request):
         }
         return send_email(data, "New Pet Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+@csrf_exempt
+def health_send_email(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        fields = {
+            "Selected Category": "category",
+            "Types of Resident": "residentType",
+            "Emirate of Visa": 'emirateVisa',
+            "Your nationality": "nationality",
+            "Birth Date": "birthDate",
+            "Your Gender": "gender",
+        }
+        return send_email(data, "New Pet Form Submission", fields)
+    return JsonResponse({"error": "Invalid request method."}, status=400)

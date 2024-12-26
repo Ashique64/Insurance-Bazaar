@@ -247,6 +247,7 @@ const FormBike = () => {
     ];
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
+    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
 
     const [formData, setFormData] = useState({
         bikeDetails: "",
@@ -280,6 +281,8 @@ const FormBike = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const dataToSubmit = { ...formData, birthDate: formattedDate };
+        console.log("Form data:", dataToSubmit);
         console.log("Form data:", formData);
         setSuccessMessage("Submitting your form...");
 
@@ -289,7 +292,7 @@ const FormBike = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(dataToSubmit),
             });
 
             if (response.ok) {

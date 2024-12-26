@@ -1,38 +1,22 @@
 import React, { useState } from "react";
-import "./FormCar.scss";
 
-const FormCar = () => {
+const FormHealth = () => {
     const [successMessage, setSuccessMessage] = useState("");
-    const modelYear = [
-        2025,
-        2024,
-        2023,
-        2022,
-        2021,
-        2020,
-        2019,
-        2018,
-        2017,
-        2016,
-        2015,
-        2014,
-        2013,
-        2012,
-        2011,
-        2010,
-        2009,
-        2008,
-        2007,
-        2006,
-        2005,
-        2004,
-        2003,
-        2002,
-        2001,
-        2000,
-        1999,
-        "1998 or older",
+    const categories = ["Individual", "Family", "Group of Employees"];
+    const residentTypes = [
+        "Investor or Partner",
+        "Golden visa",
+        "Self-employed or Freelancer",
+        "Domestic worker",
+        "Dependent spouse",
+        "Dependent child",
+        "Dependent parent",
+        "Dependent sibling or Other relatives",
+        "Employee with salary AED 4000 and below",
+        "Employee with salary above AED 4000",
     ];
+
+    const emirateVisa = ["Ajman", "Dubai", "Fujairah", "Ras Al Khaimah", "Sharjah", "Umm Al Quwain", "Abu Dhabi"];
     const nationalities = [
         "Afghanistan",
         "Albania",
@@ -248,33 +232,21 @@ const FormCar = () => {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
 
-    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
+    const Genders = ["Male", "Female", "Other"];
 
-    
-    const emiratesOfRegistration = [
-        "Abu Dhabi",
-        "Dubai",
-        "Sharjah",
-        "Ajman",
-        "Ras Al Khaimah",
-        "Fujairah",
-        "Umm Al Quwain",
-    ];
-    const licenceHeldOptions = ["Less than 1 year", "1-2 years", "2-3 years", "3-5 years", "5-10 years", "10+ years"];
-    
     const [formData, setFormData] = useState({
-        carDetails: "",
-        modelYear: "",
-        fullName: "",
+        category: "",
+        residentType: "",
+        emirateVisa: "",
         nationality: "",
         day: "",
         month: "",
         year: "",
-        email: "",
-        phone: "",
-        emirateRegistered: "",
-        uaeLicenceHeld: "",
+        gender: "",
     });
+
+    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -283,12 +255,12 @@ const FormCar = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const dataToSubmit = { ...formData, birthDate: formattedDate };
-        console.log("Form data:", dataToSubmit);
         console.log("Form data:", formData);
+        console.log("Form data:", dataToSubmit);
         setSuccessMessage("Submitting your form...");
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/car/send-email/", {
+            const response = await fetch("http://127.0.0.1:8000/api/health/send-email/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -299,17 +271,14 @@ const FormCar = () => {
             if (response.ok) {
                 setSuccessMessage("Form submitted successfully!");
                 setFormData({
-                    carDetails: "",
-                    modelYear: "",
-                    fullName: "",
+                    category: "",
+                    residentType: "",
+                    emirateVisa: "",
                     nationality: "",
                     day: "",
                     month: "",
                     year: "",
-                    email: "",
-                    phone: "",
-                    emirateRegistered: "",
-                    uaeLicenceHeld: "",
+                    gender: "",
                 });
             } else {
                 const errorData = await response.json();
@@ -336,7 +305,7 @@ const FormCar = () => {
                 <div className="row title_row">
                     <div className="col-12 title_col">
                         <h1>
-                            Get your <span>Car insurance</span> quotes
+                            Get your <span>Home insurance</span> quotes
                         </h1>
                     </div>
                 </div>
@@ -353,29 +322,31 @@ const FormCar = () => {
                         <div className="container">
                             <form onSubmit={handleSubmit}>
                                 <div className="row form_row">
-                                    <div className="col-lg-8 item">
-                                        <input
-                                            type="text"
-                                            name="carDetails"
-                                            placeholder="Enter your Make,Model and Trim"
-                                            value={formData.carDetails}
-                                            onChange={handleChange}
-                                            required
-                                        />
+                                    <div className="col-lg-6 item">
+                                        <select name="category" value={formData.category} onChange={handleChange} required>
+                                            <option value="" disabled selected>
+                                                Select your category
+                                            </option>
+                                            {categories.map((item, index) => (
+                                                <option key={index} value={item}>
+                                                    {item}
+                                                </option>
+                                            ))}
+                                        </select>
                                     </div>
-                                    <div className="col-lg-4 item">
+                                    <div className="col-lg-6 item">
                                         <select
-                                            name="modelYear"
-                                            value={formData.modelYear}
+                                            name="residentType"
+                                            value={formData.residentType}
                                             onChange={handleChange}
                                             required
                                         >
                                             <option value="" disabled selected>
-                                                Model year
+                                                Types of Resident
                                             </option>
-                                            {modelYear.map((year, index) => (
-                                                <option key={index} value={year}>
-                                                    {year}
+                                            {residentTypes.map((type, index) => (
+                                                <option key={index} value={type}>
+                                                    {type}
                                                 </option>
                                             ))}
                                         </select>
@@ -383,14 +354,21 @@ const FormCar = () => {
                                 </div>
                                 <div className="row form_row">
                                     <div className="col-lg-6 item">
-                                        <input
-                                            type="text"
-                                            name="fullName"
-                                            placeholder="Your full name"
-                                            value={formData.fullName}
+                                        <select
+                                            name="emirateVisa"
+                                            value={formData.emirateVisa}
                                             onChange={handleChange}
                                             required
-                                        />
+                                        >
+                                            <option value="" disabled selected>
+                                                Emirate of Visa
+                                            </option>
+                                            {emirateVisa.map((type, index) => (
+                                                <option key={index} value={type}>
+                                                    {type}
+                                                </option>
+                                            ))}
+                                        </select>
                                     </div>
                                     <div className="col-lg-6 item">
                                         <select
@@ -411,7 +389,7 @@ const FormCar = () => {
                                     </div>
                                 </div>
                                 <div className="row form_row">
-                                    <div className="col-lg-6 item">
+                                    <div className="col-lg-8 item">
                                         <div className="birth">
                                             <select name="day" value={formData.day} onChange={handleChange} required>
                                                 <option value="" disabled>
@@ -445,63 +423,20 @@ const FormCar = () => {
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3 item">
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Your email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="col-lg-3 item">
-                                        <input
-                                            type="text"
-                                            name="phone"
-                                            placeholder="Your Phone no"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className="row form_row">
-                                    <div className="col-lg-6 item">
-                                        <select
-                                            name="emirateRegistered"
-                                            value={formData.emirateRegistered}
-                                            onChange={handleChange}
-                                            required
-                                        >
+                                    <div className="col-lg-4 item">
+                                        <select name="gender" value={formData.gender} onChange={handleChange} required>
                                             <option value="" disabled>
-                                                Emirate of registration
+                                                Your Gender
                                             </option>
-                                            {emiratesOfRegistration.map((item, index) => (
-                                                <option key={index} value={item}>
-                                                    {item}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                    <div className="col-lg-6 item">
-                                        <select
-                                            name="uaeLicenceHeld"
-                                            value={formData.uaeLicenceHeld}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled>
-                                                UAE licence held for
-                                            </option>
-                                            {licenceHeldOptions.map((option, index) => (
-                                                <option key={index} value={option}>
-                                                    {option}
+                                            {Genders.map((gender, index) => (
+                                                <option key={index} value={gender}>
+                                                    {gender}
                                                 </option>
                                             ))}
                                         </select>
                                     </div>
                                 </div>
+
                                 <div className="row form_row">
                                     <div className="col-xl-2 col-lg-3 col-12 item">
                                         <button type="submit">Submit</button>
@@ -516,4 +451,4 @@ const FormCar = () => {
     );
 };
 
-export default FormCar;
+export default FormHealth;
