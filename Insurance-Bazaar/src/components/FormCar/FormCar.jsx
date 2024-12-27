@@ -248,8 +248,7 @@ const FormCar = () => {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
 
-    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
-
+    
     
     const emiratesOfRegistration = [
         "Abu Dhabi",
@@ -275,6 +274,8 @@ const FormCar = () => {
         emirateRegistered: "",
         uaeLicenceHeld: "",
     });
+    
+    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });

@@ -153,13 +153,40 @@ def pet_send_email(request):
 def health_send_email(request):
     if request.method == "POST":
         data = json.loads(request.body)
-        fields = {
-            "Selected Category": "category",
-            "Types of Resident": "residentType",
-            "Emirate of Visa": 'emirateVisa',
-            "Your nationality": "nationality",
-            "Birth Date": "birthDate",
-            "Your Gender": "gender",
-        }
-        return send_email(data, "New Pet Form Submission", fields)
+        category = data.get("category")
+
+        if category == "Individual":
+            fields = {
+                "Selected Category": "category",
+                "Types of Resident": "residentType",
+                "Emirate of Visa": "emirateVisa",
+                "Your nationality": "nationality",
+                "Birth Date": "birthDate",
+                "Your Gender": "gender",
+            }
+        elif category == "Family":
+            fields = {
+                "Selected Category": "category",
+                "First Name": "firstName",
+                "Last Name": "lastName",
+                "Nationality": "nationality",
+                "Emirate of Visa": "emirateVisa",
+                "Relation to Sponsor": "relationToSponser",
+                "Birth Date": "birthDate",
+                "Gender": "gender",
+            }
+        elif category == "Group of Employees":
+            fields = {
+                "Selected Category": "category",
+                "First Name": "firstName",
+                "Last Name": "lastName",
+                "Company Name": "companyName",
+                "No. of Employees": "employeesNumber",
+                "Phone Number": "phoneNumber",
+                "E-mail": "email",
+            }
+        else:
+            return JsonResponse({"error": "Invalid category."}, status=400)
+
+        return send_email(data, f"New {category} Health Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)

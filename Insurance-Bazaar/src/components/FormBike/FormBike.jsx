@@ -247,8 +247,7 @@ const FormBike = () => {
     ];
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
-    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
-
+    
     const [formData, setFormData] = useState({
         bikeDetails: "",
         modelYear: "",
@@ -262,7 +261,8 @@ const FormBike = () => {
         emirateRegistered: "",
         uaeLicenceHeld: "",
     });
-
+    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
+    
     const emiratesOfRegistration = [
         "Abu Dhabi",
         "Dubai",
