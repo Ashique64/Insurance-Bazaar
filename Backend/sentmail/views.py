@@ -211,3 +211,23 @@ def home_send_email(request):
 
         return send_email(data, "New Home Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+@csrf_exempt
+def travel_send_email(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        fields = {
+            "Your journey take you": "journeyType",
+            "Travel Destination": "travelDestination",
+            "Departing From":"departingFrom",
+            "Name as per passport":"fullName",
+            "E-mail":"email",
+            "Phone Number": "phoneNumber",
+            "Nationality": "nationality",
+            "Gender": "gender",
+            
+        }
+
+        return send_email(data, "New Travel Form Submission", fields)
+    return JsonResponse({"error": "Invalid request method."}, status=400)

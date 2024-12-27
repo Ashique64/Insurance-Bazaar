@@ -11,6 +11,7 @@ import FormBusiness from "./components/FormBusiness/FormBusiness";
 import FormPet from "./components/FormPet/FormPet";
 import FormHealth from "./components/FormHealth/FormHealth";
 import FormHome from "./components/FormHome/FormHome";
+import FormTravel from "./components/FormTravel/FormTravel";
 import "./App.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/form/pet" element={<FormPet/>}/>
                 <Route path="/form/health" element={<FormHealth/>}/>
                 <Route path="/form/home" element={<FormHome/>}/>
+                <Route path="/form/travel" element={<FormTravel/>}/>
                 <Route path="/admin_login" element={<AdminLogin />} />
                 <Route path="/admin_panel" element={<AdminPanel />} />
             </Routes>

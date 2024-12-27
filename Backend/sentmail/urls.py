@@ -9,4 +9,5 @@ urlpatterns = [
     path('pet/send-email/', views.pet_send_email, name='pet_send_email'),
     path('health/send-email/', views.health_send_email, name='health_send_email'),
     path('home/send-email/', views.home_send_email, name='home_send_email'),
+    path('travel/send-email/', views.travel_send_email, name='travel_send_email'),
 ]
