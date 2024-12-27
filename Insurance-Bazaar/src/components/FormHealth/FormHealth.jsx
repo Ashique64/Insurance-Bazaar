@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const FormHealth = () => {
     const [successMessage, setSuccessMessage] = useState("");
@@ -301,7 +301,6 @@ const FormHealth = () => {
             dataToSubmit = { ...groupFormData, category };
         }
 
-        // const dataToSubmit = { ...formData, category, birthDate: formattedDate };
         console.log("Form data:", formData);
         console.log("Form data:", dataToSubmit);
         setSuccessMessage("Submitting your form...");
@@ -368,6 +367,10 @@ const FormHealth = () => {
         if (successMessage.includes("Error") || successMessage.includes("wrong")) return "error";
         return "";
     };
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
     return (
         <div className="form">

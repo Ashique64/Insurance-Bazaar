@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./FormCar.scss";
 
 const FormCar = () => {
@@ -274,7 +274,7 @@ const FormCar = () => {
         emirateRegistered: "",
         uaeLicenceHeld: "",
     });
-    
+
     const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -330,6 +330,11 @@ const FormCar = () => {
         if (successMessage.includes("Error") || successMessage.includes("wrong")) return "error";
         return "";
     };
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
 
     return (
         <div className="form">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../FormCar/FormCar.scss";
 
 const FormBike = () => {
@@ -247,7 +247,7 @@ const FormBike = () => {
     ];
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
-    
+
     const [formData, setFormData] = useState({
         bikeDetails: "",
         modelYear: "",
@@ -262,7 +262,7 @@ const FormBike = () => {
         uaeLicenceHeld: "",
     });
     const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
-    
+
     const emiratesOfRegistration = [
         "Abu Dhabi",
         "Dubai",
@@ -328,6 +328,11 @@ const FormBike = () => {
         if (successMessage.includes("Error") || successMessage.includes("wrong")) return "error";
         return "";
     };
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
     return (
         <div className="form">
             <div className="container-fluid">

@@ -41,7 +41,7 @@ const NavBar = ({ page }) => {
                         <div id="mobile_menu">
                             <ul className={menuIcon ? "show" : ""}>
                                 <li>
-                                    <Link to="/">Home</Link>
+                                    <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</Link >
                                 </li>
                                 {/* <li>
                                     <a href="">companies</a>
