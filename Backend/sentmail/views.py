@@ -10,7 +10,7 @@ def send_email(data, subject, fields):
         rows = "".join(f"""
         <tr>
             <td>{field}</td>
-            <td>{data.get(key, '')}</td>
+            <td>{data.get(key, 'None')}</td>
         </tr>
         """ for field, key in fields.items())
 
@@ -189,4 +189,25 @@ def health_send_email(request):
             return JsonResponse({"error": "Invalid category."}, status=400)
 
         return send_email(data, f"New {category} Health Form Submission", fields)
+    return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+@csrf_exempt
+def home_send_email(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        fields = {
+            "I am": "i_Am",
+            "Live in": "liveIn",
+            "Contents(AED)":"contentsPrice",
+            "Personal(AED)":"personalPrice",
+            "Building(AED)":"buildingPrice",
+            "First Name": "firstName",
+            "Last Name": "lastName",
+            "E-mail": 'email',
+            "Phone Number": "phoneNumber",
+            "Address": "address",
+        }
+
+        return send_email(data, "New Home Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
