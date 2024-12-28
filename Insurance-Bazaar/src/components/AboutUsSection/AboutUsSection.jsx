@@ -15,15 +15,15 @@ const AboutUsSection = () => {
                         <div className="about_section_content">
                             <h4 className="subtitle">About us</h4>
                             <h3 className="title">
-                                Change the way but
-                                <br />
-                                life Insurance
+                                Our History
                             </h3>
                             <p className="para">
-                                Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem
-                                insitamconse quat.Exerci tation ullamcorper suscipit loborti excommodo habent claritatem
-                                insitamconse quat.Exerci tationlobortis nisl aliquip ex ea commodo n ullamcorper suscipit
-                                loborti excommodo
+                                PWS Gulf was founded in Dubai in 1998 and is able to efficiently transact a broad range of
+                                insurance and reinsurance classes in addition to the traditional Property and Casualty
+                                classes. Having hired a team of dedicated professionals, we are committed to always ensuring
+                                a high standard of service for our clients. In addition, although we transact reinsurance
+                                business, we also have developed relationships with direct clients particularly in the
+                                Marine, Contracting, and Financial Institutions fields.
                             </p>
                         </div>
                     </div>

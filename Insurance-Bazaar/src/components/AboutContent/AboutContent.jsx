@@ -25,14 +25,15 @@ const AboutContent = () => {
                             <h3>Creating a better future for your loved once</h3>
                             <div className="paragraphs">
                                 <p className="para1">
-                                    Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem
-                                    insitamconse quat.Exerci tation ullamcorper suscipit lobort Exerci tation ullamcorper
-                                    suscipit lobortis nisl aliquip
+                                    We always put our clients’ interests and welfare first and give priority to forming
+                                    long-term relationships. Our commitment is exemplified by the fact that we are one of
+                                    the very few brokers in the world who can provide a six day a week service.
                                 </p>
                                 <p className="para2">
-                                    ex ea commodo claritatem insitamconse quat.Exerci tation ullamcorper suscipit lobort
-                                    Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo claritatem
-                                    insitamconse quat.Exerci tation ullamcorper suscipit lobort
+                                    The company’s roots are within the PWS Group. It was founded by Messrs. Pearson, Webb,
+                                    and Springbett in London in 1964 as a Lloyd’s reinsurance broker; the company name was
+                                    later shortened to PWS during the 1980s. Continued organic growth lead to the opening of
+                                    further companies.
                                 </p>
                             </div>
                         </div>
