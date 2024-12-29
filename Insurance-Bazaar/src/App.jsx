@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
 import AdminLogin from "./pages/AdminLogin/AdminLogin";
-import AdminPanel from "./pages/AdminPanel";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import FormCar from "./components/FormCar/FormCar";
 import FormBike from "./components/FormBike/FormBike";
 import FormLife from "./components/FormLife/FormLife";
