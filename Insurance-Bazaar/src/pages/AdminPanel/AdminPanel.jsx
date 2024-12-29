@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setImages } from "../../Redux/imageSlice";
 import "./AdminPanel.scss";
 
 const AdminPanel = () => {
-    const [images, setImages] = useState([]);
     const [file, setFile] = useState(null);
+    const dispatch = useDispatch();
+    const images = useSelector((state) => state.images.value);
 
     const fetchImages = async () => {
         try {
@@ -13,9 +16,14 @@ const AdminPanel = () => {
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                 },
             });
-            const updatedImages = response.data.images.map(img => `http://localhost:8000${img}`);
-            console.log(response.data.images);
-            setImages(updatedImages);
+            console.log("Fetched Images for me:", response.data);
+            const updatedImages = response.data.map((img) => ({
+                ...img,
+                image: `http://localhost:8000/${img.image}`,
+            }));
+            console.log("Fetched Images:", updatedImages);
+            dispatch(setImages(updatedImages));
+            console.log("Images dispatched to Redux:", updatedImages);
         } catch (error) {
             console.error("You are not authorized to access this page.");
         }
@@ -62,8 +70,8 @@ const AdminPanel = () => {
                         <div className="uploaded_images">
                             <h3>Uploaded Images</h3>
                             {images.map((img, index) => (
-                                <div key={index} className="show_img">
-                                    <img src={img} alt={`Slide ${index + 1}`} width="200" />
+                                <div className="show_img" key={index}>
+                                    <img src={img.image} alt={`Uploaded ${img.id}`} width="200" />
                                 </div>
                             ))}
                         </div>
