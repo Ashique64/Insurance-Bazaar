@@ -5,6 +5,7 @@ import "./Hero.scss";
 const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slides, setSlides] = useState([]);
+    const [timer, setTimer] = useState(null);
 
     const goToNext = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -22,7 +23,7 @@ const Hero = () => {
                 ...img,
                 image: `http://localhost:8000/${img.image}`,
             }));
-            console.log("Updated Images:", updatedImages); 
+            console.log("Updated Images:", updatedImages);
             setSlides(updatedImages);
         } catch (error) {
             console.error("Failed to fetch images:", error);
@@ -30,14 +31,27 @@ const Hero = () => {
     };
 
     useEffect(() => {
-        console.log("Slides:", slides);
         fetchImages();
-        const timer = setInterval(goToNext, 5000);
-        return () => clearInterval(timer);
+        console.log("Slides:", slides);
     }, []);
 
+    useEffect(() => {
+        if (slides.length > 0) {
+            setCurrentSlide(0);
+            if (timer) clearInterval(timer);
+            const newTimer = setInterval(goToNext, 5000);
+            setTimer(newTimer);
+
+            return () => clearInterval(newTimer);
+        }
+    }, [slides]);
+
     if (slides.length === 0) {
-        return <p>Loading images...</p>;
+        return (
+            <div className="loader">
+                <div className="preloader"></div>
+            </div>
+        );
     }
 
     return (

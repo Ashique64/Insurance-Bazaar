@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setImages } from "../../Redux/imageSlice";
 import "./AdminPanel.scss";
 
 const AdminPanel = () => {
     const [file, setFile] = useState(null);
+    const [adminName, setAdminName] = useState("");
     const dispatch = useDispatch();
     const images = useSelector((state) => state.images.value);
+    const navigate = useNavigate();
 
     const fetchImages = async () => {
         try {
@@ -21,11 +24,11 @@ const AdminPanel = () => {
                 ...img,
                 image: `http://localhost:8000/${img.image}`,
             }));
-            console.log("Fetched Images:", updatedImages);
+
             dispatch(setImages(updatedImages));
-            console.log("Images dispatched to Redux:", updatedImages);
         } catch (error) {
             console.error("You are not authorized to access this page.");
+            navigate("/admin_login");
         }
     };
 
@@ -53,16 +56,57 @@ const AdminPanel = () => {
         }
     };
 
+    const fetchAdminName = async () => {
+        try {
+            const response = await axios.get("http://localhost:8000/admins/admin_panel", {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+                },
+            });
+            setAdminName(response.data.message);
+        } catch (error) {
+            console.error("Error fetching admin name", error);
+            navigate("/admin_login");
+        }
+    };
+
+    const deleteImage = async (id) => {
+        try {
+            await axios.delete(`http://localhost:8000/admins/delete/${id}/`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+                },
+            });
+            fetchImages();
+        } catch (error) {
+            console.error("Error deleting the image.", error);
+        }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("access_token");
+        navigate("/admin_login");
+    };
+
     useEffect(() => {
-        fetchImages();
-    }, []);
+        const token = localStorage.getItem("access_token");
+        if (!token) {
+            navigate("/admin_login");
+        } else {
+            fetchImages();
+            fetchAdminName();
+        }
+    }, [navigate]);
 
     return (
         <div className="admin-panel">
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h2>Welcome Admin "AdminName"</h2>
+                        <h2>{adminName}</h2>
+                        <button onClick={handleLogout} className="logout">
+                            Logout
+                        </button>
                         <div className="image_upload">
                             <input type="file" onChange={handleFileChange} />
                             <button onClick={uploadFile}>Upload</button>
@@ -72,6 +116,7 @@ const AdminPanel = () => {
                             {images.map((img, index) => (
                                 <div className="show_img" key={index}>
                                     <img src={img.image} alt={`Uploaded ${img.id}`} width="200" />
+                                    <button onClick={() => deleteImage(img.id)}>Delete</button>
                                 </div>
                             ))}
                         </div>

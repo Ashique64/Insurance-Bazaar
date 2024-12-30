@@ -50,6 +50,14 @@ class AdminUploadView(APIView):
         images = SliderImage.objects.all()
         serializer = SliderImageSerializer(images, many=True)
         return Response(serializer.data)
+    
+    def delete(self, request, pk=None):
+        try:
+            image = SliderImage.objects.get(pk=pk)
+            image.delete()
+            return Response({"message": "Image deleted successfully."}, status=status.HTTP_200_OK)
+        except SliderImage.DoesNotExist:
+            return Response({"error": "Image not found."}, status=status.HTTP_404_NOT_FOUND)
 
 
 class ImageListView(APIView):
