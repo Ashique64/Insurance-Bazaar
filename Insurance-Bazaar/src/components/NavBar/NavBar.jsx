@@ -43,9 +43,6 @@ const NavBar = ({ page }) => {
                                 <li>
                                     <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</Link >
                                 </li>
-                                {/* <li>
-                                    <a href="">companies</a>
-                                    </li> */}
                                 <li>
                                     <a href="#about">About us</a>
                                 </li>

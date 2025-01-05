@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { backendAPI } from "../../api/BackendApi";
 import "../FormCar/FormCar.scss";
 
 const FormPet = () => {
@@ -38,7 +39,7 @@ const FormPet = () => {
         setSuccessMessage("Submitting your form...");
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/pet/send-email/", {
+            const response = await fetch(`${backendAPI}/api/pet/send-email/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

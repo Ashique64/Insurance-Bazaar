@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { backendAPI } from "../../api/BackendApi";
 import "./Hero.scss";
 
 const Hero = () => {
@@ -17,11 +18,11 @@ const Hero = () => {
 
     const fetchImages = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/admins/image_list/");
+            const response = await axios.get(`${backendAPI}/admins/image_list/`);
             console.log("Fetched Images: for me", response.data);
             const updatedImages = response.data.map((img) => ({
                 ...img,
-                image: `http://localhost:8000/${img.image}`,
+                image: `${backendAPI}/${img.image}`,
             }));
             console.log("Updated Images:", updatedImages);
             setSlides(updatedImages);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { backendAPI } from "../../api/BackendApi";
 import { useNavigate } from "react-router-dom";
 import "./AdminLogin.scss";
 
@@ -15,7 +16,7 @@ const AdminLogin = () => {
         setLoading(true);
         setError("");
         try {
-            const response = await axios.post("http://localhost:8000/admins/admin_login", { username, password });
+            const response = await axios.post(`${backendAPI}/admins/admin_login/`, { username, password });
             localStorage.setItem("access_token", response.data.access);
             localStorage.setItem("refresh_token", response.data.refresh);
             setLoading(false);

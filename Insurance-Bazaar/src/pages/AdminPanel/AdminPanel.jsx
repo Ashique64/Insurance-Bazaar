@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { backendAPI } from "../../api/BackendApi";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setImages } from "../../Redux/imageSlice";
@@ -14,7 +15,7 @@ const AdminPanel = () => {
 
     const fetchImages = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/admins/upload/", {
+            const response = await axios.get(`${backendAPI}/admins/upload/`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                 },
@@ -22,7 +23,7 @@ const AdminPanel = () => {
             console.log("Fetched Images for me:", response.data);
             const updatedImages = response.data.map((img) => ({
                 ...img,
-                image: `http://localhost:8000/${img.image}`,
+                image: `${backendAPI}/${img.image}`,
             }));
 
             dispatch(setImages(updatedImages));
@@ -43,7 +44,7 @@ const AdminPanel = () => {
         formData.append("image", file);
 
         try {
-            await axios.post("http://localhost:8000/admins/upload/", formData, {
+            await axios.post(`${backendAPI}/admins/upload/`, formData, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                     "Content-Type": "multipart/form-data",
@@ -58,7 +59,7 @@ const AdminPanel = () => {
 
     const fetchAdminName = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/admins/admin_panel", {
+            const response = await axios.get(`${backendAPI}/admins/admin_panel/`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                 },
@@ -72,7 +73,7 @@ const AdminPanel = () => {
 
     const deleteImage = async (id) => {
         try {
-            await axios.delete(`http://localhost:8000/admins/delete/${id}/`, {
+            await axios.delete(`${backendAPI}/admins/delete/${id}/`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                 },

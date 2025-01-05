@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { backendAPI } from "../../api/BackendApi";
 
 const FormHealth = () => {
     const [successMessage, setSuccessMessage] = useState("");
@@ -306,7 +307,7 @@ const FormHealth = () => {
         setSuccessMessage("Submitting your form...");
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/health/send-email/", {
+            const response = await fetch(`${backendAPI}/api/health/send-email/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
