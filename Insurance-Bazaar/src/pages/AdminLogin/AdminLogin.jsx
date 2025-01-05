@@ -16,6 +16,8 @@ const AdminLogin = () => {
         setLoading(true);
         setError("");
         try {
+            console.log("before the api call");
+            
             const response = await axios.post(`${backendAPI}/admins/admin_login/`, { username, password });
             localStorage.setItem("access_token", response.data.access);
             localStorage.setItem("refresh_token", response.data.refresh);
