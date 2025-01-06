@@ -3,7 +3,7 @@ import "./WhatsAppButton.scss";
 
 const WhatsAppButton = () => {
     const redirectToWhatsApp = () => {
-        const phoneNumber = "918089682533";
+        const phoneNumber = "971566900471";
         const message = "Hello, I want to know more about your services!";
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappURL, "_blank");

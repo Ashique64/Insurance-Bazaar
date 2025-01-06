@@ -1,0 +1,225 @@
+.form {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.form .container-fluid {
+  margin: 0;
+  padding: 20px 12px;
+  background-color: var(--tp-common-white);
+}
+.form .container-fluid .title_row {
+  padding: 40px 0 20px 0;
+}
+.form .container-fluid .title_row .title_col {
+  text-align: center;
+  padding: 30px 0;
+}
+.form .container-fluid .title_row .title_col h1 {
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  font-family: var(--tp-ff-heading);
+  color: var(--tp-common-black);
+  margin-bottom: 8px;
+}
+.form .container-fluid .title_row .title_col h1 span {
+  color: var(--tp-theme-1);
+}
+.form .container-fluid .success-message {
+  position: static;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  color: var(--tp-common-black);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.form .container-fluid .success-message.show {
+  visibility: visible;
+  opacity: 1;
+}
+.form .container-fluid .success-message.warning {
+  background-color: #0dcaf0;
+  color: var(--tp-common-white);
+}
+.form .container-fluid .success-message.success {
+  background-color: #198754;
+  color: var(--tp-common-white);
+}
+.form .container-fluid .success-message.error {
+  background-color: #dc3545;
+  color: var(--tp-common-white);
+}
+.form .container-fluid .form_section {
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px 40px 40px;
+  padding-bottom: 100px;
+}
+.form .container-fluid .form_section .form_content {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid var(--tp-border-1);
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.form .container-fluid .form_section .form_content:hover {
+  box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+.form .container-fluid .form_section .form_content .form_title {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.form .container-fluid .form_section .form_content .form_title i {
+  font-size: 24px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+  color: var(--tp-theme-2);
+  font-weight: bold;
+}
+.form .container-fluid .form_section .form_content .form_title h4 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.form .container-fluid .form_section .form_content .container {
+  padding: 0;
+}
+.form .container-fluid .form_section .form_content .container .form_row {
+  display: flex;
+  margin: 0;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item {
+  margin: 10px 0;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--tp-border-1);
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--tp-common-black);
+  outline: none;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item label input {
+  margin: 0;
+  width: 5%;
+  height: 15%;
+  margin-right: 10px;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--tp-border-1);
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--tp-common-black);
+  outline: none;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item textarea::-moz-placeholder {
+  color: #767272;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item textarea::placeholder {
+  color: #767272;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item select {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--tp-border-1);
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--tp-common-black);
+  outline: none;
+  color: #747474;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item select option {
+  color: #747474;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item .birth {
+  display: flex;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item .birth select {
+  margin-right: 10px;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item button {
+  width: 100%;
+  display: inline-block;
+  height: 55px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tp-common-white);
+  background-color: var(--tp-theme-2);
+  padding: 0 50px;
+  overflow: hidden;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item button:hover {
+  background-color: var(--tp-theme-1);
+}
+
+@media (max-width: 567px) {
+  .form .container-fluid .title_row {
+    padding: 0;
+  }
+  .form .container-fluid .title_row .title_col {
+    padding: 20px 0;
+  }
+  .form .container-fluid .title_row .title_col h1 {
+    font-size: 30px;
+  }
+  .form .container-fluid .success-message {
+    position: static;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .form .container-fluid .form_section {
+    padding: 40px 0;
+  }
+  .form .container-fluid .form_section .form_content {
+    padding: 30px 15px;
+  }
+  .form .container-fluid .form_section .form_content .form_title i {
+    font-size: 20px;
+  }
+  .form .container-fluid .form_section .form_content .form_title h4 {
+    font-size: 20px;
+  }
+  .form .container-fluid .form_section .form_content .container .form_row .item input,
+  .form .container-fluid .form_section .form_content .container .form_row .item select {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1199px) {
+  .form .container-fluid .success-message {
+    position: static;
+    width: 90%;
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=FormCar.css.map */

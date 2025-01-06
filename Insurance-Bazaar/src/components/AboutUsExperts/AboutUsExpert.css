@@ -1,0 +1,140 @@
+.about-us-expert {
+  padding: 100px 0;
+}
+.about-us-expert .container {
+  padding: 0 12px;
+}
+.about-us-expert .container .about_expert_title_row {
+  margin: 0 -15px 50px -15px;
+  display: flex;
+  justify-content: center;
+}
+.about-us-expert .container .about_expert_title_row .title_col {
+  padding: 0px 15px;
+}
+.about-us-expert .container .about_expert_title_row .title_col .title_content {
+  text-align: center;
+}
+.about-us-expert .container .about_expert_title_row .title_col .title_content .subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--tp-theme-2);
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+.about-us-expert .container .about_expert_title_row .title_col .title_content .subtitle::before {
+  content: "";
+  height: 12px;
+  width: 12px;
+  background-color: var(--tp-theme-2);
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.about-us-expert .container .about_expert_title_row .title_col .title_content .title {
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 105.5%;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.about-us-expert .container .about_expert_content_row {
+  margin: 0 -15px;
+}
+.about-us-expert .container .about_expert_content_row .card_col {
+  padding: 0 15px;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section {
+  padding: 10px;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--tp-grey-2);
+  width: 100%;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items:hover {
+  transform: scale(1.05);
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_image {
+  padding: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_image img {
+  width: 100%;
+  border-radius: 15px;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_content {
+  padding: 20px;
+  width: 100%;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_content h4 {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--tp-common-black);
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_content span {
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #747474;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_icons {
+  border-top: 1px solid var(--tp-border-1);
+  width: 100%;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_icons .icon1 {
+  font-weight: 900;
+  font-size: 18px;
+  color: #9c96a4;
+  text-align: center;
+  transition: 0.3s;
+  margin: 0px -2px;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 65px;
+  width: 50%;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_icons .icon1:hover {
+  background-color: var(--tp-theme-1);
+  color: var(--tp-common-white);
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_icons .icon2 {
+  font-weight: 900;
+  font-size: 18px;
+  color: #9c96a4;
+  text-align: center;
+  transition: 0.3s;
+  margin: 0px -2px;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 65px;
+  width: 50%;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.about-us-expert .container .about_expert_content_row .card_col .card_section .items .card_icons .icon2:hover {
+  background-color: var(--tp-theme-2);
+  color: var(--tp-common-white);
+}
+
+@media (max-width: 991px) {
+  .about-us-expert .container .about_expert_title_row .title_col .title_content .title {
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=AboutUsExpert.css.map */

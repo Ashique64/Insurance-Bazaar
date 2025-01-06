@@ -1,0 +1,243 @@
+.our-services {
+  background: var(--tp-common-black);
+  position: relative;
+  padding: 200px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.our-services .services_shape1 {
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+.our-services .services_shape2 {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+.our-services .container {
+  margin: 0px 30px;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.our-services .container .services_item1 {
+  display: flex;
+  justify-content: center;
+  margin: 0 -15px;
+}
+.our-services .container .services_item1 .item1_col {
+  max-width: 100%;
+  padding: 0 15px;
+}
+.our-services .container .services_item1 .item1_col .title_section {
+  margin-bottom: 60px;
+  text-align: center !important;
+}
+.our-services .container .services_item1 .item1_col .title_section .subtitle {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--tp-theme-2);
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+.our-services .container .services_item1 .item1_col .title_section .subtitle::before {
+  content: "";
+  height: 12px;
+  width: 12px;
+  background-color: var(--tp-theme-2);
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.our-services .container .services_item1 .item1_col .title_section .title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 55px;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--tp-common-white);
+}
+.our-services .container .services_item1 .item1_col .title_section .title span {
+  color: var(--tp-theme-1);
+}
+.our-services .container .services_item2 {
+  margin: 0px -10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.our-services .container .services_item2 .item2_col {
+  padding: 0px 10px;
+}
+.our-services .container .services_item2 .item2_col .card {
+  text-align: center;
+  background-color: #132038;
+  padding: 40px 15px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.our-services .container .services_item2 .item2_col .card .icon {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.our-services .container .services_item2 .item2_col .card .icon a {
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+.our-services .container .services_item2 .item2_col .card .icon a i {
+  color: var(--tp-common-white);
+  font-size: 30px;
+}
+.our-services .container .services_item2 .item2_col .card .title h4 {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--tp-common-white);
+  padding-bottom: 20px;
+  margin-bottom: 8px;
+}
+.our-services .container .services_item2 .item2_col .card .title h4 a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  background: transparent;
+  transition: 0.3s ease-in-out;
+}
+.our-services .container .services_item2 .item2_col .card .circle span {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #1a4772;
+  display: inline-block;
+  margin: 0 4px;
+  transition: 0.4s ease-in-out;
+}
+.our-services .container .services_item2 .item2_col .card:hover {
+  outline: 1.5px solid var(--card-color);
+}
+.our-services .container .services_item2 .item2_col .card:hover .circle span {
+  background-color: var(--card-color);
+}
+.our-services .container .services_item2 .item2_col .card:hover .icon {
+  animation: bounce 0.6s ease-in-out;
+}
+.our-services .container .services_item3 {
+  margin: 60px -10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.our-services .container .services_item3 .item3_col {
+  padding: 0px 10px;
+}
+.our-services .container .services_item3 .item3_col .get_qoutes {
+  background-color: #132038;
+  padding: 30px 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.our-services .container .services_item3 .item3_col .get_qoutes h4 {
+  font-size: 22px;
+  color: var(--tp-common-white);
+  margin-bottom: 14px;
+}
+.our-services .container .services_item3 .item3_col .get_qoutes .items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin-bottom: 20px;
+}
+.our-services .container .services_item3 .item3_col .get_qoutes .items select {
+  display: inline-block;
+  padding: 12px 20px;
+  width: 40%;
+  margin: 0px 30px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  color: #747474;
+  transition: 0.3s ease-in-out;
+}
+.our-services .container .services_item3 .item3_col .get_qoutes .items select option {
+  color: #747474;
+  background-color: var(--tp-common-black);
+}
+.our-services .container .services_item3 .item3_col .get_qoutes .items select:focus {
+  outline: 3px solid var(--tp-theme-2);
+}
+.our-services .container .services_item3 .item3_col .get_qoutes .items button {
+  padding: 10px;
+  background-color: var(--tp-theme-2);
+  padding: 10px 40px;
+  border-radius: 6px;
+  color: var(--tp-common-white);
+  font-weight: 700;
+}
+.our-services .container .services_item3 .item3_col .get_qoutes .items button:hover {
+  background-color: var(--tp-theme-1);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (max-width: 767px) {
+  .our-services .container {
+    margin: 0;
+  }
+  .our-services .container .services_item1 .item1_col .title_section .title {
+    font-size: 30px;
+    padding: 0;
+  }
+  .our-services .container .services_item3 {
+    margin: 40px -10px;
+  }
+  .our-services .container .services_item3 .item3_col .get_qoutes {
+    padding: 20px;
+  }
+  .our-services .container .services_item3 .item3_col .get_qoutes h4 {
+    font-size: 20px;
+  }
+  .our-services .container .services_item3 .item3_col .get_qoutes .items {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .our-services .container .services_item3 .item3_col .get_qoutes .items select {
+    display: block;
+    width: 100%;
+    margin: 0 15px;
+  }
+  .our-services .container .services_item3 .item3_col .get_qoutes .items button {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=OurServices.css.map */

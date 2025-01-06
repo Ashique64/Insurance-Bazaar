@@ -95,7 +95,7 @@ const Footer = () => {
                     <div className="col-xl-12 copy_col">
                         <div className="copy_content">
                             <div className="item">
-                                <span>© 2022 Insurance website. All Rights Reserved.</span>
+                                <span>© 2025 Insurance website. All Rights Reserved.</span>
                             </div>
                         </div>
                     </div>

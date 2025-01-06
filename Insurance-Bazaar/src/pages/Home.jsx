@@ -10,6 +10,7 @@ import OurBlog from "../components/OurBlog/OurBlog";
 import Footer from "../components/Footer/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton/ScrollToTopButton";
 import WhatsAppButton from "../components/WhatsappButton/WhatsappButton";
+import Hero2 from "../components/Hero2/Hero2";
 
 const Home = () => {
 
@@ -25,7 +26,8 @@ const Home = () => {
     return (
         <>
             <NavBar />
-            <Hero />
+            {/* <Hero /> */}
+            <Hero2/>
             <TrustedBrands />
             <About />
             <OurServices />

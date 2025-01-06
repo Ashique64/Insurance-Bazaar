@@ -1,0 +1,102 @@
+.about_hero {
+  padding: 180px 0;
+  background-image: url("/images/about/breadcurmb.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.about_hero .circle_one {
+  height: 640px;
+  width: 640px;
+  background-color: var(--tp-theme-1);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -310px;
+  left: -175px;
+  opacity: 0.5;
+  z-index: 2;
+}
+.about_hero .circle_two {
+  height: 640px;
+  width: 640px;
+  background-color: var(--tp-theme-2);
+  border-radius: 50%;
+  position: absolute;
+  top: -290px;
+  right: -230px;
+  opacity: 0.5;
+  z-index: 2;
+}
+.about_hero .container {
+  padding: 0 12px;
+}
+.about_hero .container .row {
+  margin: 0 -15px;
+}
+.about_hero .container .row .about_hero_col {
+  padding: 0 15px;
+  width: 100%;
+}
+.about_hero .container .row .about_hero_col .about_hero_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 6;
+}
+.about_hero .container .row .about_hero_col .about_hero_wrapper .about_hero_content h3 {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 105.5%;
+  letter-spacing: -0.01em;
+  color: var(--tp-common-white);
+}
+.about_hero .container .row .about_hero_col .about_hero_wrapper .about_hero_button button {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tp-theme-1);
+  background: var(--tp-common-white);
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  padding: 0 50px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 91px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0px 2px 55px rgba(209, 214, 226, 0.32);
+}
+.about_hero .container .row .about_hero_col .about_hero_wrapper .about_hero_button button:hover {
+  color: var(--tp-common-white);
+  background-color: var(--tp-theme-2);
+}
+
+@media (max-width: 767px) {
+  .about_hero {
+    padding: 120px 0;
+  }
+  .about_hero .circle_one,
+  .about_hero .circle_two {
+    display: none;
+  }
+  .about_hero .container .row .about_hero_col .about_hero_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .about_hero .container .row .about_hero_col .about_hero_wrapper .about_hero_content h3 {
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+  .about_hero .container .row .about_hero_col .about_hero_wrapper .about_hero_button button {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 40px;
+  }
+}/*# sourceMappingURL=AboutHero.css.map */

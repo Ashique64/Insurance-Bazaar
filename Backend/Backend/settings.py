@@ -98,6 +98,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'tortill1_insurancebasaar',  
+#         'USER': 'tortill1',       
+#         'PASSWORD': 'tortillon@987', 
+#         'HOST': '127.0.0.200',                
+#         'PORT': '5432',                     
+#     }
+# }
+
 
 
 # Password validation
