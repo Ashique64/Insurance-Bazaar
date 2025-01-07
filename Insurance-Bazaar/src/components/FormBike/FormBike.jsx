@@ -284,7 +284,7 @@ const FormBike = () => {
         if (name === "bikeDetails" && value.length > 1) {
             setLoading(true);
             try {
-                const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}&model=${value}`, {
+                const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}`, {
                     headers: {
                         "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
                     },
