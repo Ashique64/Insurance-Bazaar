@@ -307,7 +307,7 @@ const FormBike = () => {
     };
 
     const handleSuggestionClick = (make, model) => {
-        setFormData({ ...formData, carDetails: `${make} ${model}` });
+        setFormData({ ...formData, bikeDetails: `${make} ${model}` });
         setSuggestions([]);
     };
 
