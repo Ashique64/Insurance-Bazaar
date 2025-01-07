@@ -5,11 +5,7 @@ import { useNavigate } from "react-router-dom";
 const OurServices = () => {
     const navigate = useNavigate();
 
-
-    const handleCardClick = (title) => {
-        navigate(`/form/${title.toLowerCase()}`);
-    };
-
+    
     const cardItems = [
         {
             title: "Car",
@@ -61,8 +57,14 @@ const OurServices = () => {
         },
     ];
 
+    
+    const handleCardClick = (title) => {
+        navigate(`/form/${title.toLowerCase()}`);
+    };
+
     return (
         <div id="service" className="our-services">
+            
             <div className="services_shape1">
                 <img src="/images/slider/02_Shape.png" alt="" />
             </div>
@@ -70,7 +72,9 @@ const OurServices = () => {
                 <img src="/images/slider/03_Shape.png" alt="" />
             </div>
 
+            
             <div className="container">
+                
                 <div className="row services_item1">
                     <div className="col-md-12 item1_col">
                         <div className="title_section">
@@ -82,6 +86,7 @@ const OurServices = () => {
                     </div>
                 </div>
 
+                
                 <div className="row services_item2">
                     {cardItems.map((item, index) => (
                         <div
@@ -116,13 +121,22 @@ const OurServices = () => {
                     ))}
                 </div>
 
+                
                 <div className="row services_item3">
                     <div className="col-md-12 item3_col">
                         <div className="get_qoutes">
-                            <h4>Get insurance qoutes</h4>
+                            <h4>Get insurance quotes</h4>
                             <div className="items">
-                                <select>
-                                    <option value="" disabled selected>
+                                <select
+                                    onChange={(e) => {
+                                        const selectedValue = e.target.value;
+                                        if (selectedValue) {
+                                            navigate(`/form/${selectedValue}`);
+                                        }
+                                    }}
+                                    defaultValue=""
+                                >
+                                    <option value="" disabled>
                                         Select an insurance product
                                     </option>
                                     <option value="car">Car Insurance</option>
@@ -134,7 +148,17 @@ const OurServices = () => {
                                     <option value="pet">Pet Insurance</option>
                                     <option value="travel">Travel Insurance</option>
                                 </select>
-                                <button>Get Qoutes</button>
+                                <button
+                                    onClick={() => {
+                                        const selectElement = document.querySelector("select");
+                                        const selectedValue = selectElement.value;
+                                        if (selectedValue) {
+                                            navigate(`/form/${selectedValue}`);
+                                        }
+                                    }}
+                                >
+                                    Get Quotes
+                                </button>
                             </div>
                         </div>
                     </div>

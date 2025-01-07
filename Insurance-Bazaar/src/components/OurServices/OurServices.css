@@ -168,7 +168,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 100%;
   margin-bottom: 20px;
 }
 .our-services .container .services_item3 .item3_col .get_qoutes .items select {
@@ -197,6 +197,7 @@
   border-radius: 6px;
   color: var(--tp-common-white);
   font-weight: 700;
+  display: none;
 }
 .our-services .container .services_item3 .item3_col .get_qoutes .items button:hover {
   background-color: var(--tp-theme-1);
