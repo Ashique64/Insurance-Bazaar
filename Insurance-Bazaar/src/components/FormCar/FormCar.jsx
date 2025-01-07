@@ -285,7 +285,7 @@ const FormCar = () => {
         if (name === "carDetails" && value.length > 1) {
             setLoading(true);
             try {
-                const response = await fetch(`https://api.api-ninjas.com/v1/cars?make=${value}`, {
+                const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}&model=${value}`, {
                     headers: {
                         "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
                     },
