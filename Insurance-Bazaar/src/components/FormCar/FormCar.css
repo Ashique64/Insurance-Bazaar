@@ -99,6 +99,7 @@
 }
 .form .container-fluid .form_section .form_content .container .form_row .item {
   margin: 10px 0;
+  position: relative;
 }
 .form .container-fluid .form_section .form_content .container .form_row .item input {
   width: 100%;
@@ -111,6 +112,31 @@
   font-weight: 400;
   color: var(--tp-common-black);
   outline: none;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item .loading {
+  color: var(--tp-theme-2);
+}
+.form .container-fluid .form_section .form_content .container .form_row .item ul {
+  background-color: rgba(174, 169, 169, 0.6196078431);
+  position: absolute;
+  left: 12px;
+  width: 95%;
+  max-height: 300px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  z-index: 10;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item ul li {
+  padding: 10px;
+  border-radius: 10px;
+  font-family: var(--tp-ff-heading);
+  font-weight: 500;
+}
+.form .container-fluid .form_section .form_content .container .form_row .item ul li:hover {
+  background-color: var(--tp-theme-1);
+  color: var(--tp-common-white);
 }
 .form .container-fluid .form_section .form_content .container .form_row .item label {
   display: flex;

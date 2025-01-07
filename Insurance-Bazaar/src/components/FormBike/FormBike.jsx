@@ -275,9 +275,40 @@ const FormBike = () => {
     ];
     const licenceHeldOptions = ["Less than 1 year", "1-2 years", "2-3 years", "3-5 years", "5-10 years", "10+ years"];
 
-    const handleChange = (e) => {
+    const [suggestions, setSuggestions] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const handleChange = async (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+
+        if (name === "bikeDetails" && value.length > 1) {
+            setLoading(true);
+            try {
+                const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}`, {
+                    headers: {
+                        "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
+                    },
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setSuggestions(data);
+                } else {
+                    setSuggestions([]);
+                }
+            } catch (error) {
+                console.error("Error fetching car suggestions:", error);
+                setSuggestions([]);
+            } finally {
+                setLoading(false);
+            }
+        } else if (name === "carDetails" && value.length <= 2) {
+            setSuggestions([]);
+        }
+    };
+
+    const handleSuggestionClick = (make, model) => {
+        setFormData({ ...formData, carDetails: `${make} ${model}` });
+        setSuggestions([]);
     };
 
     const handleSubmit = async (e) => {
@@ -361,11 +392,24 @@ const FormBike = () => {
                                         <input
                                             type="text"
                                             name="bikeDetails"
-                                            placeholder="Enter your Make,Model and Trim"
+                                            placeholder="Enter your Make, Model, and Trim"
                                             value={formData.bikeDetails}
                                             onChange={handleChange}
                                             required
                                         />
+
+                                        {suggestions.length > 0 && (
+                                            <ul className="suggestions">
+                                                {suggestions.map((car, index) => (
+                                                    <li
+                                                        key={index}
+                                                        onClick={() => handleSuggestionClick(car.make, car.model)}
+                                                    >
+                                                        {car.make} {car.model}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </div>
                                     <div className="col-lg-4 item">
                                         <select

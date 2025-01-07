@@ -249,8 +249,6 @@ const FormCar = () => {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 100 }, (_, i) => currentYear - i).filter((year) => year <= currentYear - 18);
 
-    
-    
     const emiratesOfRegistration = [
         "Abu Dhabi",
         "Dubai",
@@ -261,7 +259,7 @@ const FormCar = () => {
         "Umm Al Quwain",
     ];
     const licenceHeldOptions = ["Less than 1 year", "1-2 years", "2-3 years", "3-5 years", "5-10 years", "10+ years"];
-    
+
     const [formData, setFormData] = useState({
         carDetails: "",
         modelYear: "",
@@ -276,10 +274,42 @@ const FormCar = () => {
         uaeLicenceHeld: "",
     });
 
+    const [suggestions, setSuggestions] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
-    const handleChange = (e) => {
+    const handleChange = async (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+
+        if (name === "carDetails" && value.length > 1) {
+            setLoading(true);
+            try {
+                const response = await fetch(`https://api.api-ninjas.com/v1/cars?make=${value}`, {
+                    headers: {
+                        "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
+                    },
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setSuggestions(data);
+                } else {
+                    setSuggestions([]);
+                }
+            } catch (error) {
+                console.error("Error fetching car suggestions:", error);
+                setSuggestions([]);
+            } finally {
+                setLoading(false);
+            }
+        } else if (name === "carDetails" && value.length <= 2) {
+            setSuggestions([]);
+        }
+    };
+
+    const handleSuggestionClick = (make, model) => {
+        setFormData({ ...formData, carDetails: `${make} ${model}` });
+        setSuggestions([]);
     };
 
     const handleSubmit = async (e) => {
@@ -336,7 +366,6 @@ const FormCar = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
-
     return (
         <div className="form">
             <div className="container-fluid">
@@ -364,11 +393,24 @@ const FormCar = () => {
                                         <input
                                             type="text"
                                             name="carDetails"
-                                            placeholder="Enter your Make,Model and Trim"
+                                            placeholder="Enter your Make, Model, and Trim"
                                             value={formData.carDetails}
                                             onChange={handleChange}
                                             required
                                         />
+                                        
+                                        {suggestions.length > 0 && (
+                                            <ul className="suggestions">
+                                                {suggestions.map((car, index) => (
+                                                    <li
+                                                        key={index}
+                                                        onClick={() => handleSuggestionClick(car.make, car.model)}
+                                                    >
+                                                        {car.make} {car.model}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </div>
                                     <div className="col-lg-4 item">
                                         <select

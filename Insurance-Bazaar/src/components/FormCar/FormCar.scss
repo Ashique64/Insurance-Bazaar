@@ -110,6 +110,7 @@
 
                         .item {
                             margin: 10px 0;
+                            position: relative;
                             input {
                                 width: 100%;
                                 border-radius: 10px;
@@ -122,6 +123,38 @@
                                 color: var(--tp-common-black);
                                 outline: none;
                             }
+
+                            .loading {
+                                color: var(--tp-theme-2);
+                            }
+
+                            ul {
+                                background-color: #aea9a99e;
+                                position: absolute;
+                                left: 12px;
+                                width: 95%;
+                                max-height: 300px;
+                                border-radius: 10px;
+                                padding: 10px 20px;
+                                z-index: 10;
+                                overflow-y: scroll;
+                                overflow-x: hidden;
+
+                                li {
+                                    padding: 10px;
+                                    border-radius: 10px;
+                                    font-family: var(--tp-ff-heading);
+                                    font-weight: 500;
+                                    
+                                    &:hover {
+                                        background-color: var(--tp-theme-1);
+                                        color: var(--tp-common-white);
+                                        
+                                    }
+                                }
+                                
+                            }
+
                             
                             label {
                                 display: flex;
