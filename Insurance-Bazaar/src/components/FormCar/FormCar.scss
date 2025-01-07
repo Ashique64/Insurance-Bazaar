@@ -129,7 +129,7 @@
                             }
 
                             ul {
-                                background-color: #aea9a99e;
+                                background-color: var(--tp-common-white);
                                 position: absolute;
                                 left: 12px;
                                 width: 95%;
@@ -145,6 +145,7 @@
                                     border-radius: 10px;
                                     font-family: var(--tp-ff-heading);
                                     font-weight: 500;
+                                    color: var(--tp-common-black);
                                     
                                     &:hover {
                                         background-color: var(--tp-theme-1);
