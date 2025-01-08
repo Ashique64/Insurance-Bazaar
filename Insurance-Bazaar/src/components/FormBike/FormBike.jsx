@@ -283,33 +283,45 @@ const FormBike = () => {
 
         if (name === "bikeDetails" && value.length > 1) {
             setLoading(true);
+
             setTimeout(async () => {
                 try {
-                    const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}`, {
-                        headers: {
-                            "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
-                        },
-                    });
+                    const response = await fetch("/motorcycleAPI.json");
                     if (response.ok) {
                         const data = await response.json();
-                        setSuggestions(data);
+
+                        const filteredSuggestions = data
+                            .filter((bike) => bike["Naming"].toLowerCase().includes(value.toLowerCase()))
+                            .map((bike) => ({
+                                make: bike["Naming"],
+                            }))
+                            .filter(
+                                (value, index, self) =>
+                                    index ===
+                                    self.findIndex(
+                                        (t) => t.make === value.make
+                                    )
+                            );
+
+                        setSuggestions(filteredSuggestions);
                     } else {
+                        console.error("Failed to load bike data");
                         setSuggestions([]);
                     }
                 } catch (error) {
-                    console.error("Error fetching car suggestions:", error);
+                    console.error("Error fetching bike data:", error);
                     setSuggestions([]);
                 } finally {
                     setLoading(false);
                 }
             }, 1000);
-        } else if (name === "carDetails" && value.length <= 2) {
+        } else {
             setSuggestions([]);
         }
     };
 
-    const handleSuggestionClick = (make, model) => {
-        setFormData({ ...formData, bikeDetails: `${make} ${model}` });
+    const handleSuggestionClick = (make) => {
+        setFormData({ ...formData, bikeDetails: `${make}` });
         setSuggestions([]);
     };
 
@@ -399,17 +411,13 @@ const FormBike = () => {
                                             onChange={handleChange}
                                             required
                                         />
-
                                         {loading && <div className="spinner"></div>}
-                                        
+
                                         {suggestions.length > 0 && (
                                             <ul className="suggestions">
-                                                {suggestions.map((car, index) => (
-                                                    <li
-                                                        key={index}
-                                                        onClick={() => handleSuggestionClick(car.make, car.model)}
-                                                    >
-                                                        {car.make} {car.model}
+                                                {suggestions.map((bike, index) => (
+                                                    <li key={index} onClick={() => handleSuggestionClick(bike.make)}>
+                                                        {bike.make}
                                                     </li>
                                                 ))}
                                             </ul>

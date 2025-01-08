@@ -288,10 +288,8 @@ const FormCar = () => {
             setTimeout(async () => {
                 try {
                     const response = await fetch("/carAPI.json");
-                    console.log("Json data:", response);
                     if (response.ok) {
                         const data = await response.json();
-                        console.log("Car data fetched:", data);
 
                         const filteredSuggestions = data
                             .filter(
