@@ -31,7 +31,6 @@
         }
 
         .success-message {
-            
             position: static;
             padding: 20px;
             border-radius: 8px;
@@ -41,12 +40,12 @@
             font-size: 18px;
             color: var(--tp-common-black);
             visibility: hidden;
-            opacity: 0; 
+            opacity: 0;
             transition: opacity 0.3s ease-in-out;
 
             &.show {
                 visibility: visible;
-                opacity: 1; 
+                opacity: 1;
             }
 
             &.warning {
@@ -146,22 +145,19 @@
                                     font-family: var(--tp-ff-heading);
                                     font-weight: 500;
                                     color: var(--tp-common-black);
-                                    
+
                                     &:hover {
                                         background-color: var(--tp-theme-1);
                                         color: var(--tp-common-white);
-                                        
                                     }
                                 }
-                                
                             }
 
-                            
                             label {
                                 display: flex;
                                 align-items: center;
                                 font-size: 16px;
-                                
+
                                 input {
                                     margin: 0;
                                     width: 5%;
@@ -169,7 +165,7 @@
                                     margin-right: 10px;
                                 }
                             }
-                            
+
                             textarea {
                                 width: 100%;
                                 border-radius: 10px;
@@ -185,7 +181,6 @@
                                 &::placeholder {
                                     color: #767272;
                                 }
-                                
                             }
 
                             select {

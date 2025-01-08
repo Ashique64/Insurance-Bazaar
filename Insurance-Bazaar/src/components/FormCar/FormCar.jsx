@@ -285,30 +285,50 @@ const FormCar = () => {
         if (name === "carDetails" && value.length > 1) {
             setLoading(true);
             try {
-                const response = await fetch(`https://api.api-ninjas.com/v1/cars?make=${value}`, {
-                    headers: {
-                        "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
-                    },
-                });
+                const response = await fetch("/carAPI.json");
+                console.log("Json data:", response);
                 if (response.ok) {
                     const data = await response.json();
-                    setSuggestions(data);
+                    console.log("Car data fetched:", data);
+
+                    const filteredSuggestions = data
+                        .filter(
+                            (car) =>
+                                car["Make Name"].toLowerCase().includes(value.toLowerCase()) ||
+                                car["Model Name"].toLowerCase().includes(value.toLowerCase()) ||
+                                car["Trim Name"].toLowerCase().includes(value.toLowerCase())
+                        )
+                        .map((car) => ({
+                            make: car["Make Name"],
+                            model: car["Model Name"],
+                            trim: car["Trim Name"],
+                        }))
+                        .filter(
+                            (value, index, self) =>
+                                index ===
+                                self.findIndex(
+                                    (t) => t.make === value.make && t.model === value.model && t.trim === value.trim
+                                )
+                        );
+
+                    setSuggestions(filteredSuggestions);
                 } else {
+                    console.error("Failed to load car data");
                     setSuggestions([]);
                 }
             } catch (error) {
-                console.error("Error fetching car suggestions:", error);
+                console.error("Error fetching car data:", error);
                 setSuggestions([]);
             } finally {
                 setLoading(false);
             }
-        } else if (name === "carDetails" && value.length <= 2) {
+        } else {
             setSuggestions([]);
         }
     };
 
-    const handleSuggestionClick = (make, model) => {
-        setFormData({ ...formData, carDetails: `${make} ${model}` });
+    const handleSuggestionClick = (make, model, trim) => {
+        setFormData({ ...formData, carDetails: `${make} ${model} ${trim}` });
         setSuggestions([]);
     };
 
@@ -398,15 +418,15 @@ const FormCar = () => {
                                             onChange={handleChange}
                                             required
                                         />
-                                        
+
                                         {suggestions.length > 0 && (
                                             <ul className="suggestions">
                                                 {suggestions.map((car, index) => (
                                                     <li
                                                         key={index}
-                                                        onClick={() => handleSuggestionClick(car.make, car.model)}
+                                                        onClick={() => handleSuggestionClick(car.make, car.model, car.trim)}
                                                     >
-                                                        {car.make} {car.model}
+                                                        {car.make} {car.model} {car.trim}
                                                     </li>
                                                 ))}
                                             </ul>
