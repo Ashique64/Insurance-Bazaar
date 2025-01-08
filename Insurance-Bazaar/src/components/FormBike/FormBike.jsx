@@ -283,24 +283,26 @@ const FormBike = () => {
 
         if (name === "bikeDetails" && value.length > 1) {
             setLoading(true);
-            try {
-                const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}`, {
-                    headers: {
-                        "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
-                    },
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    setSuggestions(data);
-                } else {
+            setTimeout(async () => {
+                try {
+                    const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}`, {
+                        headers: {
+                            "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
+                        },
+                    });
+                    if (response.ok) {
+                        const data = await response.json();
+                        setSuggestions(data);
+                    } else {
+                        setSuggestions([]);
+                    }
+                } catch (error) {
+                    console.error("Error fetching car suggestions:", error);
                     setSuggestions([]);
+                } finally {
+                    setLoading(false);
                 }
-            } catch (error) {
-                console.error("Error fetching car suggestions:", error);
-                setSuggestions([]);
-            } finally {
-                setLoading(false);
-            }
+            }, 1000);
         } else if (name === "carDetails" && value.length <= 2) {
             setSuggestions([]);
         }
@@ -398,6 +400,8 @@ const FormBike = () => {
                                             required
                                         />
 
+                                        {loading && <div className="spinner"></div>}
+                                        
                                         {suggestions.length > 0 && (
                                             <ul className="suggestions">
                                                 {suggestions.map((car, index) => (

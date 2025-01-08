@@ -284,44 +284,47 @@ const FormCar = () => {
 
         if (name === "carDetails" && value.length > 1) {
             setLoading(true);
-            try {
-                const response = await fetch("/carAPI.json");
-                console.log("Json data:", response);
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log("Car data fetched:", data);
 
-                    const filteredSuggestions = data
-                        .filter(
-                            (car) =>
-                                car["Make Name"].toLowerCase().includes(value.toLowerCase()) ||
-                                car["Model Name"].toLowerCase().includes(value.toLowerCase()) ||
-                                car["Trim Name"].toLowerCase().includes(value.toLowerCase())
-                        )
-                        .map((car) => ({
-                            make: car["Make Name"],
-                            model: car["Model Name"],
-                            trim: car["Trim Name"],
-                        }))
-                        .filter(
-                            (value, index, self) =>
-                                index ===
-                                self.findIndex(
-                                    (t) => t.make === value.make && t.model === value.model && t.trim === value.trim
-                                )
-                        );
+            setTimeout(async () => {
+                try {
+                    const response = await fetch("/carAPI.json");
+                    console.log("Json data:", response);
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log("Car data fetched:", data);
 
-                    setSuggestions(filteredSuggestions);
-                } else {
-                    console.error("Failed to load car data");
+                        const filteredSuggestions = data
+                            .filter(
+                                (car) =>
+                                    car["Make Name"].toLowerCase().includes(value.toLowerCase()) ||
+                                    car["Model Name"].toLowerCase().includes(value.toLowerCase()) ||
+                                    car["Trim Name"].toLowerCase().includes(value.toLowerCase())
+                            )
+                            .map((car) => ({
+                                make: car["Make Name"],
+                                model: car["Model Name"],
+                                trim: car["Trim Name"],
+                            }))
+                            .filter(
+                                (value, index, self) =>
+                                    index ===
+                                    self.findIndex(
+                                        (t) => t.make === value.make && t.model === value.model && t.trim === value.trim
+                                    )
+                            );
+
+                        setSuggestions(filteredSuggestions);
+                    } else {
+                        console.error("Failed to load car data");
+                        setSuggestions([]);
+                    }
+                } catch (error) {
+                    console.error("Error fetching car data:", error);
                     setSuggestions([]);
+                } finally {
+                    setLoading(false);
                 }
-            } catch (error) {
-                console.error("Error fetching car data:", error);
-                setSuggestions([]);
-            } finally {
-                setLoading(false);
-            }
+            }, 1000);
         } else {
             setSuggestions([]);
         }
@@ -418,6 +421,7 @@ const FormCar = () => {
                                             onChange={handleChange}
                                             required
                                         />
+                                        {loading && <div className="spinner"></div>}
 
                                         {suggestions.length > 0 && (
                                             <ul className="suggestions">
