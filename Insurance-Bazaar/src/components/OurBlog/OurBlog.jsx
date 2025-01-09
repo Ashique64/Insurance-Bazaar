@@ -5,15 +5,15 @@ const OurBlog = () => {
     const blogItems = [
         {
             img: "/images/blog/blog-1.jpg",
-            title: "Strategy for Norway’s Peion to Fund Global.of the best town.",
+            title: "Unlock Insights and Strategies in the World of Business",
             tag: "Business",
-            para: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum The man",
+            para: "Stay ahead with the latest trends, strategies, and tips in the world of business. From startups to established enterprises, discover insights that drive success and innovation.",
         },
         {
             img: "/images/blog/blog-2.jpg",
-            title: "Long established fact that a reader than trust a insurance company.",
+            title: "Navigate Your Path with Expert Insurance Advice",
             tag: "insurance",
-            para: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum The man",
+            para: "Navigate the world of insurance with ease. Explore expert advice, updates, and essential information to secure your future and make informed decisions about coverage and policies.",
         },
     ];
     return (
@@ -55,9 +55,7 @@ const OurBlog = () => {
                                     <h3 className="blog_item_content_title">
                                         <a href="">{item.title}</a>
                                     </h3>
-                                    <p>
-                                        {item.para}
-                                    </p>
+                                    <p>{item.para}</p>
                                 </div>
                             </div>
                         </div>

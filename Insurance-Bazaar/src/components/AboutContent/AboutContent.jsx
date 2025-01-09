@@ -30,9 +30,9 @@ const AboutContent = () => {
                                     the very few brokers in the world who can provide a six day a week service.
                                 </p>
                                 <p className="para2">
-                                    The company’s roots are within the PWS Group. It was founded by Messrs. Pearson, Webb,
+                                    The company’s roots are within the Insurance Basaar Group. It was founded by Messrs. Pearson, Webb,
                                     and Springbett in London in 1964 as a Lloyd’s reinsurance broker; the company name was
-                                    later shortened to PWS during the 1980s. Continued organic growth lead to the opening of
+                                    later shortened to Insurance Basaar during the 1980s. Continued organic growth lead to the opening of
                                     further companies.
                                 </p>
                             </div>

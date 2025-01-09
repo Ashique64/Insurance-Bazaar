@@ -18,7 +18,7 @@ const AboutUsSection = () => {
                                 Our History
                             </h3>
                             <p className="para">
-                                PWS Gulf was founded in Dubai in 1998 and is able to efficiently transact a broad range of
+                                Insurance Basaar was founded in Dubai in 1998 and is able to efficiently transact a broad range of
                                 insurance and reinsurance classes in addition to the traditional Property and Casualty
                                 classes. Having hired a team of dedicated professionals, we are committed to always ensuring
                                 a high standard of service for our clients. In addition, although we transact reinsurance

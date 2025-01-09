@@ -29,7 +29,7 @@ const About = () => {
                                 </span>
                             </h3>
                             <p className="para1">
-                                With our main office located in the commercial capital of the Arabian Gulf, Dubai, PWS Gulf
+                                With our main office located in the commercial capital of the Arabian Gulf, Dubai, Insurance Basaar
                                 delivers innovative and complex risk solutions across the region and elsewhere.
                             </p>
                             <p className="para2">
