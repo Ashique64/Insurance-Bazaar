@@ -273,11 +273,11 @@ const FormCar = () => {
         emirateRegistered: "",
         uaeLicenceHeld: "",
     });
+    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
 
     const [suggestions, setSuggestions] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const formattedDate = `${formData.day} ${formData.month} ${formData.year}`;
     const handleChange = async (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AdminLoginView,AdminDataView,AdminUploadView,ImageListView
+from .views import AdminLoginView,AdminDataView,AdminUploadView,ImageListView,AddCarDataView
 
 
 
@@ -9,6 +9,6 @@ urlpatterns = [
     path('upload/', AdminUploadView.as_view(), name='admin_upload'),
     path('delete/<int:pk>/', AdminUploadView.as_view(), name='delete_upload'), 
     path('image_list/', ImageListView.as_view(), name='image_list'),
+    path('add_car/', AddCarDataView.as_view(), name='add_car'),
 ]
-
 

@@ -88,6 +88,9 @@ const AdminPanel = () => {
         localStorage.removeItem("access_token");
         navigate("/admin_login");
     };
+    const handleAddCar = () => {
+        navigate("/admin_add_car");
+    };
 
     useEffect(() => {
         const token = localStorage.getItem("access_token");
@@ -102,12 +105,17 @@ const AdminPanel = () => {
     return (
         <div className="admin-panel">
             <div className="container">
-                <div className="row">
+                <div className="row admin-panel-row">
                     <div className="col-12">
                         <h2>{adminName}</h2>
-                        <button onClick={handleLogout} className="logout">
-                            Logout
-                        </button>
+                        <div className="nav_buttons">
+                            <button onClick={handleAddCar} className="add_car">
+                                Add Car Data
+                            </button>
+                            <button onClick={handleLogout} className="logout">
+                                Logout
+                            </button>
+                        </div>
                         <div className="image_upload">
                             <input type="file" onChange={handleFileChange} />
                             <button onClick={uploadFile}>Upload</button>

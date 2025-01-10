@@ -14,6 +14,7 @@ import FormHome from "./components/FormHome/FormHome";
 import FormTravel from "./components/FormTravel/FormTravel";
 import { Provider } from "react-redux";
 import store from "../src/Redux/store";
+import AddCarData from "./pages/AddCarData/AddCarData";
 import "./App.css";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                     <Route path="/form/travel" element={<FormTravel />} />
                     <Route path="/admin_login" element={<AdminLogin />} />
                     <Route path="/admin_panel" element={<AdminPanel />} />
+                    <Route path="/admin_add_car" element={<AddCarData />} />
                 </Routes>
             </Router>
         </Provider>
