@@ -279,9 +279,14 @@ const FormCar = () => {
     const [suggestions, setSuggestions] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    const [errors, setErrors] = useState({});
+
     const handleChange = async (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+
+        if (name === "email") validateEmail(value);
+        if (name === "phone") validatePhone(value);
 
         if (name === "carDetails" && value.length > 1) {
             setLoading(true);
@@ -329,6 +334,30 @@ const FormCar = () => {
         }
     };
 
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setErrors((prev) => ({ ...prev, email: "Invalid email address" }));
+        } else {
+            setErrors((prev) => {
+                const { email, ...rest } = prev;
+                return rest;
+            });
+        }
+    };
+
+    const validatePhone = (phone) => {
+        const phoneRegex = /^(?:\+91|91|\+971|971)\d{7,10}$/;
+        if (!phoneRegex.test(phone)) {
+            setErrors((prev) => ({ ...prev, phone: "Phone number must start with +91 or +971 and have a valid format." }));
+        } else {
+            setErrors((prev) => {
+                const { phone, ...rest } = prev;
+                return rest;
+            });
+        }
+    };
+
     const handleSuggestionClick = (make, model, trim) => {
         setFormData({ ...formData, carDetails: `${make} ${model} ${trim}` });
         setSuggestions([]);
@@ -336,6 +365,15 @@ const FormCar = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        validateEmail(formData.email);
+        validatePhone(formData.phone);
+
+        if (Object.keys(errors).length > 0) {
+            setSuccessMessage("Please fix the errors before submitting.");
+            return;
+        }
+
         const dataToSubmit = { ...formData, birthDate: formattedDate };
         console.log("Form data:", dataToSubmit);
         console.log("Form data:", formData);
@@ -531,20 +569,15 @@ const FormCar = () => {
                                             onChange={handleChange}
                                             required
                                         />
+
+                                        {errors.email && (
+                                            <p className="error-message" style={{ color: "red" }}>
+                                                {errors.email}
+                                            </p>
+                                        )}
                                     </div>
+
                                     <div className="col-lg-3 item">
-                                        <input
-                                            type="text"
-                                            name="phone"
-                                            placeholder="Your Phone no"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className="row form_row">
-                                    <div className="col-lg-6 item">
                                         <select
                                             name="emirateRegistered"
                                             value={formData.emirateRegistered}
@@ -560,6 +593,24 @@ const FormCar = () => {
                                                 </option>
                                             ))}
                                         </select>
+                                    </div>
+                                </div>
+                                <div className="row form_row">
+                                    <div className="col-lg-6 item">
+                                        <input
+                                            type="text"
+                                            name="phone"
+                                            placeholder="Your Phone no"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            required
+                                        />
+
+                                        {errors.phone && (
+                                            <p className="error-message" style={{ color: "red" }}>
+                                                {errors.phone}
+                                            </p>
+                                        )}
                                     </div>
                                     <div className="col-lg-6 item">
                                         <select
