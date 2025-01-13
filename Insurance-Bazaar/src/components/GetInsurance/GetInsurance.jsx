@@ -30,7 +30,7 @@ const GetInsurance = () => {
     };
 
     return (
-        <div className="get-insurance">
+        <div id="get_insurance" className="get-insurance">
             <div className="container">
                 <div className="row insurance_row">
                     <div className="col-xl-6 col-lg-6 col-md-12 item1">

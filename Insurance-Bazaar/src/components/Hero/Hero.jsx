@@ -74,8 +74,12 @@ const Hero = () => {
                                     additional cost.
                                 </p>
                                 <div className="content_btn">
-                                    <button className="btn1">GET STARTED</button>
-                                    <button className="btn2">CONTACT US TODAY</button>
+                                    <a href="#service">
+                                        <button className="btn1">GET STARTED</button>
+                                    </a>
+                                    <a href="#get_insurance">
+                                        <button className="btn2">CONTACT US TODAY</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
