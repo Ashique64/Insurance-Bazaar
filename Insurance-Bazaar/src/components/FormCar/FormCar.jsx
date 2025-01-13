@@ -391,9 +391,9 @@ const FormCar = () => {
     return (
         <div className="form">
             <div className="container-fluid">
-                <div className="home_button">
-                    <Link to="/">
-                        <button>Home</button>
+                <div className="back_button">
+                    <Link to="/#service">
+                        <button>back</button>
                     </Link>
                 </div>
                 <div className="row title_row">
