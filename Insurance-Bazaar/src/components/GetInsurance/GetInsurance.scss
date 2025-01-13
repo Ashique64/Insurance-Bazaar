@@ -37,7 +37,6 @@
                     .tabs {
                         .items {
                             margin-right: 100px;
-                            
 
                             ul {
                                 padding: 0;
@@ -50,7 +49,7 @@
                                     align-items: center;
                                     cursor: pointer;
                                     margin-bottom: 15px;
-                                    color: #959AA5;
+                                    color: #959aa5;
                                     transition: 0.2s ease;
 
                                     .item {
@@ -75,7 +74,6 @@
                                         font-size: 22px;
                                         font-weight: 400;
                                         transition: 0.2s ease-in-out;
-
                                     }
 
                                     &:hover {
@@ -108,7 +106,42 @@
                                 font-size: 30px;
                                 font-weight: 600;
                                 color: var(--tp-common-black);
-                                padding-bottom: 40px;
+                                padding-bottom: 20px;
+                            }
+                        }
+
+                        .success-message {
+                            position: static;
+                            padding: 10px;
+                            border-radius: 8px;
+                            width: 100%;
+                            margin: 0 auto;
+                            text-align: center;
+                            font-size: 14px;
+                            color: var(--tp-common-black);
+                            visibility: hidden;
+                            opacity: 0;
+                            margin: 19px 0;
+                            transition: opacity 0.3s ease-in-out;
+
+                            &.show {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+
+                            &.warning {
+                                background-color: #0dcaf0;
+                                color: var(--tp-common-white);
+                            }
+
+                            &.success {
+                                background-color: #198754;
+                                color: var(--tp-common-white);
+                            }
+
+                            &.error {
+                                background-color: #dc3545;
+                                color: var(--tp-common-white);
                             }
                         }
 
@@ -120,14 +153,13 @@
                                         border-radius: 10px;
                                         border: 1px solid var(--tp-border-1);
                                         padding: 25px 20px;
-                                        background-color: #F0F0F0;
+                                        background-color: #f0f0f0;
                                         margin-bottom: 10px;
                                         font-size: 15px;
                                         font-weight: 400;
                                         text-transform: capitalize;
                                         color: var(--tp-common-black);
                                         outline: none;
-
                                     }
                                 }
                                 .form_select {
@@ -136,7 +168,7 @@
                                         border-radius: 10px;
                                         border: 1px solid var(--tp-border-1);
                                         padding: 25px 20px;
-                                        background-color: #F0F0F0;
+                                        background-color: #f0f0f0;
                                         margin-bottom: 10px;
                                         font-size: 15px;
                                         font-weight: 400;
@@ -147,7 +179,6 @@
                                         option {
                                             color: #747474;
                                         }
-                                        
                                     }
                                 }
                                 .form_textarea {
@@ -157,7 +188,7 @@
                                         border-radius: 10px;
                                         border: 1px solid var(--tp-border-1);
                                         padding: 25px 20px;
-                                        background-color: #F0F0F0;
+                                        background-color: #f0f0f0;
                                         margin-bottom: 10px;
                                         font-size: 15px;
                                         font-weight: 400;
@@ -202,8 +233,7 @@
     }
 }
 
-
-@media (max-width:991px) {
+@media (max-width: 991px) {
     .get-insurance {
         .container {
             margin: 0;
@@ -224,7 +254,6 @@
                                 ul {
                                     li {
                                         .item {
-
                                             i {
                                                 font-size: 25px;
                                                 margin-right: 15px;
@@ -237,7 +266,6 @@
 
                                         i {
                                             font-size: 17px;
-
                                         }
                                     }
                                 }

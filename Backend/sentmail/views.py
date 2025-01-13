@@ -231,3 +231,20 @@ def travel_send_email(request):
 
         return send_email(data, "New Travel Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+
+@csrf_exempt
+def contact_send_email(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        fields = {
+            "Your Full Name": "fullName",
+            "E-mail":"email",
+            "Insurance Type": "insuranceType",
+            "Message for You": "message",
+            
+        }
+
+        return send_email(data, "New Contact Form Submission", fields)
+    return JsonResponse({"error": "Invalid request method."}, status=400)

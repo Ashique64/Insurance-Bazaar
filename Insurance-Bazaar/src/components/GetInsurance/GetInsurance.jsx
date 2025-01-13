@@ -1,9 +1,18 @@
 import React, { useState } from "react";
+import { backendAPI } from "../../api/BackendApi";
 import "./GetInsurance.scss";
 
 const GetInsurance = () => {
     const [active, setActive] = useState(0);
     const [formTitle, setFormTitle] = useState("Home Insurance");
+    const [successMessage, setSuccessMessage] = useState("");
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        insuranceType: "",
+        message: "",
+    });
 
     const tabItems = [
         {
@@ -19,14 +28,60 @@ const GetInsurance = () => {
             title: "Health Insurance",
         },
         {
-            icon: "bx bxs-book-alt",
-            title: "Education Insurance",
+            icon: "bx bx-cycling",
+            title: "Bike Insurance",
         },
     ];
 
     const handleItemClick = (index) => {
         setActive(index);
         setFormTitle(tabItems[index].title);
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Form data:", formData);
+        setSuccessMessage("Submitting your form...");
+
+        try {
+            const response = await fetch(`${backendAPI}/api/contact/send-email/`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSuccessMessage("Form submitted successfully!");
+                setFormData({
+                    fullName: "",
+                    email: "",
+                    insuranceType: "",
+                    message: "",
+                });
+            } else {
+                const errorData = await response.json();
+                setSuccessMessage(`Error: ${errorData.error}`);
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setSuccessMessage("Something went wrong!");
+        } finally {
+            setTimeout(() => setSuccessMessage(""), 3000);
+        }
+    };
+
+    const getMessageClass = () => {
+        if (successMessage.includes("Submitting")) return "warning";
+        if (successMessage.includes("successfully")) return "success";
+        if (successMessage.includes("Error") || successMessage.includes("wrong")) return "error";
+        return "";
     };
 
     return (
@@ -69,28 +124,59 @@ const GetInsurance = () => {
                                     <h4 className="title">{formTitle}</h4>
                                 </div>
 
+                                <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
+                                    {successMessage || " "}
+                                </p>
+
                                 <div className="contact_form">
-                                    <form action="#">
+                                    <form onSubmit={handleSubmit}>
                                         <div className="form_input">
-                                            <input type="text" placeholder="Enter Name" />
-                                            
+                                            <input
+                                                type="text"
+                                                name="fullName"
+                                                value={formData.fullName}
+                                                onChange={handleChange}
+                                                placeholder="Enter Name"
+                                                required
+                                            />
                                         </div>
                                         <div className="form_input">
-                                            <input type="text" placeholder="Enter Mail" />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                placeholder="Enter Mail"
+                                                required
+                                            />
                                         </div>
                                         <div className="form_select">
-                                            <select>
+                                            <select
+                                                name="insuranceType"
+                                                value={formData.insuranceType}
+                                                onChange={handleChange}
+                                                required
+                                            >
                                                 <option value="" disabled selected>
                                                     Property Type
                                                 </option>
-                                                <option value="home">Home Insurance</option>
-                                                <option value="car">Car Insurance</option>                                                <option value="bike">Bike Insurance</option>
-                                                <option value="health">Health Insurance</option>
-                                                <option value="education">Education Insurance</option>
+                                                {tabItems.map((type, index) => (
+                                                    <option key={index} value={type.title}>
+                                                        {type.title}
+                                                    </option>
+                                                ))}
                                             </select>
                                         </div>
                                         <div className="form_textarea">
-                                            <textarea name="" rows={3} placeholder="Enter Message" id=""></textarea>
+                                            <textarea
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                required
+                                                rows={3}
+                                                placeholder="Enter Message"
+                                                id=""
+                                            ></textarea>
                                         </div>
                                         <div className="form_button">
                                             <button type="submit">Get a Quote now</button>

@@ -32,9 +32,9 @@ const OurBlog = () => {
                                     </span>
                                 </h3>
                             </div>
-                            <div className="title_button">
+                            {/* <div className="title_button">
                                 <button>see more blogs</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

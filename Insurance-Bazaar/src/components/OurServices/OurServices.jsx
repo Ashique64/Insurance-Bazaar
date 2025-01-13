@@ -80,7 +80,7 @@ const OurServices = () => {
                         <div className="title_section">
                             <h4 className="subtitle">Our Services</h4>
                             <h3 className="title">
-                                Types of instive <span>insurance</span>
+                                Types of <span>insurance</span>
                             </h3>
                         </div>
                     </div>
