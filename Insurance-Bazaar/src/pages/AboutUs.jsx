@@ -17,7 +17,7 @@ const AboutUs = () => {
             <AboutHero />
             <AboutContent />
             <AboutUsSection />
-            <AboutUsExpert />
+            {/* <AboutUsExpert /> */}
             <Footer />
         </>
     );

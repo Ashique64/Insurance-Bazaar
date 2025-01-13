@@ -14,16 +14,17 @@ const AboutUsSection = () => {
                     <div className="col-md-6 item2">
                         <div className="about_section_content">
                             <h4 className="subtitle">About us</h4>
-                            <h3 className="title">
-                                Our History
-                            </h3>
+                            <h3 className="title">Our History</h3>
                             <p className="para">
-                                Insurance Basaar was founded in Dubai in 1998 and is able to efficiently transact a broad range of
-                                insurance and reinsurance classes in addition to the traditional Property and Casualty
-                                classes. Having hired a team of dedicated professionals, we are committed to always ensuring
-                                a high standard of service for our clients. In addition, although we transact reinsurance
-                                business, we also have developed relationships with direct clients particularly in the
-                                Marine, Contracting, and Financial Institutions fields.
+                                Insurancebasar is based in Dubai, the commercial capital of the Arabian Gulf, and is a
+                                leading provider of innovative and complex risk solutions across the region and globally.
+                                With a strong presence in the Middle East, South and East Asia, and Africa, our expertise
+                                spans multiple regions, reflecting our deep understanding of local markets and risks. We
+                                have built our reputation on a long history of partnering with clients to meet their
+                                evolving risk management needs in an ever-changing global environment. At Insurancebasar, we
+                                prioritize our clients' interests and well-being, focusing on building long-term
+                                relationships. Our commitment to exceptional service is demonstrated by our ability to
+                                provide support six days a week, a rare offering among brokers globally.
                             </p>
                         </div>
                     </div>

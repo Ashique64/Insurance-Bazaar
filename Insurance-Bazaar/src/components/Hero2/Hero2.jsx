@@ -51,8 +51,8 @@ const Hero2 = () => {
                             <div className="content">
                                 <h2>Insurance that protects your family</h2>
                                 <p>
-                                    Only our company gives you an investment with your life insurance policy at no extra
-                                    cost.
+                                    We offers an investment opportunity with your life insurance policy at no
+                                    additional cost.
                                 </p>
                                 <div className="content_btn">
                                     <button className="btn1">GET STARTED</button>

@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
 from .models import SliderImage
-from .serializers import SliderImageSerializer
+from .serializers import SliderImageSerializer,AdminLoginSerializer
 from rest_framework.views import APIView
 import json
 from django.conf import settings
@@ -14,19 +14,25 @@ import os
 
 # Create your views here.
 
-
+    
 class AdminLoginView(GenericAPIView):
+    serializer_class = AdminLoginSerializer
+
     def post(self, request):
-        username = request.data.get("username")
-        password = request.data.get("password")
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        username = serializer.validated_data["username"]
+        password = serializer.validated_data["password"]
         user = authenticate(username=username, password=password)
+
         if user:
             refresh = RefreshToken.for_user(user)
             return Response({
                 "refresh": str(refresh),
                 "access": str(refresh.access_token),
             })
-        return Response({"error": "Invalid credentials"}, status=400)
+        return Response({"error": "Invalid credentials"}, status=HTTP_400_BAD_REQUEST)
 
 
 class AdminDataView(GenericAPIView):
