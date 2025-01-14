@@ -5,15 +5,33 @@ const Footer = () => {
     const footerItems = [
         {
             title: "Our company",
-            items: ["Our Story", "News & Blog", "Carreers", "Customer support", "Contact us"],
+            items: [
+                { name: "Our Story", link: "#our-story" },
+                { name: "News & Blog", link: "#news-blog" },
+                { name: "Careers", link: "#careers" },
+                { name: "Customer support", link: "#customer-support" },
+                { name: "Contact us", link: "#get_insurance" },
+            ],
         },
         {
             title: "Our offer",
-            items: ["Insurance Plans", "Special Discounts", "Customer Testimonials", "Partners", "FAQs"],
+            items: [
+                { name: "Insurance Plans", link: "#insurance-plans" },
+                { name: "Special Discounts", link: "#special-discounts" },
+                { name: "Customer Testimonials", link: "#testimonials" },
+                { name: "Partners", link: "#partners" },
+                { name: "FAQs", link: "#faqs" },
+            ],
         },
         {
             title: "Contact info",
-            items: ["Email Us", "Call Support", "Find Us", "Working Hours", "Feedback"],
+            items: [
+                { name: "Email Us", link: "mailto:support@example.com" },
+                { name: "Call Support", link: "tel:+123456789" },
+                { name: "Find Us", link: "#find-us" },
+                { name: "Working Hours", link: "#working-hours" },
+                { name: "Feedback", link: "#feedback" },
+            ],
         },
     ];
 
@@ -77,7 +95,7 @@ const Footer = () => {
                                             <ul>
                                                 {item.items.map((listItem, index) => (
                                                     <li key={index}>
-                                                        <a href="">{listItem}</a>
+                                                        <a href={listItem.link}>{listItem.name}</a>
                                                     </li>
                                                 ))}
                                             </ul>
