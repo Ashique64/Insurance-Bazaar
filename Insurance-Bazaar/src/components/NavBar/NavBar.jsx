@@ -32,8 +32,7 @@ const NavBar = ({ page }) => {
                     <div className="col-xl-2 col-lg-2 col-6 nav_col1">
                         <div className="logo">
                             <a href="">
-                                LOGO
-                                <img src="" alt="" />
+                                <img src="/images/logo/insuranceLogo.png" alt="Logo" />
                             </a>
                         </div>
                     </div>

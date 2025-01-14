@@ -30,6 +30,7 @@
                     border-bottom: 1px solid #253450;
 
                     .logo {
+                        width: 150px;
                         a {
                             color: inherit;
                             outline: none;
@@ -156,6 +157,16 @@
                         .logo {
                             margin-bottom: 25px;
                             margin-left: 8px;
+                        }
+
+                        .social {
+                            display: flex;
+                            a {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                text-decoration: none;
+                            }
                         }
 
                         
