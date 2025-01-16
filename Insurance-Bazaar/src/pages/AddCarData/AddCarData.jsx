@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { backendAPI } from "../../api/BackendApi";
 import "./AddCarData.scss";
@@ -11,6 +11,26 @@ const AddCarData = () => {
     });
 
     const [isLoading, setIsLoading] = useState(false);
+    const [carList, setCarList] = useState([]);
+    const [editIndex, setEditIndex] = useState(null);
+
+    const fetchCarData = async () => {
+        try {
+            const response = await axios.get(`${backendAPI}/admins/recent_cars/`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+                },
+            });
+            setCarList(response.data);
+        } catch (error) {
+            console.error("Error fetching recent car data:", error);
+            alert("Failed to fetch recent car data.");
+        }
+    };
+
+    useEffect(() => {
+        fetchCarData();
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -28,6 +48,7 @@ const AddCarData = () => {
             });
             alert("Car data added successfully.");
             setNewCarData({ "Make Name": "", "Model Name": "", "Trim Name": "" });
+            fetchCarData();
         } catch (error) {
             console.error("Error adding car data:", error);
 
@@ -40,6 +61,12 @@ const AddCarData = () => {
             setIsLoading(false);
         }
     };
+
+    const handleEdit = (index) => {
+        setEditIndex(index);
+        setNewCarData(carList[index]);
+    };
+
     return (
         <div className="add-car-form">
             <div className="container">
@@ -70,13 +97,22 @@ const AddCarData = () => {
                             onChange={handleInputChange}
                         />
                         <button onClick={addCarData} disabled={isLoading}>
-                            {isLoading ? (
-                                <span className="spinner"></span>
-                            ) : (
-                                "Add Car"
-                            )}
+                            {isLoading ? <span className="spinner"></span> : "Add Car"}
                         </button>
                     </div>
+                </div>
+
+                <div className="car-list">
+                    <h3>Recently Added Cars</h3>
+                    <ul>
+                        {carList.map((car, index) => (
+                            <li key={car.id}>
+                                <strong>Make:</strong> {car["Make Name"]}, <strong>Model:</strong> {car["Model Name"]},{" "}
+                                <strong>Trim:</strong> {car["Trim Name"]}
+                                <button onClick={() => handleEdit(index)}>Edit</button>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>

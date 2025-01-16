@@ -11,6 +11,8 @@ from rest_framework.views import APIView
 import json
 from django.conf import settings
 import os
+from datetime import datetime
+import uuid
 
 # Create your views here.
 
@@ -82,8 +84,10 @@ class AddCarDataView(APIView):
     def post(self, request):
         try:
             new_car_data = request.data
-            json_file_path = os.path.join(
-                settings.REACT_PUBLIC_DIR, "carAPI.json")
+            new_car_data["id"] = str(uuid.uuid4())
+            new_car_data["added_at"] = datetime.now().isoformat()
+
+            json_file_path = os.path.join(settings.REACT_PUBLIC_DIR, "carAPI.json")
 
             if os.path.exists(json_file_path):
                 with open(json_file_path, "r") as file:
@@ -96,13 +100,32 @@ class AddCarDataView(APIView):
             with open(json_file_path, "w") as file:
                 json.dump(data, file, indent=4)
 
-            return Response({"message": "Car data added successfully."}, status=status.HTTP_201_CREATED)
-
-        except json.JSONDecodeError:
-            return Response({"error": "Invalid JSON data."}, status=status.HTTP_400_BAD_REQUEST)
-
-        except FileNotFoundError:
-            return Response({"error": "JSON file not found."}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"message": "Car data added successfully.", "car": new_car_data}, status=status.HTTP_201_CREATED)
 
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class RecentlyAddedCarsView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def get(self, request):
+        try:
+            json_file_path = os.path.join(settings.REACT_PUBLIC_DIR, "carAPI.json")
+            print(f"JSON file path: {json_file_path}")
+
+            if os.path.exists(json_file_path):
+                with open(json_file_path, "r") as file:
+                    data = json.load(file)
+                    
+                    recent_cars = [car for car in data if "id" in car]
+                    print("cars",recent_cars)
+                    
+                return Response(recent_cars, status=status.HTTP_200_OK)
+            else:
+                return Response([], status=status.HTTP_200_OK)
+        except Exception as e:
+            print(f"Error fetching cars: {e}")
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AdminLoginView,AdminDataView,AdminUploadView,ImageListView,AddCarDataView
+from .views import AdminLoginView,AdminDataView,AdminUploadView,ImageListView,AddCarDataView,RecentlyAddedCarsView
 
 
 
@@ -10,5 +10,7 @@ urlpatterns = [
     path('delete/<int:pk>/', AdminUploadView.as_view(), name='delete_upload'), 
     path('image_list/', ImageListView.as_view(), name='image_list'),
     path('add_car/', AddCarDataView.as_view(), name='add_car'),
+    path('recent_cars/', RecentlyAddedCarsView.as_view(), name='recent_cars'),
+    
 ]
 

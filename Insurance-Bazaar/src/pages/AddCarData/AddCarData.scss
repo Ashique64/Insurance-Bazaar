@@ -5,6 +5,7 @@
 
     .container {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
@@ -13,6 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 30px;
             .add_car_form {
                 padding: 40px;
                 border: 1px solid #c7c5f470;
