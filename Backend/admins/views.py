@@ -130,3 +130,36 @@ class RecentlyAddedCarsView(APIView):
                 return Response([], status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class EditCarDataView(APIView):
+    permission_classes = [IsAdminUser]
+
+    def put(self, request, car_id):
+        try:
+            updated_car_data = request.data
+            json_file_path = os.path.join(settings.REACT_PUBLIC_DIR, "carAPI.json")
+
+            if os.path.exists(json_file_path):
+                with open(json_file_path, "r") as file:
+                    data = json.load(file)
+
+                car_found = False
+                for car in data:
+                    if car.get("id") == car_id:
+                        car.update(updated_car_data)
+                        car_found = True
+                        break
+
+                if not car_found:
+                    return Response({"error": "Car with specified ID not found."}, status=status.HTTP_404_NOT_FOUND)
+
+                with open(json_file_path, "w") as file:
+                    json.dump(data, file, indent=4)
+
+                return Response({"message": "Car data updated successfully.", "car": updated_car_data}, status=status.HTTP_200_OK)
+
+            return Response({"error": "Data file not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

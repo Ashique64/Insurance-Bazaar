@@ -64,7 +64,28 @@ const AddCarData = () => {
 
     const handleEdit = (index) => {
         setEditIndex(index);
-        setNewCarData(carList[index]);
+        setNewCarData({ ...carList[index], id: carList[index].id });
+    };
+
+    const handleUpdate = async () => {
+        setIsLoading(true);
+        try {
+            const response = await axios.put(`${backendAPI}/admins/edit_car/${newCarData.id}/`, newCarData, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+                    "Content-Type": "application/json",
+                },
+            });
+            alert("Car data updated successfully.");
+            setNewCarData({ "Make Name": "", "Model Name": "", "Trim Name": "" });
+            setEditIndex(null);
+            fetchCarData();
+        } catch (error) {
+            console.error("Error updating car data:", error);
+            alert("Failed to update car data.");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -96,8 +117,8 @@ const AddCarData = () => {
                             value={newCarData["Trim Name"]}
                             onChange={handleInputChange}
                         />
-                        <button onClick={addCarData} disabled={isLoading}>
-                            {isLoading ? <span className="spinner"></span> : "Add Car"}
+                        <button onClick={editIndex !== null ? handleUpdate : addCarData} disabled={isLoading}>
+                            {isLoading ? <span className="spinner"></span> : editIndex !== null ? "Update Car" : "Add Car"}
                         </button>
                     </div>
                 </div>
