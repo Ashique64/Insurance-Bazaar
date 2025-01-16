@@ -349,7 +349,7 @@ const FormCar = () => {
     const validatePhone = (phone) => {
         const phoneRegex = /^(?:\+91|91|\+971|971)\d{7,10}$/;
         if (!phoneRegex.test(phone)) {
-            setErrors((prev) => ({ ...prev, phone: "Phone number must start with +91 or +971 and have a valid format." }));
+            setErrors((prev) => ({ ...prev, phone: "Phone number must start with +971 and have a valid format." }));
         } else {
             setErrors((prev) => {
                 const { phone, ...rest } = prev;

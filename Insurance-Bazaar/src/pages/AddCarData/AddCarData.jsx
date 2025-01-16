@@ -10,11 +10,14 @@ const AddCarData = () => {
         "Trim Name": "",
     });
 
+    const [successMessage, setSuccessMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isListing, setIsListing] = useState(false);
     const [carList, setCarList] = useState([]);
     const [editIndex, setEditIndex] = useState(null);
 
     const fetchCarData = async () => {
+        setIsListing(true);
         try {
             const response = await axios.get(`${backendAPI}/admins/recent_cars/`, {
                 headers: {
@@ -25,6 +28,8 @@ const AddCarData = () => {
         } catch (error) {
             console.error("Error fetching recent car data:", error);
             alert("Failed to fetch recent car data.");
+        } finally {
+            setIsListing(false);
         }
     };
 
@@ -46,17 +51,28 @@ const AddCarData = () => {
                     "Content-Type": "application/json",
                 },
             });
-            alert("Car data added successfully.");
+            setSuccessMessage("Car data added successfully.");
             setNewCarData({ "Make Name": "", "Model Name": "", "Trim Name": "" });
             fetchCarData();
+
+            setTimeout(() => {
+                setSuccessMessage("");
+            }, 3000);
+
         } catch (error) {
             console.error("Error adding car data:", error);
 
             if (error.response) {
-                alert(`Error: ${error.response.status} - ${error.response.data.error}`);
+                setSuccessMessage(`Error: ${error.response.status} - ${error.response.data.error}`);
             } else {
-                alert("Unexpected error occurred.");
+                setSuccessMessage("Unexpected error occurred.");
             }
+
+            setTimeout(() => {
+                setSuccessMessage("");
+            }, 3000);
+
+
         } finally {
             setIsLoading(false);
         }
@@ -76,13 +92,25 @@ const AddCarData = () => {
                     "Content-Type": "application/json",
                 },
             });
-            alert("Car data updated successfully.");
+            setSuccessMessage("Car data updated successfully.");
             setNewCarData({ "Make Name": "", "Model Name": "", "Trim Name": "" });
             setEditIndex(null);
             fetchCarData();
+
+            setTimeout(() => {
+                setSuccessMessage("");
+            }, 3000);
+
+
         } catch (error) {
             console.error("Error updating car data:", error);
-            alert("Failed to update car data.");
+            setSuccessMessage("Failed to update car data");
+
+            setTimeout(() => {
+                setSuccessMessage("");
+            }, 3000);
+
+            
         } finally {
             setIsLoading(false);
         }
@@ -91,8 +119,9 @@ const AddCarData = () => {
     return (
         <div className="add-car-form">
             <div className="container">
+                <p className={successMessage ? "show" : "unshow"}>{successMessage}</p>
                 <div className="row add_car_row">
-                    <div className="add_car_form">
+                    <div className="col-12 add_car_form">
                         <h3>Add New Car</h3>
                         <input
                             type="text"
@@ -123,17 +152,26 @@ const AddCarData = () => {
                     </div>
                 </div>
 
-                <div className="car-list">
-                    <h3>Recently Added Cars</h3>
-                    <ul>
-                        {carList.map((car, index) => (
-                            <li key={car.id}>
-                                <strong>Make:</strong> {car["Make Name"]}, <strong>Model:</strong> {car["Model Name"]},{" "}
-                                <strong>Trim:</strong> {car["Trim Name"]}
-                                <button onClick={() => handleEdit(index)}>Edit</button>
-                            </li>
-                        ))}
-                    </ul>
+                <div className="row carlist_row">
+                    <div className="col-12 carlist_col">
+                        <h3>Recently Added Cars</h3>
+                        {isListing ? (
+                            <span className="islist"></span>
+                        ) : (
+                            <div className="list">
+                                <ul>
+                                    {carList.map((car, index) => (
+                                        <li key={car.id}>
+                                            <h5>
+                                                {car["Make Name"]} {car["Model Name"]} {car["Trim Name"]}
+                                            </h5>
+                                            <button onClick={() => handleEdit(index)}>Edit</button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
