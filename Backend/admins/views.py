@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
 from .models import SliderImage
-from .serializers import SliderImageSerializer,AdminLoginSerializer
+from .serializers import SliderImageSerializer, AdminLoginSerializer
 from rest_framework.views import APIView
 import json
 from django.conf import settings
@@ -16,7 +16,7 @@ import uuid
 
 # Create your views here.
 
-    
+
 class AdminLoginView(GenericAPIView):
     serializer_class = AdminLoginSerializer
 
@@ -87,7 +87,8 @@ class AddCarDataView(APIView):
             new_car_data["id"] = str(uuid.uuid4())
             new_car_data["added_at"] = datetime.now().isoformat()
 
-            json_file_path = os.path.join(settings.REACT_PUBLIC_DIR, "carAPI.json")
+            json_file_path = os.path.join(
+                settings.REACT_PUBLIC_DIR, "carAPI.json")
 
             if os.path.exists(json_file_path):
                 with open(json_file_path, "r") as file:
@@ -111,21 +112,21 @@ class RecentlyAddedCarsView(APIView):
 
     def get(self, request):
         try:
-            json_file_path = os.path.join(settings.REACT_PUBLIC_DIR, "carAPI.json")
-            print(f"JSON file path: {json_file_path}")
+            json_file_path = os.path.join(
+                settings.REACT_PUBLIC_DIR, "carAPI.json")
 
             if os.path.exists(json_file_path):
                 with open(json_file_path, "r") as file:
                     data = json.load(file)
-                    
-                    recent_cars = [car for car in data if "id" in car]
-                    print("cars",recent_cars)
-                    
+
+                    recent_cars = sorted(
+                        [car for car in data if "id" in car],
+                        key=lambda x: x.get("added_at", ""),
+                        reverse=True
+                    )
+
                 return Response(recent_cars, status=status.HTTP_200_OK)
             else:
                 return Response([], status=status.HTTP_200_OK)
         except Exception as e:
-            print(f"Error fetching cars: {e}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
