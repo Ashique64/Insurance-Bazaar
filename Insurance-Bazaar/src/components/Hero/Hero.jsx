@@ -35,7 +35,7 @@ const Hero = () => {
         try {
             const response = await axios.get(`${backendAPI}/admins/image_list/`);
             console.log("Fetched Images: for me", response.data);
-    
+
             const updatedImages = response.data.map((img) => {
                 const imageUrl = img.image.startsWith("/") ? img.image.substring(1) : img.image;
                 return {
@@ -43,14 +43,13 @@ const Hero = () => {
                     image: `${backendAPI}/${imageUrl}`,
                 };
             });
-    
+
             console.log("Updated Images:", updatedImages);
             setSlides(updatedImages);
         } catch (error) {
             console.error("Failed to fetch images:", error);
         }
     };
-    
 
     useEffect(() => {
         fetchImages();
@@ -89,11 +88,8 @@ const Hero = () => {
                             }}
                         >
                             <div className="content">
-                                <h2>Insurance that protects your family</h2>
-                                <p>
-                                    We offers an investment opportunity with your life insurance policy at no
-                                    additional cost.
-                                </p>
+                                <h2>Innovative Insurance Solutions for Risk management</h2>
+                                {/* <p>Simplifying Risk Management with Innovative Insurance</p> */}
                                 <div className="content_btn">
                                     <a href="#service">
                                         <button className="btn1">GET STARTED</button>

@@ -28,7 +28,7 @@ const Home = () => {
             <NavBar />
             <Hero />
             {/* <Hero2/> */}
-            <TrustedBrands />
+            {/* <TrustedBrands /> */}
             <About />
             <OurServices />
             <GetInsurance />

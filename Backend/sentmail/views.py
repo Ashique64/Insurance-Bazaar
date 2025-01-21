@@ -57,6 +57,7 @@ def send_email(data, subject, fields):
 
         return JsonResponse({"message": "Form submitted successfully and email sent!"}, status=200)
     except Exception as e:
+        print(f"Error while sending email: {e}")
         return JsonResponse({"error": str(e)}, status=500)
 
 

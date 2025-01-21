@@ -73,7 +73,6 @@ class AdminUploadView(APIView):
 class ImageListView(APIView):
     def get(self, request):
         images = SliderImage.objects.all()
-        print(images,"Imagesddd")
         serializer = SliderImageSerializer(images, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

@@ -55,6 +55,7 @@
                         letter-spacing: -0.01em;
                         line-height: 1.1;
                         color: var(--tp-common-white);
+                        text-transform: capitalize;
 
                         span {
                             color: var(--tp-theme-1);
@@ -71,18 +72,23 @@
             justify-content: center;
 
             .card_section {
-                padding: 50px 0;
+                padding: 6px 0;
                 display: flex;
                 justify-content: center;
 
                 .card {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: start;
                     background-color: #132038;
-                    padding: 40px 25px;
+                    outline: 2px solid #132038;
+                    padding: 10px 25px;
                     border-radius: 20px;
                     border: 1px solid transparent;
-                    transition: 0.4s ease-in-out;
-                    margin-bottom: 20px;
+                    transition: 0.3s ease-in-out;
                     width: 90%;
+                    // text-align: center;
 
                     .icons {
                         display: flex;
@@ -92,9 +98,16 @@
                         }
                     }
 
+                    i {
+                        margin-right: 10px;
+                        color: var(--tp-theme-2);
+                    }
+
                     p {
                         margin: 30px 0;
                         color: var(--tp-common-white);
+                        font-size: 18px;
+
                     }
 
                     .user {
@@ -121,6 +134,10 @@
                             }
                         }
                     }
+
+                    &:hover {
+                        outline: 2px solid var(--tp-theme-1);
+                    }
                 }
             }
         }
@@ -136,7 +153,7 @@
                 .title_col {
                     .title_section {
                         .title {
-                            font-size: 30px;
+                            font-size: 26px;
                             padding: 0;
                         }
                     }
