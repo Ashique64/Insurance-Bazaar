@@ -13,9 +13,6 @@ const AboutHero = () => {
                     <div className="about_hero_content">
                         <h3>About Company</h3>
                     </div>
-                    <div className="about_hero_button">
-                        <button>Contact us today</button>
-                    </div>
                 </div>
             </div>
         </div>

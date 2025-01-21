@@ -13,6 +13,26 @@ const AdminPanel = () => {
     const images = useSelector((state) => state.images.value);
     const navigate = useNavigate();
 
+    // const fetchImages = async () => {
+    //     try {
+    //         const response = await axios.get(`${backendAPI}/admins/upload/`, {
+    //             headers: {
+    //                 Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+    //             },
+    //         });
+    //         console.log("Fetched Images for me:", response.data);
+    //         const updatedImages = response.data.map((img) => ({
+    //             ...img,
+    //             image: `${backendAPI}/${img.image}`,
+    //         }));
+
+    //         dispatch(setImages(updatedImages));
+    //     } catch (error) {
+    //         console.error("You are not authorized to access this page.");
+    //         navigate("/admin_login");
+    //     }
+    // };
+
     const fetchImages = async () => {
         try {
             const response = await axios.get(`${backendAPI}/admins/upload/`, {
@@ -21,17 +41,23 @@ const AdminPanel = () => {
                 },
             });
             console.log("Fetched Images for me:", response.data);
-            const updatedImages = response.data.map((img) => ({
-                ...img,
-                image: `${backendAPI}/${img.image}`,
-            }));
-
+    
+          
+            const updatedImages = response.data.map((img) => {
+                const imageUrl = img.image.startsWith("/") ? img.image.substring(1) : img.image; 
+                return {
+                    ...img,
+                    image: `${backendAPI}/${imageUrl}`,
+                };
+            });
+    
             dispatch(setImages(updatedImages));
         } catch (error) {
             console.error("You are not authorized to access this page.");
             navigate("/admin_login");
         }
     };
+    
 
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);

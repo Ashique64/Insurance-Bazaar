@@ -10,6 +10,10 @@ const NavBar = ({ page }) => {
         setMenuicon(!menuIcon);
     };
 
+    const closeMenu = () => {
+        setMenuicon(false);
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 100) {
@@ -32,7 +36,7 @@ const NavBar = ({ page }) => {
                     <div className="col-xl-2 col-lg-2 col-6 nav_col1">
                         <div className="logo">
                             <a href="">
-                                <img src="/images/logo/insuranceLogo.png" alt="Logo" />
+                                <img src="/images/logo/InsuranceLogo2.png" style={{ transform: "scale(1.1)" }} alt="Logo" />
                             </a>
                         </div>
                     </div>
@@ -40,16 +44,24 @@ const NavBar = ({ page }) => {
                         <div id="mobile_menu">
                             <ul className={menuIcon ? "show" : ""}>
                                 <li>
-                                    <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</Link >
+                                    <Link
+                                        to="/"
+                                        onClick={() => {
+                                            window.scrollTo({ top: 0, behavior: "smooth" });
+                                            closeMenu();
+                                        }}
+                                    >
+                                        Home
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#about">About us</a>
+                                    <a onClick={closeMenu} href="#about">About us</a>
                                 </li>
                                 <li>
-                                    <a href="#service">service</a>
+                                    <a onClick={closeMenu} href="#service">service</a>
                                 </li>
                                 <li>
-                                    <a href="">privacy policy</a>
+                                    <a onClick={closeMenu} href="">privacy policy</a>
                                 </li>
                                 <i className={menuIcon ? "bx bx-x" : ""} onClick={handleMenuIcon}></i>
                             </ul>
@@ -66,7 +78,13 @@ const NavBar = ({ page }) => {
                                     <button>get started</button>
                                 </a>
                             </div>
-                            <div className="mobile_icon" onClick={handleMenuIcon}>
+                            <div
+                                className="mobile_icon"
+                                onClick={handleMenuIcon}
+                                role="button"
+                                aria-label="Toggle menu"
+                                tabindex="0"
+                            >
                                 <i className={menuIcon ? "" : "bx bx-menu"}></i>
                             </div>
                         </div>

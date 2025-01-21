@@ -16,7 +16,6 @@ import uuid
 
 # Create your views here.
 
-
 class AdminLoginView(GenericAPIView):
     serializer_class = AdminLoginSerializer
 
@@ -74,6 +73,7 @@ class AdminUploadView(APIView):
 class ImageListView(APIView):
     def get(self, request):
         images = SliderImage.objects.all()
+        print(images,"Imagesddd")
         serializer = SliderImageSerializer(images, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

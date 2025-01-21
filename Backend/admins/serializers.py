@@ -10,3 +10,4 @@ class SliderImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = SliderImage
         fields = ['id', 'image', 'uploaded_at']
+        

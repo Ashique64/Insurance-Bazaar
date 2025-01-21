@@ -15,7 +15,13 @@ import FormTravel from "./components/FormTravel/FormTravel";
 import { Provider } from "react-redux";
 import store from "../src/Redux/store";
 import AddCarData from "./pages/AddCarData/AddCarData";
+import { backendAPI } from "./api/BackendApi";
 import "./App.css";
+
+function RedirectToAdmin() {
+    window.location.href = `${backendAPI}/admin/`;
+    return null; 
+}
 
 function App() {
     return (
@@ -35,6 +41,7 @@ function App() {
                     <Route path="/admin_login" element={<AdminLogin />} />
                     <Route path="/admin_panel" element={<AdminPanel />} />
                     <Route path="/admin_add_car" element={<AddCarData />} />
+                    <Route path="/admin" element={<RedirectToAdmin />} />
                 </Routes>
             </Router>
         </Provider>

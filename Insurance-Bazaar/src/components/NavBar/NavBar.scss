@@ -155,11 +155,10 @@
         .container-fluid {
             .nav_row {
                 display: flex;
-
-                .nav_col1 {
-                }
                 .nav_col2 {
                     #mobile_menu {
+                        right: -100%; // Hidden menu
+                        transition: right 0.3s ease-in-out;
                         ul {
                             display: none;
                             display: flex;
@@ -386,8 +385,8 @@
             .nav_row {
                 .nav_col3 {
                     .items {
-                    display: flex;
-                    justify-content: end;
+                        display: flex;
+                        justify-content: end;
                         .call_us {
                             display: none;
                         }

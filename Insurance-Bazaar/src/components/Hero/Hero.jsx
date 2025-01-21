@@ -16,20 +16,41 @@ const Hero = () => {
         setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     };
 
+    // const fetchImages = async () => {
+    //     try {
+    //         const response = await axios.get(`${backendAPI}/admins/image_list/`);
+    //         console.log("Fetched Images: for me", response.data);
+    //         const updatedImages = response.data.map((img) => ({
+    //             ...img,
+    //             image: `${backendAPI}/${img.image}`,
+    //         }));
+    //         console.log("Updated Images:", updatedImages);
+    //         setSlides(updatedImages);
+    //     } catch (error) {
+    //         console.error("Failed to fetch images:", error);
+    //     }
+    // };
+
     const fetchImages = async () => {
         try {
             const response = await axios.get(`${backendAPI}/admins/image_list/`);
             console.log("Fetched Images: for me", response.data);
-            const updatedImages = response.data.map((img) => ({
-                ...img,
-                image: `${backendAPI}/${img.image}`,
-            }));
+    
+            const updatedImages = response.data.map((img) => {
+                const imageUrl = img.image.startsWith("/") ? img.image.substring(1) : img.image;
+                return {
+                    ...img,
+                    image: `${backendAPI}/${imageUrl}`,
+                };
+            });
+    
             console.log("Updated Images:", updatedImages);
             setSlides(updatedImages);
         } catch (error) {
             console.error("Failed to fetch images:", error);
         }
     };
+    
 
     useEffect(() => {
         fetchImages();

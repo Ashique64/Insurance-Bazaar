@@ -51,7 +51,7 @@ const FormPet = () => {
     };
 
     const validatePhone = (phoneNumber) => {
-        const phoneRegex = /^(?:\+971|971)\d{7,10}$/;
+        const phoneRegex = /^(?:\+971|971)\d{7,8}$/;
         if (!phoneRegex.test(phoneNumber)) {
             setErrors((prev) => ({
                 ...prev,

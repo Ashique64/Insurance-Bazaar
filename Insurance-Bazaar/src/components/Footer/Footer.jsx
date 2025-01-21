@@ -69,7 +69,7 @@ const Footer = () => {
                             <div className="logo_items">
                                 <div className="logo">
                                     <a href="">
-                                        <img src="/images/logo/insuranceLogo.png" alt="" />
+                                        <img style={{transform: "scale(1.2)"}} src="/images/logo/InsuranceLogo2.png" alt="" />
                                     </a>
                                 </div>
                                 <div className="social">

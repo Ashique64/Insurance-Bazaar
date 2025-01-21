@@ -327,7 +327,7 @@ const FormBike = () => {
     };
 
     const validatePhone = (phone) => {
-        const phoneRegex = /^(?:\+971|971)\d{7}$/;
+        const phoneRegex = /^(?:\+971|971)\d{7,8}$/;
         if (!phoneRegex.test(phone)) {
             setErrors((prev) => ({ ...prev, phone: "Phone number must start with +971 and have a valid format." }));
         } else {
