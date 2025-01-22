@@ -6,31 +6,31 @@ const Footer = () => {
         {
             title: "Our company",
             items: [
-                { name: "Our Story", link: "#our-story" },
-                { name: "News & Blog", link: "#news-blog" },
-                { name: "Careers", link: "#careers" },
-                { name: "Customer support", link: "#customer-support" },
+                // { name: "Our Story", link: "#our-story" },
+                // { name: "News & Blog", link: "#news-blog" },
+                // { name: "Careers", link: "#careers" },
+                { name: "Customer support", link: "#get_insurance" },
                 { name: "Contact us", link: "#get_insurance" },
             ],
         },
         {
             title: "Our offer",
             items: [
-                { name: "Insurance Plans", link: "#insurance-plans" },
-                { name: "Special Discounts", link: "#special-discounts" },
-                { name: "Customer Testimonials", link: "#testimonials" },
-                { name: "Partners", link: "#partners" },
-                { name: "FAQs", link: "#faqs" },
+                { name: "Insurance Plans", link: "#service" },
+                // { name: "Special Discounts", link: "#special-discounts" },
+                // { name: "Customer Testimonials", link: "#testimonials" },
+                // { name: "Partners", link: "#partners" },
+                // { name: "FAQs", link: "#faqs" },
             ],
         },
         {
             title: "Contact info",
             items: [
-                { name: "Email Us", link: "mailto:support@example.com" },
-                { name: "Call Support", link: "tel:+123456789" },
-                { name: "Find Us", link: "#find-us" },
-                { name: "Working Hours", link: "#working-hours" },
-                { name: "Feedback", link: "#feedback" },
+                { name: "Email Us", link: "mailto:salesinsurancebasaar@gmail.com" },
+                { name: "Call Support", link: "tel:+971566900471" },
+                { name: "Find Us", link: "https://wa.me/971566900471" },
+                // { name: "Working Hours", link: "#working-hours" },
+                // { name: "Feedback", link: "#feedback" },
             ],
         },
     ];
@@ -95,7 +95,7 @@ const Footer = () => {
                                             <ul>
                                                 {item.items.map((listItem, index) => (
                                                     <li key={index}>
-                                                        <a href={listItem.link}>{listItem.name}</a>
+                                                        <a href={listItem.link} target="_blank" rel="noopener noreferrer">{listItem.name}</a>
                                                     </li>
                                                 ))}
                                             </ul>

@@ -61,7 +61,7 @@ const NavBar = ({ page }) => {
                                     <a onClick={closeMenu} href="#service">service</a>
                                 </li>
                                 <li>
-                                    <a onClick={closeMenu} href="">privacy policy</a>
+                                    <a onClick={closeMenu} href="#get_insurance">contact us</a>
                                 </li>
                                 <i className={menuIcon ? "bx bx-x" : ""} onClick={handleMenuIcon}></i>
                             </ul>

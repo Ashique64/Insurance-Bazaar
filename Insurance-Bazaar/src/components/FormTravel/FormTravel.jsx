@@ -236,16 +236,17 @@ const FormTravel = () => {
         }
     };
 
-    const validatePhone = (phoneNumber) => {
+    const validatePhone = (phone) => {
         const phoneRegex = /^(?:\+971|971)\d{7,8}$/;
-        if (!phoneRegex.test(phoneNumber)) {
+
+        if (!phoneRegex.test(phone)) {
             setErrors((prev) => ({
                 ...prev,
-                phoneNumber: "Phone number must start with +971 and have a valid format.",
+                phone: "Phone number must start with +971 or 971 and contain only digits and max 8 digits",
             }));
         } else {
             setErrors((prev) => {
-                const { phoneNumber, ...rest } = prev;
+                const { phone, ...rest } = prev;
                 return rest;
             });
         }

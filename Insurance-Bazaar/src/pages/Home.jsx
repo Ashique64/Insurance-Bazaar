@@ -30,9 +30,9 @@ const Home = () => {
             {/* <Hero2/> */}
             {/* <TrustedBrands /> */}
             <About />
-            <OurServices />
-            <GetInsurance />
             <Feedback />
+            <GetInsurance />
+            <OurServices />
             <OurBlog />
             <Footer />
             <ScrollToTopButton/>
