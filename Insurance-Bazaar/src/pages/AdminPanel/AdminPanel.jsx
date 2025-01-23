@@ -133,7 +133,8 @@ const AdminPanel = () => {
             <div className="container">
                 <div className="row admin-panel-row">
                     <div className="col-12">
-                        <h2>{adminName}</h2>
+                        {/* <h2>{adminName}</h2> */}
+                        <h2>Welcome To Admin Dashboard</h2>
                         <div className="nav_buttons">
                             <button onClick={handleAddCar} className="add_car">
                                 Add Car Data

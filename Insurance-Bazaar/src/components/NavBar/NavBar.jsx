@@ -71,7 +71,7 @@ const NavBar = ({ page }) => {
                         <div className="items">
                             <div className="call_us">
                                 <i className="bx bxs-phone-call"></i>
-                                <p>+971 56 690 0471</p>
+                                <a href="tel:+971566900471">+971 56 690 0471</a>
                             </div>
                             <div className="nav_button">
                                 <a href="#service">

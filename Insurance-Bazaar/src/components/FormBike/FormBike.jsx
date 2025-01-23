@@ -284,8 +284,8 @@ const FormBike = () => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
 
-        if (name === "email") validateEmail(value);
-        if (name === "phone") validatePhone(value);
+        // if (name === "email") validateEmail(value);
+        // if (name === "phone") validatePhone(value);
 
         if (name === "bikeDetails" && value.length > 1) {
             setLoading(true);
@@ -314,33 +314,33 @@ const FormBike = () => {
         }
     };
 
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setErrors((prev) => ({ ...prev, email: "Invalid email address" }));
-        } else {
-            setErrors((prev) => {
-                const { email, ...rest } = prev;
-                return rest;
-            });
-        }
-    };
+    // const validateEmail = (email) => {
+    //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //     if (!emailRegex.test(email)) {
+    //         setErrors((prev) => ({ ...prev, email: "Invalid email address" }));
+    //     } else {
+    //         setErrors((prev) => {
+    //             const { email, ...rest } = prev;
+    //             return rest;
+    //         });
+    //     }
+    // };
 
-    const validatePhone = (phone) => {
-        const phoneRegex = /^(?:\+971|971)\d{7,8}$/;
+    // const validatePhone = (phone) => {
+    //     const phoneRegex = /^(?:\+971|971)\d{7,8}$/;
 
-        if (!phoneRegex.test(phone)) {
-            setErrors((prev) => ({
-                ...prev,
-                phone: "Phone number must start with +971 or 971 and contain only digits and max 8 digits",
-            }));
-        } else {
-            setErrors((prev) => {
-                const { phone, ...rest } = prev;
-                return rest;
-            });
-        }
-    };
+    //     if (!phoneRegex.test(phone)) {
+    //         setErrors((prev) => ({
+    //             ...prev,
+    //             phone: "Phone number must start with +971 or 971 and contain only digits and max 8 digits",
+    //         }));
+    //     } else {
+    //         setErrors((prev) => {
+    //             const { phone, ...rest } = prev;
+    //             return rest;
+    //         });
+    //     }
+    // };
 
     const handleSuggestionClick = (make, model) => {
         setFormData({ ...formData, bikeDetails: `${make} ${model}` });
@@ -350,8 +350,8 @@ const FormBike = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        validateEmail(formData.email);
-        validatePhone(formData.phone);
+        // validateEmail(formData.email);
+        // validatePhone(formData.phone);
 
         if (Object.keys(errors).length > 0) {
             setSuccessMessage("Please fix the errors before submitting.");
@@ -554,11 +554,11 @@ const FormBike = () => {
                                             onChange={handleChange}
                                             required
                                         />
-                                        {errors.email && (
+                                        {/* {errors.email && (
                                             <p className="error-message" style={{ color: "red" }}>
                                                 {errors.email}
                                             </p>
-                                        )}
+                                        )} */}
                                     </div>
                                     <div className="col-lg-3 item">
                                         <select
@@ -588,11 +588,11 @@ const FormBike = () => {
                                             onChange={handleChange}
                                             required
                                         />
-                                        {errors.phone && (
+                                        {/* {errors.phone && (
                                             <p className="error-message" style={{ color: "red" }}>
                                                 {errors.phone}
                                             </p>
-                                        )}
+                                        )} */}
                                     </div>
                                     <div className="col-lg-6 item">
                                         <select

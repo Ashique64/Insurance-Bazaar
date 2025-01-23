@@ -48,14 +48,14 @@ const Footer = () => {
             icon: "bx bxl-instagram",
             link: "https://www.instagram.com/",
         },
-        {
-            icon: "bx bxl-youtube",
-            link: "https://www.youtube.com/",
-        },
-        {
-            icon: "bx bxl-linkedin",
-            link: "https://www.linkedin.com/",
-        },
+        // {
+        //     icon: "bx bxl-youtube",
+        //     link: "https://www.youtube.com/",
+        // },
+        // {
+        //     icon: "bx bxl-linkedin",
+        //     link: "https://www.linkedin.com/",
+        // },
     ];
     return (
         <>
@@ -95,7 +95,7 @@ const Footer = () => {
                                             <ul>
                                                 {item.items.map((listItem, index) => (
                                                     <li key={index}>
-                                                        <a href={listItem.link} target="_blank" rel="noopener noreferrer">{listItem.name}</a>
+                                                        <a href={listItem.link} rel="noopener noreferrer">{listItem.name}</a>
                                                     </li>
                                                 ))}
                                             </ul>

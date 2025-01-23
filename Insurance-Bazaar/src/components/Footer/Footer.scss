@@ -27,7 +27,7 @@
                     justify-content: space-between;
                     align-items: center;
                     padding-bottom: 35px;
-                    border-bottom: 1px solid #253450;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.484);
 
                     .logo {
                         width: 150px;
@@ -41,11 +41,14 @@
                     }
 
                     .social {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         a {
                             height: 50px;
                             width: 50px;
                             border-radius: 50%;
-                            background-color: #132038;
+                            background-color: var(--tp-color-2);
                             line-height: 50px;
                             color: var(--tp-common-white);
                             display: inline-block;
@@ -57,7 +60,7 @@
                             box-shadow: none;
 
                             &:hover {
-                                box-shadow: inset 0px 0px 20px rgba(57, 112, 140, 0.722);
+                                box-shadow: inset 0px 0px 20px rgba(3, 132, 192, 0.722);
                                 transform: scale(1.15);
                             }
                         }
@@ -116,7 +119,7 @@
 .copy_right {
     padding: 25px 0 60px 0;
     background-color: var(--tp-common-black);
-    border-top: 1px solid #253450;
+    border-top: 1px solid rgba(255, 255, 255, 0.484);
 
     .container {
         margin: 0 50px;
@@ -139,7 +142,6 @@
         }
     }
 }
-
 
 @media (max-width: 767px) {
     .footer {
@@ -168,8 +170,6 @@
                                 text-decoration: none;
                             }
                         }
-
-                        
                     }
                 }
             }
@@ -182,5 +182,3 @@
         }
     }
 }
-
-

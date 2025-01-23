@@ -86,7 +86,7 @@
 
                 .card {
                     text-align: center;
-                    background-color: #132038;
+                    background-color: var(--tp-color-2);
                     padding: 40px 15px;
                     border-radius: 20px;
                     border: 1px solid transparent;
@@ -143,7 +143,7 @@
                             height: 12px;
                             width: 12px;
                             border-radius: 50%;
-                            background-color: #1a4772;
+                            background-color: #0d365e;
                             display: inline-block;
                             margin: 0 4px;
                             transition: 0.4s ease-in-out;
@@ -176,7 +176,7 @@
                 padding: 0px 10px;
 
                 .get_qoutes {
-                    background-color: #132038;
+                    background-color: var(--tp-color-2);
                     padding: 30px 15px;
                     border-radius: 15px;
                     display: flex;
@@ -193,19 +193,25 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        width: 100%;
+                        width: 40%;
                         margin-bottom: 20px;
+                        background: rgb(248, 248, 248);
+                        border-radius: 6px;
+                        padding-right: 10px;
+                        overflow: hidden;
+
 
                         select {
                             display: inline-block;
                             padding: 12px 20px;
-                            width: 40%;
-                            margin: 0px 30px;
+                            width: 100%;
                             border-radius: 6px;
                             border: none;
                             font-size: 14px;
                             outline: none;
                             color: #747474;
+                            padding-right: 0px;
+                            background: transparent;
                             transition: 0.3s ease-in-out;
 
                             option {
@@ -214,7 +220,7 @@
                             }
 
                             &:focus {
-                                outline: 3px solid var(--tp-theme-2);
+                                outline: none;
                             }
                         }
 

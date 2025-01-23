@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { backendAPI } from "../../api/BackendApi";
+import { useNavigate } from "react-router-dom";
 import "./AddCarData.scss";
 
 const AddCarData = () => {
+
+    const navigate = useNavigate()
     const [newCarData, setNewCarData] = useState({
         "Make Name": "",
         "Model Name": "",
@@ -58,7 +61,6 @@ const AddCarData = () => {
             setTimeout(() => {
                 setSuccessMessage("");
             }, 3000);
-
         } catch (error) {
             console.error("Error adding car data:", error);
 
@@ -71,8 +73,6 @@ const AddCarData = () => {
             setTimeout(() => {
                 setSuccessMessage("");
             }, 3000);
-
-
         } finally {
             setIsLoading(false);
         }
@@ -100,8 +100,6 @@ const AddCarData = () => {
             setTimeout(() => {
                 setSuccessMessage("");
             }, 3000);
-
-
         } catch (error) {
             console.error("Error updating car data:", error);
             setSuccessMessage("Failed to update car data");
@@ -109,15 +107,18 @@ const AddCarData = () => {
             setTimeout(() => {
                 setSuccessMessage("");
             }, 3000);
-
-            
         } finally {
             setIsLoading(false);
         }
     };
 
+    const handleBackNavigate = () => {
+        navigate("/admin_panel");
+    }
+
     return (
         <div className="add-car-form">
+            <i onClick={handleBackNavigate} className="bx bx-left-arrow-alt"></i>
             <div className="container">
                 <p className={successMessage ? "show" : "unshow"}>{successMessage}</p>
                 <div className="row add_car_row">
