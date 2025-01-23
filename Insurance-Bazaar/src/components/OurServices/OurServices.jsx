@@ -59,7 +59,8 @@ const OurServices = () => {
 
     
     const handleCardClick = (title) => {
-        navigate(`/form/${title.toLowerCase()}`);
+        // navigate(`/form/${title.toLowerCase()}`);
+        navigate(`/${title.toLowerCase()}-service`);
     };
 
     return (
@@ -131,7 +132,8 @@ const OurServices = () => {
                                     onChange={(e) => {
                                         const selectedValue = e.target.value;
                                         if (selectedValue) {
-                                            navigate(`/form/${selectedValue}`);
+                                            // navigate(`/form/${selectedValue}`);
+                                            navigate(`/${selectedValue}-service`);
                                         }
                                     }}
                                     defaultValue=""
@@ -153,7 +155,8 @@ const OurServices = () => {
                                         const selectElement = document.querySelector("select");
                                         const selectedValue = selectElement.value;
                                         if (selectedValue) {
-                                            navigate(`/form/${selectedValue}`);
+                                            // navigate(`/form/${selectedValue}`);
+                                            navigate(`/${selectedValue}-service`);
                                         }
                                     }}
                                 >

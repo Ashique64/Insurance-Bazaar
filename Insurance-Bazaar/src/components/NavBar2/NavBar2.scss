@@ -1,0 +1,177 @@
+.navbars {
+    padding: 0 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 333;
+    background-color: var(--tp-common-black);
+    transition: background-color 0.3s ease;
+
+    &.sticky {
+        background-color: var(--tp-common-black);
+    }
+
+    &.blue-bg {
+        background-color: var(--tp-common-black);
+        position: relative;
+    }
+
+    .container-fluid {
+        padding: 20px 12px;
+
+        .nav_row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .nav_col1 {
+                .logo {
+                    a {
+                        color: inherit;
+                        outline: none;
+                        border: none;
+                        background: transparent;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .nav_col3 {
+                .items {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    .call_us {
+                        display: flex;
+                        align-items: center;
+                        i {
+                            color: var(--tp-common-white);
+                            font-weight: 600;
+                            font-size: 18px;
+                            margin: 0 7px;
+                        }
+                        a {
+                            color: var(--tp-common-white);
+                            font-weight: 600;
+                            font-size: 15px;
+                            margin-bottom: 0;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .nav_button {
+                        i {
+                            font-size: 30px;
+                            height: 50px;
+                            line-height: 50px;
+                            display: inline-block;
+                            color: var(--tp-theme-2);
+                            font-weight: 700;
+                            text-align: center;
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 90px;
+                            text-transform: uppercase;
+                            transition: 0.3s ease-in-out;
+                            
+                            &:hover {
+                                color: var(--tp-common-white);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .navbars {
+        padding: 20px 15px;
+        .container-fluid {
+            .nav_row {
+                display: flex;
+                .nav_col3 {
+                    position: absolute;
+                    right: 0;
+                    .items {
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        .call_us {
+                            display: none;
+                        }
+
+                        .nav_button {
+                            button {
+                                font-size: 14px;
+                                height: 45px;
+                                line-height: 45px;
+                                padding: 0 30px;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 567px) {
+    .navbars {
+        padding: 20px 15px;
+        .container-fluid {
+            .nav_row {
+                display: flex;
+
+                .nav_col3 {
+                    position: absolute;
+                    right: 0;
+                    .items {
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        .call_us {
+                            display: none;
+                        }
+
+                        .nav_button {
+                            display: flex;
+                            align-items: center;
+                            button {
+                                font-size: 12px;
+                                height: 35px;
+                                line-height: 35px;
+                                padding: 0 20px;
+                                margin-bottom: 0;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    .navbars {
+        .container-fluid {
+            .nav_row {
+                .nav_col3 {
+                    .items {
+                        display: flex;
+                        justify-content: end;
+                        .call_us {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
