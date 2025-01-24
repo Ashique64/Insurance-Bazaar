@@ -1,8 +1,10 @@
 .car-section {
-    // height: 300vh;
     background-color: var(--tp-common-white);
 
-    .container {
+    .container_first {
+        padding: 40px 60px;
+        width: 100%;
+        background: linear-gradient(190deg, #e3bbbb2f, #ffd9007c);
         .first_row {
             padding: 80px 0;
             .col_1 {
@@ -14,6 +16,7 @@
                         object-fit: cover;
                         width: 100%;
                         height: auto;
+                        padding: 20px 0;
                     }
                 }
             }
@@ -28,7 +31,7 @@
                         font-size: 40px;
                         font-weight: 600;
                         margin-bottom: 15px;
-                        color: var(--tp-theme-1);
+                        color: var(--tp-common-black);
                     }
 
                     .get_quotes_button {
@@ -69,7 +72,7 @@
     .container_two {
         padding: 40px 60px;
         width: 100%;
-        background: linear-gradient(90deg, #ffa6007a, #ffd9007c);
+        // background: linear-gradient(90deg, #ffa6007a, #ffd9007c);
         background: linear-gradient(45deg, #e3bbbb2f, #ffd9007c);
 
         .first_row {
@@ -428,7 +431,6 @@
                     margin: 10px 0;
                 }
             }
-
         }
 
         .container_fourth {
@@ -438,7 +440,6 @@
                 padding: 30px 0;
 
                 .title_section {
-
                     h4 {
                         text-align: start;
                         font-size: 26px;

@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import "./CarSection.scss";
 import { useNavigate } from "react-router-dom";
 import NavBar2 from "../../components/NavBar2/NavBar2";
+import Footer2 from "../../components/Footer2/Footer2";
+import "./CarSection.scss";
 
 const CarSection = () => {
     const navigate = useNavigate();
@@ -17,11 +18,12 @@ const CarSection = () => {
         <>
             <NavBar2 />
             <div className="car-section">
-                <div className="container container_one">
+                <div className="container-fluid container_first">
                     <div className="row first_row">
                         <div className="col-xl-4 col-lg-4 col-md-12 col_1">
                             <div className="car_image">
-                                <img src="images/car-section/car-image-1.avif" alt="Car-image" />
+                                <img src="images/car-section/car-image-2-removebg.png" alt="Car-image" />
+
                             </div>
                         </div>
                         <div className="col-xl-8 col-lg-8 col-md-12 col_2">
@@ -73,7 +75,7 @@ const CarSection = () => {
                         </div>
                         <div className="col-xl-4 col-lg-4 col-md-12 col_2">
                             <div className="car_image">
-                                <img src="images/car-section/car-image-2-removebg.png" alt="Car-image" />
+                                <img src="images/car-section/car-image-1.png" alt="Car-image" />
                             </div>
                         </div>
                     </div>
@@ -234,13 +236,14 @@ const CarSection = () => {
                                 <div className="button_items">
                                     <i className="bx bx-car"></i>
                                     <h6>Get quotes in less than a minute</h6>
-                                    <button>get quotes</button>
+                                    <button onClick={handleGetQuotes}>get quotes</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer2/>
         </>
     );
 };
