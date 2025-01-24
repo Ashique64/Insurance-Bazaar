@@ -131,7 +131,7 @@ const CarSection = () => {
                     </div>
                 </div>
 
-                <div className="container third_container">
+                <div className="container-fluid third_container">
                     <div className="row first_row">
                         <div className="title_section">
                             <h4>Why Choose InsuranceBasaar for Your Car Insurance Needs?</h4>
@@ -179,6 +179,62 @@ const CarSection = () => {
                                         Enjoy perks like discount vouchers and value-added services that go beyond your
                                         insurance policy, helping you save more.
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container-fluid container_fourth">
+                    <div className="row first_row">
+                        <div className="title_section">
+                            <h4>How to Save Money on Your Vehicle Insurance in the UAE</h4>
+                            <p>
+                                Getting affordable car insurance doesn’t have to be a challenge. By taking a strategic
+                                approach and avoiding common mistakes, you can secure a policy that balances affordability
+                                and coverage. Here are some practical tips InsuranceBasaar recommends:
+                            </p>
+                        </div>
+                        <div className="row items_row">
+                            <div className="col-xl-4 col-lg-4 col-md-12 item_col1">
+                                <div className="image_section">
+                                    <img src="images/car-section/car-image-4.png" alt="" />
+                                </div>
+                            </div>
+                            <div className="col-xl-8 col-lg-8 col-md-12 item_col2">
+                                <div className="item1">
+                                    <p>
+                                        <strong>Start Early and Plan Ahead:</strong> Avoid last-minute decisions! Begin your search for
+                                        insurance well before your current policy expires. This gives you time to research,
+                                        compare options, and choose the coverage that fits your needs and budget. A rushed
+                                        decision could lead to overspending or insufficient coverage.
+                                    </p>
+                                </div>
+                                <div className="item1">
+                                    <p>
+                                        <strong>Leverage Expert Assistance:</strong> Searching for the best deal on your own can be
+                                        overwhelming. Trust professionals to help! At InsuranceMarket.ae, our expert
+                                        advisors do the heavy lifting, helping you find the best policies at competitive
+                                        prices. With no extra cost and minimal effort on your part, it’s a win-win!
+                                    </p>
+                                </div>
+                                <div className="item1">
+                                    <p>
+                                        <strong>Don’t Sacrifice Coverage for Cost:</strong> A cheaper policy isn’t always better. Ensure your
+                                        coverage meets your needs so that you’re protected in the event of a claim. At
+                                        InsuranceMarket.ae, we help you strike the perfect balance between cost and coverage
+                                        to ensure you get the most value for your money.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row button_row">
+                            <div className="col-md-12 button_col">
+                                <div className="button_items">
+                                    <i className="bx bx-car"></i>
+                                    <h6>Get quotes in less than a minute</h6>
+                                    <button>get quotes</button>
                                 </div>
                             </div>
                         </div>
