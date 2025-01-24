@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import NavBar2 from "../../components/NavBar2/NavBar2";
+import { useNavigate } from "react-router-dom";
 import Footer2 from "../../components/Footer2/Footer2";
-import "./CarSection.scss";
+import "../CarSection/CarSection.scss";
 
-const CarSection = () => {
+const BikeSection = () => {
     const navigate = useNavigate();
-
     const handleGetQuotes = () => {
-        navigate("/form/car");
+        navigate("/form/bike");
     };
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
     return (
         <>
             <NavBar2 />
@@ -23,26 +23,25 @@ const CarSection = () => {
                         <div className="col-xl-4 col-lg-4 col-md-12 col_1">
                             <div className="car_image">
                                 <img src="images/car-section/car-image-2-removebg.png" alt="Car-image" />
-
                             </div>
                         </div>
                         <div className="col-xl-8 col-lg-8 col-md-12 col_2">
                             <div className="content">
-                                <h4>Find the Best Car Insurance in Dubai and UAE with Ease</h4>
+                                <h4>Find the Best Bike Insurance in Dubai and UAE with Ease</h4>
 
                                 <div className="para">
                                     <p>
-                                        Car insurance serves as your ultimate safeguard in the unfortunate event of an
-                                        accident. While having car insurance is mandatory, choosing the right provider is
-                                        entirely up to you. That’s why making an informed decision is crucial. In Dubai and
-                                        across the UAE, federal law requires all drivers to hold at least Third Party
-                                        Liability Insurance to cover damages to others and their property.
+                                        Bike insurance acts as your essential safety net in case of unforeseen accidents.
+                                        While it’s mandatory to have insurance for your motorcycle, choosing the right
+                                        provider is entirely up to you. That’s why making an informed decision is vital.
+                                        Across Dubai and the UAE, federal law mandates that all motorcycle riders carry at
+                                        least Third Party Liability Insurance to cover damages to others and their property.
                                     </p>
                                     <p>
-                                        Though some prefer to stick with the minimum legal requirement, many drivers opt for
-                                        Comprehensive Motor Insurance. This enhanced coverage not only protects third-party
-                                        liabilities but also safeguards your own vehicle, giving you greater peace of mind
-                                        on the road.
+                                        Although some riders stick to the basic legal requirements, many prefer
+                                        Comprehensive Bike Insurance. This type of policy not only covers third-party
+                                        liabilities but also protects your own bike against risks like accidents, theft, and
+                                        natural disasters, offering you greater peace of mind on the road.
                                     </p>
                                 </div>
 
@@ -58,18 +57,18 @@ const CarSection = () => {
                     <div className="row first_row">
                         <div className="col-xl-8 col-lg-8 col-md-12 col_1">
                             <div className="content">
-                                <h4>What Does Car Insurance Cover in the UAE?</h4>
+                                <h4>What Does Bike Insurance Cover in the UAE?</h4>
                                 <p>
-                                    The coverage of your car insurance policy depends on its type, but a typical
-                                    Comprehensive car insurance plan usually protects against a wide range of risks. These
-                                    include damages or injuries resulting from{" "}
+                                    The coverage of your bike insurance policy depends on its type, but a typical
+                                    Comprehensive bike insurance plan generally protects against a variety of risks. These
+                                    include damages or injuries caused by
                                     <span>
                                         accidents, storms, floods, fire, theft, vandalism, explosions, lightning, and
                                         malicious damage
                                     </span>
-                                    . While adhering to policy terms and conditions is essential for a successful claim,
-                                    it’s reassuring to know that most unforeseen circumstances are covered, offering peace
-                                    of mind on the road!
+                                    . While adhering to policy terms and conditions is crucial for a successful claim, it’s
+                                    comforting to know that most unexpected situations are covered, giving you peace of mind
+                                    every time you hit the road!
                                 </p>
                             </div>
                         </div>
@@ -82,12 +81,12 @@ const CarSection = () => {
 
                     <div className="row second_row">
                         <div className="title_section">
-                            <h4>What Isn’t Covered by Your Car Insurance?</h4>
+                            <h4>What Isn’t Covered by Your Bike Insurance?</h4>
                             <p>
-                                While car insurance aims to provide extensive protection, certain scenarios or risks fall
-                                outside the scope of coverage. These exclusions are typically due to their nature, which may
-                                require a different type of insurance or be entirely ineligible. Here are some common
-                                examples of what isn’t covered under standard car insurance policies:
+                                While bike insurance strives to offer comprehensive protection, certain risks or situations
+                                fall outside its scope. These exclusions often arise due to the nature of the risk, which
+                                may require specialized coverage or be deemed ineligible. Here are some common examples of
+                                what isn’t covered under standard bike insurance policies:
                             </p>
                         </div>
                         <div className="items">
@@ -95,36 +94,54 @@ const CarSection = () => {
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Intentional Damage or Negligence:</strong> Any damage caused
-                                            intentionally by the owner or due to gross negligence, such as deliberately
-                                            ignoring a mechanical fault.
+                                            <strong>Intentional Damage or Recklessness:</strong> Any damage caused
+                                            intentionally by the bike owner or due to reckless behavior, such as stunt
+                                            riding or ignoring safety warnings, will not be covered.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Driving Without a Valid License:</strong> Accidents caused while driving
-                                            without a valid driver’s license, or with an expired or invalid license, will
-                                            not be covered.
+                                            <strong>Riding Without a Valid License:</strong> Accidents or damages caused
+                                            while riding without a valid or appropriate license for the bike’s type are
+                                            excluded from coverage.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Damage During Unauthorized Use:</strong> If the vehicle is used for
-                                            activities not specified in the policy, such as commercial purposes when insured
-                                            for personal use only, it won’t be covered.
+                                            <strong>Damage During Unauthorized Usage:</strong> If the bike is used for
+                                            purposes not specified in the policy, such as delivery services when insured for
+                                            personal use, the damages will not be covered.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Damage During War or Natural Disasters:</strong> Unless specified,
-                                            damages caused by acts of war, nuclear risks, or certain natural calamities
-                                            (like earthquakes) may be excluded.
+                                            <strong>Damage During Racing or Off-Roading:</strong> Damages caused while
+                                            participating in professional races, competitions, or off-road biking are not
+                                            included unless explicitly covered.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="col-xl-6 col-lg-6 col-md-12 item_col">
+                                    <div className="item">
+                                        <p>
+                                            <strong>Acts of War or Natural Disasters:</strong> Damages resulting from acts
+                                            of war, nuclear risks, or certain natural disasters (like landslides or volcanic
+                                            eruptions) are typically excluded unless otherwise stated.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="col-xl-6 col-lg-6 col-md-12 item_col">
+                                    <div className="item">
+                                        <p>
+                                            <strong>Unapproved Modifications:</strong> Damages resulting from unauthorized
+                                            or unapproved modifications to the bike, such as altering the engine or exhaust
+                                            system, are not covered under standard policies.
                                         </p>
                                     </div>
                                 </div>
@@ -136,50 +153,50 @@ const CarSection = () => {
                 <div className="container-fluid third_container">
                     <div className="row first_row">
                         <div className="title_section">
-                            <h4>Why Choose InsuranceBasaar for Your Car Insurance Needs?</h4>
+                            <h4>Why Choose InsuranceBasaar for Your Bike Insurance Needs?</h4>
                             <p>
-                                At InsuranceBasaar, we prioritize your satisfaction by offering a seamless and rewarding car
-                                insurance experience. Here's why you should trust InsuraceBasaar:
+                                At InsuranceBasaar, we prioritize your satisfaction by offering a seamless and rewarding
+                                bike insurance experience. Here's why you should trust InsuraceBasaar:
                             </p>
                         </div>
                         <div className="row items_row">
                             <div className="col-xl-3 col-lg-3 col-md-6 item_col">
                                 <div className="item">
-                                    <i className="bx bxs-user"></i>
-                                    <h6>Expert Guidance</h6>
+                                    <i className="bx bx-cycling"></i>
+                                    <h6>Specialized Expertise</h6>
                                     <p>
-                                        Knowledgeable advisors to simplify your car insurance journey, ensuring you get the
-                                        best coverage for your needs.
+                                        Experienced advisors who understand your biking needs, ensuring you receive the
+                                        perfect insurance coverage for your bike.
                                     </p>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-lg-3 col-md-6 item_col">
                                 <div className="item">
-                                    <i className="bx bxs-shield-alt-2"></i>
-                                    <h6>Dependable Service</h6>
+                                    <i className="bx bxs-shield"></i>
+                                    <h6>Reliable Protection</h6>
                                     <p>
-                                        Always by your side with a dependable claims team, providing peace of mind and
-                                        timely support during critical moments.
+                                        Comprehensive support and a dependable claims team to ensure your bike stays
+                                        protected when it matters the most.
                                     </p>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-lg-3 col-md-6 item_col">
                                 <div className="item">
-                                    <i className="bx bxs-wallet-alt"></i>
-                                    <h6>Affordable Plans</h6>
+                                    <i className="bx bxs-dollar-circle"></i>
+                                    <h6>Cost-Effective Plans</h6>
                                     <p>
-                                        Budget-friendly plans tailored to your requirements, giving you top-notch coverage
-                                        without stretching your finances.
+                                        Affordable bike insurance solutions tailored to your budget, offering excellent
+                                        value without compromising on coverage.
                                     </p>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-lg-3 col-md-6 item_col">
                                 <div className="item">
-                                    <i className="bx bxs-badge-check"></i>
-                                    <h6>Exclusive Benefits</h6>
+                                    <i className="bx bxs-gift"></i>
+                                    <h6>Exclusive Rewards</h6>
                                     <p>
-                                        Enjoy perks like discount vouchers and value-added services that go beyond your
-                                        insurance policy, helping you save more.
+                                        Unlock benefits such as cashback offers and biking accessories discounts, making
+                                        your insurance plan even more rewarding.
                                     </p>
                                 </div>
                             </div>
@@ -206,26 +223,26 @@ const CarSection = () => {
                             <div className="col-xl-8 col-lg-8 col-md-12 item_col2">
                                 <div className="item1">
                                     <p>
-                                        <strong>Start Early and Plan Ahead:</strong> Avoid last-minute decisions! Begin your search for
-                                        insurance well before your current policy expires. This gives you time to research,
-                                        compare options, and choose the coverage that fits your needs and budget. A rushed
-                                        decision could lead to overspending or insufficient coverage.
+                                        <strong>Start Early and Plan Ahead:</strong> Avoid last-minute decisions! Begin your
+                                        search for insurance well before your current policy expires. This gives you time to
+                                        research, compare options, and choose the coverage that fits your needs and budget.
+                                        A rushed decision could lead to overspending or insufficient coverage.
                                     </p>
                                 </div>
                                 <div className="item1">
                                     <p>
-                                        <strong>Leverage Expert Assistance:</strong> Searching for the best deal on your own can be
-                                        overwhelming. Trust professionals to help! At InsuranceMarket.ae, our expert
+                                        <strong>Leverage Expert Assistance:</strong> Searching for the best deal on your own
+                                        can be overwhelming. Trust professionals to help! At InsuranceMarket.ae, our expert
                                         advisors do the heavy lifting, helping you find the best policies at competitive
                                         prices. With no extra cost and minimal effort on your part, it’s a win-win!
                                     </p>
                                 </div>
                                 <div className="item1">
                                     <p>
-                                        <strong>Don’t Sacrifice Coverage for Cost:</strong> A cheaper policy isn’t always better. Ensure your
-                                        coverage meets your needs so that you’re protected in the event of a claim. At
-                                        InsuranceBasaar.com , we help you strike the perfect balance between cost and coverage
-                                        to ensure you get the most value for your money.
+                                        <strong>Don’t Sacrifice Coverage for Cost:</strong> A cheaper policy isn’t always
+                                        better. Ensure your coverage meets your needs so that you’re protected in the event
+                                        of a claim. At InsuranceBasaar.com , we help you strike the perfect balance between
+                                        cost and coverage to ensure you get the most value for your money.
                                     </p>
                                 </div>
                             </div>
@@ -243,9 +260,9 @@ const CarSection = () => {
                     </div>
                 </div>
             </div>
-            <Footer2/>
+            <Footer2 />
         </>
     );
 };
 
-export default CarSection;
+export default BikeSection;

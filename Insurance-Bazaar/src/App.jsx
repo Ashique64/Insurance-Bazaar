@@ -18,6 +18,7 @@ import AddCarData from "./pages/AddCarData/AddCarData";
 import { backendAPI } from "./api/BackendApi";
 import "./App.css";
 import CarSection from "./pages/CarSection/CarSection";
+import BikeSection from "./pages/BikeSection/BikeSection";
 
 function RedirectToAdmin() {
     window.location.href = `${backendAPI}/admin/`;
@@ -32,6 +33,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/car-service" element={<CarSection />} />
+                    <Route path="/bike-service" element={<BikeSection />} />
                     <Route path="/form/car" element={<FormCar />} />
                     <Route path="/form/bike" element={<FormBike />} />
                     <Route path="/form/life" element={<FormLife />} />
