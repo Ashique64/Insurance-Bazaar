@@ -27,7 +27,7 @@ const NavBar2 = () => {
     }, []);
 
     return (
-        <div className={`navbars ${isSticky ? "sticky" : ""}`}>
+        <div className={`navbars2 ${isSticky ? "sticky" : ""}`}>
             <div className="container-fluid">
                 <div className="row nav_row">
                     <div className="col-xl-2 col-lg-2 col-6 nav_col1">
