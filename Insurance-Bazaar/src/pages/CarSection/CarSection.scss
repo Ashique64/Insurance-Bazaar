@@ -1,5 +1,5 @@
 .car-section {
-    height: 300vh;
+    // height: 300vh;
     background-color: var(--tp-common-white);
 
     .container {
@@ -144,6 +144,76 @@
             }
         }
     }
+
+    .third_container {
+        .first_row {
+            padding: 80px 0;
+
+            .title_section {
+                margin: 10px 0;
+                text-align: center;
+
+                h4 {
+                    font-family: var(--tp-ff-heading);
+                    font-size: 40px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    color: var(--tp-theme-1);
+                }
+            }
+
+            .items_row {
+                padding: 20px 10px;
+                margin: 20px 0;
+                .item_col {
+                    margin: 10px 0;
+                    .item {
+                        background-color: rgba(216, 185, 75, 0.505);
+                        // background: linear-gradient(90deg, #ffa6007a, #ffd9007c);
+                        padding: 20px;
+                        height: 300px;
+                        width: 100%;
+                        border-radius: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: start;
+                        cursor: pointer;
+                        overflow: hidden;
+                        box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.27);
+                        transition: 0.3s ease-in-out;
+
+                        i {
+                            font-size: 30px;
+                            margin: 10px 0;
+                            color: var(--tp-common-white);
+                            background-color: var(--tp-theme-1);
+                            padding: 15px;
+                            border-radius: 50%;
+                            transition: 0.4s ease-in-out;
+                        }
+
+                        h6 {
+                            color: var(--tp-common-black);
+                            font-weight: 800;
+                            font-size: 20px;
+                            text-align: center;
+                            width: 100%;
+                        }
+
+                        &:hover {
+                            transform: rotate(5deg);
+
+                            i {
+                                transform: scale(1.1);
+                                box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.516);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -209,6 +279,25 @@
                                 min-height: 170px;
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .third_container {
+            .first_row {
+                padding: 60px 0;
+
+                .title_section {
+                    h4 {
+                        font-size: 25px;
+                        text-align: start;
+                    }
+
+                    p {
+                        text-align: start;
+                        font-size: 12px;
+                        line-height: 1.4;
                     }
                 }
             }

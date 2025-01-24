@@ -93,36 +93,92 @@ const CarSection = () => {
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Intentional Damage or Negligence:</strong> Any damage caused intentionally by the owner
-                                            or due to gross negligence, such as deliberately ignoring a mechanical fault.
+                                            <strong>Intentional Damage or Negligence:</strong> Any damage caused
+                                            intentionally by the owner or due to gross negligence, such as deliberately
+                                            ignoring a mechanical fault.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Driving Without a Valid License:</strong> Accidents caused while driving without a valid
-                                            driver’s license, or with an expired or invalid license, will not be covered.
+                                            <strong>Driving Without a Valid License:</strong> Accidents caused while driving
+                                            without a valid driver’s license, or with an expired or invalid license, will
+                                            not be covered.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Damage During Unauthorized Use:</strong> If the vehicle is used for activities not
-                                            specified in the policy, such as commercial purposes when insured for personal
-                                            use only, it won’t be covered.
+                                            <strong>Damage During Unauthorized Use:</strong> If the vehicle is used for
+                                            activities not specified in the policy, such as commercial purposes when insured
+                                            for personal use only, it won’t be covered.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-12 item_col">
                                     <div className="item">
                                         <p>
-                                            <strong>Damage During War or Natural Disasters:</strong> Unless specified, damages caused by acts
-                                            of war, nuclear risks, or certain natural calamities (like earthquakes) may be
-                                            excluded.
+                                            <strong>Damage During War or Natural Disasters:</strong> Unless specified,
+                                            damages caused by acts of war, nuclear risks, or certain natural calamities
+                                            (like earthquakes) may be excluded.
                                         </p>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container third_container">
+                    <div className="row first_row">
+                        <div className="title_section">
+                            <h4>Why Choose InsuranceBasaar for Your Car Insurance Needs?</h4>
+                            <p>
+                                At InsuranceBasaar, we prioritize your satisfaction by offering a seamless and rewarding car
+                                insurance experience. Here's why you should trust InsuraceBasaar:
+                            </p>
+                        </div>
+                        <div className="row items_row">
+                            <div className="col-xl-3 col-lg-3 col-md-6 item_col">
+                                <div className="item">
+                                    <i className="bx bxs-user"></i>
+                                    <h6>Expert Guidance</h6>
+                                    <p>
+                                        Knowledgeable advisors to simplify your car insurance journey, ensuring you get the
+                                        best coverage for your needs.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-3 col-md-6 item_col">
+                                <div className="item">
+                                    <i className="bx bxs-shield-alt-2"></i>
+                                    <h6>Dependable Service</h6>
+                                    <p>
+                                        Always by your side with a dependable claims team, providing peace of mind and
+                                        timely support during critical moments.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-3 col-md-6 item_col">
+                                <div className="item">
+                                    <i className="bx bxs-wallet-alt"></i>
+                                    <h6>Affordable Plans</h6>
+                                    <p>
+                                        Budget-friendly plans tailored to your requirements, giving you top-notch coverage
+                                        without stretching your finances.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="col-xl-3 col-lg-3 col-md-6 item_col">
+                                <div className="item">
+                                    <i className="bx bxs-badge-check"></i>
+                                    <h6>Exclusive Benefits</h6>
+                                    <p>
+                                        Enjoy perks like discount vouchers and value-added services that go beyond your
+                                        insurance policy, helping you save more.
+                                    </p>
                                 </div>
                             </div>
                         </div>
