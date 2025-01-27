@@ -22,7 +22,7 @@ const BikeSection = () => {
                     <div className="row first_row">
                         <div className="col-xl-4 col-lg-4 col-md-12 col_1">
                             <div className="car_image">
-                                <img src="images/car-section/car-image-2-removebg.png" alt="Car-image" />
+                                <img src="images/bike-section/bike-image-1.png" alt="Car-image" />
                             </div>
                         </div>
                         <div className="col-xl-8 col-lg-8 col-md-12 col_2">
@@ -61,7 +61,7 @@ const BikeSection = () => {
                                 <p>
                                     The coverage of your bike insurance policy depends on its type, but a typical
                                     Comprehensive bike insurance plan generally protects against a variety of risks. These
-                                    include damages or injuries caused by
+                                    include damages or injuries caused by {" "}
                                     <span>
                                         accidents, storms, floods, fire, theft, vandalism, explosions, lightning, and
                                         malicious damage
@@ -74,7 +74,7 @@ const BikeSection = () => {
                         </div>
                         <div className="col-xl-4 col-lg-4 col-md-12 col_2">
                             <div className="car_image">
-                                <img src="images/car-section/car-image-1.png" alt="Car-image" />
+                                <img src="images/bike-section/bike-image-3.png" alt="Car-image" />
                             </div>
                         </div>
                     </div>
@@ -217,7 +217,7 @@ const BikeSection = () => {
                         <div className="row items_row">
                             <div className="col-xl-4 col-lg-4 col-md-12 item_col1">
                                 <div className="image_section">
-                                    <img src="images/car-section/car-image-4.png" alt="" />
+                                    <img src="images/bike-section/bike-image-2.png" alt="" />
                                 </div>
                             </div>
                             <div className="col-xl-8 col-lg-8 col-md-12 item_col2">
@@ -251,7 +251,7 @@ const BikeSection = () => {
                         <div className="row button_row">
                             <div className="col-md-12 button_col">
                                 <div className="button_items">
-                                    <i className="bx bx-car"></i>
+                                    <i className="bx bx-cycling"></i>
                                     <h6>Get quotes in less than a minute</h6>
                                     <button onClick={handleGetQuotes}>get quotes</button>
                                 </div>

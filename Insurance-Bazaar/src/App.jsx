@@ -19,10 +19,12 @@ import { backendAPI } from "./api/BackendApi";
 import "./App.css";
 import CarSection from "./pages/CarSection/CarSection";
 import BikeSection from "./pages/BikeSection/BikeSection";
+import HealthSection from "./pages/HealthSection/HealthSection";
+import LifeSection from "./pages/LifeSection/LifeSection";
 
 function RedirectToAdmin() {
     window.location.href = `${backendAPI}/admin/`;
-    return null; 
+    return null;
 }
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/car-service" element={<CarSection />} />
                     <Route path="/bike-service" element={<BikeSection />} />
+                    <Route path="/health-service" element={<HealthSection />} />
+                    <Route path="/life-service" element={<LifeSection />} />
+
                     <Route path="/form/car" element={<FormCar />} />
                     <Route path="/form/bike" element={<FormBike />} />
                     <Route path="/form/life" element={<FormLife />} />
