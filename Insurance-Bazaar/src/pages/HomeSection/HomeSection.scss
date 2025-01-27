@@ -1,4 +1,4 @@
-.car-section {
+.home-section {
     background-color: var(--tp-common-white);
 
     .container_first {
@@ -72,8 +72,9 @@
     .container_two {
         padding: 40px 60px;
         width: 100%;
-        // background: linear-gradient(90deg, #ffa6007a, #ffd9007c);
         background: linear-gradient(45deg, #e3bbbb2f, #ffd9007c);
+
+
 
         .first_row {
             padding: 60px 0;
@@ -123,7 +124,6 @@
                     .item_col {
                         margin: 10px 0;
                         .item {
-                            // background-color: rgba(192, 156, 24, 0.505);
                             background-color: rgba(216, 185, 75, 0.505);
                             padding: 20px;
                             border-radius: 10px;
@@ -150,6 +150,8 @@
 
     .third_container {
         background: linear-gradient(190deg, #e3bbbb2f, #ffd9007c);
+
+
         padding: 40px 60px;
         .first_row {
             padding: 80px 0;
@@ -343,7 +345,7 @@
 }
 
 @media (max-width: 767px) {
-    .car-section {
+    .home-section {
         .container {
             .first_row {
                 .col_2 {

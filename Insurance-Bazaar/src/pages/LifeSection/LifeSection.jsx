@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import NavBar2 from "../../components/NavBar2/NavBar2";
-import "./LifeSection.scss";
 import Footer2 from "../../components/Footer2/Footer2";
 import { useNavigate } from "react-router-dom";
+import "./LifeSection.scss";
 
 const LifeSection = () => {
     const navigate = useNavigate();
