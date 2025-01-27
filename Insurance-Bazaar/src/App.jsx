@@ -22,6 +22,8 @@ import BikeSection from "./pages/BikeSection/BikeSection";
 import HealthSection from "./pages/HealthSection/HealthSection";
 import LifeSection from "./pages/LifeSection/LifeSection";
 import HomeSection from "./pages/HomeSection/HomeSection";
+import BusinessSection from "./pages/BusinessSection/BusinessSection";
+import PetSection from "./pages/PetSection/PetSection";
 
 function RedirectToAdmin() {
     window.location.href = `${backendAPI}/admin/`;
@@ -40,6 +42,8 @@ function App() {
                     <Route path="/health-service" element={<HealthSection />} />
                     <Route path="/life-service" element={<LifeSection />} />
                     <Route path="/home-service" element={<HomeSection />} />
+                    <Route path="/business-service" element={<BusinessSection />} />
+                    <Route path="/pet-service" element={<PetSection />} />
 
                     <Route path="/form/car" element={<FormCar />} />
                     <Route path="/form/bike" element={<FormBike />} />
