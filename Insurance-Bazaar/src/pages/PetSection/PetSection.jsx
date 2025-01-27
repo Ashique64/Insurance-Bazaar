@@ -17,7 +17,7 @@ const PetSection = () => {
     return (
         <>
             <NavBar2 />
-            <div className="health-section">
+            <div className="pet-section">
                 <div className="container-fluid container_first">
                     <div className="row first_row">
                         <div className="col-xl-4 col-lg-4 col-md-12 col_1">
