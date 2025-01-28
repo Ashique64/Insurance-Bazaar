@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer2.scss";
 
-const Footer2 = () => {
+const Footer2 = ({background, fontColor}) => {
     const footerItems = [
         {
             title: "Our company",
@@ -59,7 +59,7 @@ const Footer2 = () => {
     ];
     return (
         <>
-            <div className="footer2">
+            <div className="footer2" style={{background: background}}>
                 {/* <div className="footer-shape">
                     <img src="/images/slider/02_Shape.png" alt=""></img>
                 </div> */}
@@ -107,12 +107,12 @@ const Footer2 = () => {
                     </div>
                 </div>
             </div>
-            <div className="copy_right2">
+            <div className="copy_right2" style={{background: background}}>
                 <div className="container">
                     <div className="col-xl-12 copy_col">
                         <div className="copy_content">
                             <div className="item">
-                                <span>© 2025 Insurance website. All Rights Reserved.</span>
+                                <span style={{color: fontColor}} >© 2025 Insurance website. All Rights Reserved.</span>
                             </div>
                         </div>
                     </div>
