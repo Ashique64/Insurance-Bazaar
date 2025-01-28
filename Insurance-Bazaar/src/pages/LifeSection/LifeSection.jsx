@@ -17,7 +17,7 @@ const LifeSection = () => {
     return (
         <>
             <NavBar2 />
-            <div className="car-section">
+            <div className="life-section">
                 <div className="container-fluid container_first">
                     <div className="row first_row">
                         <div className="col-xl-4 col-lg-4 col-md-12 col_1">

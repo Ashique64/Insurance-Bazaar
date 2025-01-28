@@ -11,6 +11,11 @@
   /* --tp-common-black: #000E29; */
   --tp-common-black: #304596;
   --tp-color-2: #2d3f81;
+
+  --section-gradient-1: linear-gradient(190deg, #e3bbbb2f, #ffd9007c);
+  --section-gradient-2: linear-gradient(45deg, #e3bbbb2f, #ffd9007c);
+
+
   --tp-common-sky: #0CE0FF;
   --tp-common-red: #FD3358;
   --tp-common-green: #0DCA95;

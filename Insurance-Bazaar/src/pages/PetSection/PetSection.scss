@@ -4,7 +4,7 @@
     .container_first {
         padding: 40px 60px;
         width: 100%;
-        background: linear-gradient(190deg, #e3bbbb2f, #ffd9007c);
+        background: var(--section-gradient-1);
         .first_row {
             padding: 80px 0;
             .col_1 {
@@ -72,8 +72,7 @@
     .container_two {
         padding: 40px 60px;
         width: 100%;
-        // background: linear-gradient(90deg, #ffa6007a, #ffd9007c);
-        background: linear-gradient(45deg, #e3bbbb2f, #ffd9007c);
+        background: var(--section-gradient-1);
 
         .first_row {
             padding: 60px 0;
@@ -149,7 +148,7 @@
     }
 
     .third_container {
-        background: linear-gradient(190deg, #e3bbbb2f, #ffd9007c);
+        background: var(--section-gradient-2);
         padding: 40px 60px;
         .first_row {
             padding: 80px 0;
@@ -222,7 +221,7 @@
     .container_fourth {
         padding: 40px 60px;
         width: 100%;
-        background: linear-gradient(45deg, #e3bbbb2f, #ffd9007c);
+        background: var(--section-gradient-2);
 
         .first_row {
             padding: 60px 0;
