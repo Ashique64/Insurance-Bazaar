@@ -1,0 +1,93 @@
+.life-question-section {
+    padding: 30px;
+
+    .question-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .question-col {
+            padding-bottom: 60px;
+            .question-content {
+                .title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+
+                    h2 {
+                        color: var(--tp-common-black);
+                        font-size: 40px;
+                        margin-bottom: 20px;
+                        font-weight: 600;
+                        font-family: var(--tp-ff-heading);
+    
+                    }
+
+                    i {
+                        color: var(--tp-theme-2);
+                        font-size: 26px;
+                        font-weight: bolder;
+                        margin-bottom: 20px;
+                        margin-right: 8px;
+                    }
+                }
+
+                .item {
+                    border: 1px solid var(--tp-border-1);
+                    padding: 25px 10px;
+                    margin: 10px 0;
+                    border-radius: 12px;
+                    box-shadow: 0px 5px 4px rgba(64, 63, 63, 0.301);
+                    h3 {
+                        color: var(--tp-common-black);
+                        font-size: 28px;
+                        font-weight: 600;
+                        font-family: var(--tp-ff-heading);
+                        
+                        i {
+                            color: var(--tp-theme-1);
+                            font-weight: bold;
+                        }
+                    }
+
+                    p {
+                        margin-left: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:992px) {
+    .life-question-section {
+        padding: 30px 12px;
+
+        .question-row {
+            .question-col {
+                .question-content {
+                    .title {
+                        h2 {
+                            font-size: 28px;
+                        }
+                    }
+
+                    .item {
+                        h3 {
+                            font-size: 18px;
+                        }
+
+                        p {
+                            margin-left: 12px;
+
+                            ul {
+                                padding-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

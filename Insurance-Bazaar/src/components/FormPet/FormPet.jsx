@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../FormCar/FormCar.scss";
 import NavBar2 from "../NavBar2/NavBar2";
 import Footer2 from "../Footer2/Footer2";
+import PetFrequentQuestions from "../PetFrequentQuestions/PetFrequentQuestions";
 
 const FormPet = () => {
     const formBackground = "var(--tp-common-black)";
@@ -359,6 +360,7 @@ const FormPet = () => {
                             </div>
                         </div>
                     </div>
+                    <PetFrequentQuestions/>
                 </div>
             </div>
             <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />

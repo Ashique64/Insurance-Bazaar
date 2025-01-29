@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../FormCar/FormCar.scss";
 import NavBar2 from "../NavBar2/NavBar2";
 import Footer2 from "../Footer2/Footer2";
+import LifeFrequentQuestions from "../LifeFrequentQuestions/LifeFrequentQuestions";
 
 const FormLife = () => {
     const [successMessage, setSuccessMessage] = useState("");
@@ -254,6 +255,7 @@ const FormLife = () => {
                             </div>
                         </div>
                     </div>
+                    <LifeFrequentQuestions/>
                 </div>
             </div>
             <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />

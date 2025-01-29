@@ -643,7 +643,7 @@ const FormCar = () => {
                                         </div>
 
                                         <div className="col-lg-3 item">
-                                            <label htmlFor="">Select car's registration Emirate 🏙️</label>
+                                            <label htmlFor="">Select Emirate of registration  🏙️</label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="emirateRegistered"

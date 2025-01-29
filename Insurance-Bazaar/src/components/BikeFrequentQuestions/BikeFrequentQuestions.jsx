@@ -1,9 +1,9 @@
 import React from "react";
-import "./CarFrequentQuestions.scss";
+import "./BikeFrequentQuestions.scss";
 
-const CarFrequentQuestions = () => {
+const BikeFrequentQuestions = () => {
     return (
-        <div className="car-question-section">
+        <div className="bike-question-section">
             <div className="row question-row">
                 <div className="col-12 question-col">
                     <div className="question-content">
@@ -104,4 +104,4 @@ const CarFrequentQuestions = () => {
     );
 };
 
-export default CarFrequentQuestions;
+export default BikeFrequentQuestions;
