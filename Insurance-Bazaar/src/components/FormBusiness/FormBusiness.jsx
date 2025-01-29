@@ -194,7 +194,7 @@ const FormBusiness = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="row form_row">
                                         <div className="col-lg-4 item">
-                                            <label htmlFor="">What's Your First Name?</label>
+                                            <label htmlFor="">What's Your First Name? 📝</label>
                                             <input
                                                 type="text"
                                                 name="firstName"
@@ -205,7 +205,7 @@ const FormBusiness = () => {
                                             />
                                         </div>
                                         <div className="col-lg-4 item">
-                                            <label htmlFor="">And Your Last Name?</label>
+                                            <label htmlFor="">And Your Last Name? ✏️</label>
                                             <input
                                                 type="text"
                                                 name="lastName"
@@ -216,7 +216,7 @@ const FormBusiness = () => {
                                             />
                                         </div>
                                         <div className="col-lg-4 item">
-                                            <label htmlFor="">What Is Your Company Name?</label>
+                                            <label htmlFor="">What Is Your Company Name? 🏢</label>
                                             <input
                                                 type="text"
                                                 name="companyName"
@@ -229,7 +229,7 @@ const FormBusiness = () => {
                                     </div>
                                     <div className="row form_row">
                                         <div className="col-lg-5 item">
-                                            <label htmlFor="">Best Contact Number to Reach You</label>
+                                            <label htmlFor="">Best Contact Number to Reach You 📞</label>
                                             <input
                                                 type="text"
                                                 name="phoneNumber"
@@ -238,14 +238,9 @@ const FormBusiness = () => {
                                                 onChange={handleChange}
                                                 required
                                             />
-                                            {/* {errors.phoneNumber && (
-                                                <p className="error-message" style={{ color: "red" }}>
-                                                    {errors.phoneNumber}
-                                                </p>
-                                            )} */}
                                         </div>
                                         <div className="col-lg-7 item">
-                                            <label htmlFor="">Choose Your Coverage Type</label>
+                                            <label htmlFor="">Choose Your Coverage Type 📑</label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="insuranceType"
@@ -268,7 +263,7 @@ const FormBusiness = () => {
 
                                     <div className="row form_row">
                                         <div className="col-xl-2 col-lg-3 col-12 item">
-                                            <button type="submit">Submit</button>
+                                            <button type="submit">Submit 📤</button>
                                         </div>
                                     </div>
                                 </form>
