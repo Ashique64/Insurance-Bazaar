@@ -161,7 +161,7 @@ const FormPet = () => {
                         </div>
                         <div className="col-xl-5 col-lg-5 col-12 image_col">
                             <div className="image_section">
-                                <img src="/images/bike-section/bike-image-10.png" alt="" />
+                                <img src="/images/pet-section/pet-image-10.png" alt="" />
                             </div>
                         </div>
                     </div>
