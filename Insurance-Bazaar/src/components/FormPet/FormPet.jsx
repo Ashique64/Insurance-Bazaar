@@ -186,6 +186,7 @@ const FormPet = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="row form_row">
                                         <div className="col-lg-4 item">
+                                            <label>Enter your first name 🏷️</label>
                                             <input
                                                 type="text"
                                                 name="firstName"
@@ -196,6 +197,7 @@ const FormPet = () => {
                                             />
                                         </div>
                                         <div className="col-lg-4 item">
+                                            <label>Enter your last name 🏷️</label>
                                             <input
                                                 type="text"
                                                 name="lastName"
@@ -206,6 +208,7 @@ const FormPet = () => {
                                             />
                                         </div>
                                         <div className="col-lg-4 item">
+                                            <label>Your email address 📧</label>
                                             <input
                                                 type="email"
                                                 name="email"
@@ -223,6 +226,7 @@ const FormPet = () => {
                                     </div>
                                     <div className="row form_row">
                                         <div className="col-lg-6 item">
+                                            <label>Your contact number 📱</label>
                                             <input
                                                 type="text"
                                                 name="phoneNumber"
@@ -231,51 +235,53 @@ const FormPet = () => {
                                                 onChange={handleChange}
                                                 required
                                             />
-
-                                            {/* {errors.phoneNumber && (
-                                                <p className="error-message" style={{ color: "red" }}>
-                                                    {errors.phoneNumber}
-                                                </p>
-                                            )} */}
                                         </div>
                                         <div className="col-lg-6 item">
-                                        <div className="custom-select-wrapper">
-                                            <select
-                                                name="petType"
-                                                value={formData.petType}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Type of Pet
-                                                </option>
-                                                {petTypes.map((type, index) => (
-                                                    <option key={index} value={type}>
-                                                        {type}
+                                            <label>Select the type of pet 🐕🐈</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="petType"
+                                                    value={formData.petType}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Type of Pet
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {petTypes.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="row form_row">
                                         <div className="col-lg-4 item">
-                                        <div className="custom-select-wrapper">
-                                            <select name="petAge" value={formData.petAge} onChange={handleChange} required>
-                                                <option value="" disabled>
-                                                    Age of Pet
-                                                </option>
-                                                {petAges.map((type, index) => (
-                                                    <option key={index} value={type}>
-                                                        {type}
+                                            <label>Choose your pet's age 🎉</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="petAge"
+                                                    value={formData.petAge}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Age of Pet
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {petAges.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div className="col-lg-4 item">
+                                            <label>Enter your pet's breed 🐾</label>
                                             <input
                                                 type="text"
                                                 name="petBreed"
@@ -287,22 +293,23 @@ const FormPet = () => {
                                         </div>
 
                                         <div className="col-lg-4 item">
-                                        <div className="custom-select-wrapper">
-                                            <select
-                                                name="petGender"
-                                                value={formData.petGender}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Pet's Gender
-                                                </option>
-                                                {petGenders.map((gender, index) => (
-                                                    <option key={index} value={gender}>
-                                                        {gender}
+                                            <label>Select your pet's gender 💕</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="petGender"
+                                                    value={formData.petGender}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Pet's Gender
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {petGenders.map((gender, index) => (
+                                                        <option key={index} value={gender}>
+                                                            {gender}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -316,7 +323,7 @@ const FormPet = () => {
                                                     checked={formData.neutered}
                                                     onChange={handleChange}
                                                 />
-                                                My pet is neutered
+                                                My pet is neutered 🐾
                                             </label>
                                         </div>
                                         <div className="col-lg-4 item">
@@ -327,7 +334,7 @@ const FormPet = () => {
                                                     checked={formData.mixedBreed}
                                                     onChange={handleChange}
                                                 />
-                                                My pet is a mixed breed
+                                                My pet is a mixed breed 🦴
                                             </label>
                                         </div>
                                         <div className="col-lg-4 item">
@@ -338,14 +345,14 @@ const FormPet = () => {
                                                     checked={formData.injury}
                                                     onChange={handleChange}
                                                 />
-                                                My pet has ongoing or history of illness/injury
+                                                My pet has ongoing or history of illness/injury 🏥
                                             </label>
                                         </div>
                                     </div>
 
                                     <div className="row form_row">
                                         <div className="col-xl-2 col-lg-3 col-12 item">
-                                            <button type="submit">Submit</button>
+                                            <button type="submit">Submit 📥</button>
                                         </div>
                                     </div>
                                 </form>
