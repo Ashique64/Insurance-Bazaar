@@ -469,7 +469,7 @@ const FormBike = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="row form_row">
                                         <div className="col-lg-8 item">
-                                            <label htmlFor="">What bike do you drive ?</label>
+                                            <label htmlFor="">What bike do you drive ? 🏍️</label>
                                             <input
                                                 type="text"
                                                 name="bikeDetails"
@@ -495,7 +495,7 @@ const FormBike = () => {
                                             )}
                                         </div>
                                         <div className="col-lg-4 item">
-                                            <label htmlFor="">Select your bike model</label>
+                                            <label htmlFor="">Select your bike model 📅</label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="modelYear"
@@ -517,7 +517,7 @@ const FormBike = () => {
                                     </div>
                                     <div className="row form_row">
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">Your name as it appears on your driving license.</label>
+                                            <label htmlFor="">Your name as it appears on your driving license 👤</label>
                                             <input
                                                 type="text"
                                                 name="fullName"
@@ -528,7 +528,7 @@ const FormBike = () => {
                                             />
                                         </div>
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">Select the nationality as per your UAE driving license</label>
+                                            <label htmlFor="">Select the nationality as per your UAE driving license 🌎</label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="nationality"
@@ -550,7 +550,7 @@ const FormBike = () => {
                                     </div>
                                     <div className="row form_row">
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">Select your date of birth as per your Emirates ID</label>
+                                            <label htmlFor="">Select your date of birth as per your Emirates ID 🎂</label>
                                             <div className="birth">
                                                 <div className="custom-select-wrapper">
                                                     <select
@@ -606,7 +606,7 @@ const FormBike = () => {
                                             </div>
                                         </div>
                                         <div className="col-lg-3 item">
-                                            <label htmlFor="">Enter your email</label>
+                                            <label htmlFor="">Enter your email 📧</label>
                                             <input
                                                 type="email"
                                                 name="email"
@@ -622,7 +622,7 @@ const FormBike = () => {
                                         )} */}
                                         </div>
                                         <div className="col-lg-3 item">
-                                            <label htmlFor="">Select bike's registration Emirate</label>
+                                            <label htmlFor="">Select Emirate of registration  📍</label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="emirateRegistered"
@@ -644,7 +644,7 @@ const FormBike = () => {
                                     </div>
                                     <div className="row form_row">
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">Enter your phone number</label>
+                                            <label htmlFor="">Enter your phone number 📱</label>
                                             <input
                                                 type="text"
                                                 name="phone"
@@ -661,7 +661,7 @@ const FormBike = () => {
                                         </div>
                                         <div className="col-lg-6 item">
                                             <label htmlFor="">
-                                                Number of years have you had a UAE driving license for.
+                                                Number of years have you had a UAE driving license for 🪪
                                             </label>
                                             <div className="custom-select-wrapper">
                                                 <select
@@ -684,7 +684,7 @@ const FormBike = () => {
                                     </div>
                                     <div className="row form_row">
                                         <div className="col-xl-2 col-lg-3 col-12 item">
-                                            <button type="submit">Submit</button>
+                                            <button type="submit">Submit 📤</button>
                                         </div>
                                     </div>
                                 </form>
