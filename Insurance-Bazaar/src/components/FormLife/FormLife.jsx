@@ -141,108 +141,113 @@ const FormLife = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="row form_row">
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">Choose Your Coverage Plan</label>
-                                        <div className="custom-select-wrapper">
-                                            <select
-                                                name="lifeInsuranceType"
-                                                value={formData.lifeInsuranceType}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Type of Insurance
-                                                </option>
-                                                {lifeInsuranceType.map((type, index) => (
-                                                    <option key={index} value={type}>
-                                                        {type}
+                                            <label htmlFor="">Choose Your Coverage Plan 📋</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="lifeInsuranceType"
+                                                    value={formData.lifeInsuranceType}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Type of Insurance
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {lifeInsuranceType.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
                                         <div className="col-lg-3 item">
-                                            <label htmlFor="">No. of Children</label>
-                                        <div className="custom-select-wrapper">
-                                            <select
-                                                name="children"
-                                                value={formData.children}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Children
-                                                </option>
-                                                {children.map((child, index) => (
-                                                    <option key={index} value={child}>
-                                                        {child}
+                                            <label htmlFor="">No. of Children 👶</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="children"
+                                                    value={formData.children}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Children
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {children.map((child, index) => (
+                                                        <option key={index} value={child}>
+                                                            {child}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
                                         <div className="col-lg-3 item">
-                                            <label htmlFor="">Your Relationship Status</label>
-                                        <div className="custom-select-wrapper">
-                                            <select
-                                                name="maritalStatus"
-                                                value={formData.maritalStatus}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Marital Status
-                                                </option>
-                                                {maritalStatus.map((status, index) => (
-                                                    <option key={index} value={status}>
-                                                        {status}
+                                            <label htmlFor="">Your Relationship Status 💍</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="maritalStatus"
+                                                    value={formData.maritalStatus}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Marital Status
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {maritalStatus.map((status, index) => (
+                                                        <option key={index} value={status}>
+                                                            {status}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="row form_row">
                                         <div className="col-lg-6 item">
-                                        <label htmlFor="">Why Do You Need Coverage?</label>
-                                        <div className="custom-select-wrapper">
-                                            <select
-                                                name="insurancePurpose"
-                                                value={formData.insurancePurpose}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Purpose of Insurance
-                                                </option>
-                                                {insurancePurpose.map((purpose, index) => (
-                                                    <option key={index} value={purpose}>
-                                                        {purpose}
+                                            <label htmlFor="">Why Do You Need Coverage? 🤔</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="insurancePurpose"
+                                                    value={formData.insurancePurpose}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Purpose of Insurance
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {insurancePurpose.map((purpose, index) => (
+                                                        <option key={index} value={purpose}>
+                                                            {purpose}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">How Long Do You Need Protection?</label>
-                                        <div className="custom-select-wrapper">
-                                            <select name="tenure" value={formData.tenure} onChange={handleChange} required>
-                                                <option value="" disabled>
-                                                    Tenure of Cover
-                                                </option>
-                                                {tenure.map((item, index) => (
-                                                    <option key={index} value={item}>
-                                                        {item}
+                                            <label htmlFor="">How Long Do You Need Protection? ⏳</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="tenure"
+                                                    value={formData.tenure}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Tenure of Cover
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {tenure.map((item, index) => (
+                                                        <option key={index} value={item}>
+                                                            {item}
+                                                        </option>
+                                                    ))}
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="row form_row">
                                         <div className="col-xl-2 col-lg-3 col-12 item">
-                                            <button type="submit">Submit</button>
+                                            <button type="submit">Submit 📤</button>
                                         </div>
                                     </div>
                                 </form>
