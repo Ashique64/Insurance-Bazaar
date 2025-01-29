@@ -713,7 +713,6 @@ const FormCar = () => {
                             </div>
                         </div>
                     </div>
-
                     <FrequentQuestions/>
                 </div>
             </div>

@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import { backendAPI } from "../../api/BackendApi";
 import { Link } from "react-router-dom";
 import "../FormCar/FormCar.scss";
+import NavBar2 from "../NavBar2/NavBar2";
+import Footer2 from "../Footer2/Footer2";
 
 const FormBike = () => {
     const [successMessage, setSuccessMessage] = useState("");
+    const formBackground = "var(--tp-common-black)";
+    const formCopyright = "var(--tp-common-black)";
+    const formFontColor = "var(--tp-common-white)";
     const modelYear = [
         2025,
         2024,
@@ -411,218 +416,284 @@ const FormBike = () => {
     }, []);
 
     return (
-        <div className="form">
-            <div className="container-fluid">
-                <div className="back_button">
-                    <Link to="/#service">
-                        <button>back</button>
-                    </Link>
-                </div>
-                <div className="row title_row">
-                    <div className="col-12 title_col">
-                        <h1>
-                            Get your <span>Bike insurance</span> quotes
-                        </h1>
-                    </div>
-                </div>
-                <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
-                    {successMessage || " "}
-                </p>
+        <>
+            <NavBar2 />
+            <div className="form">
+                <div className="container-fluid">
+                    {/* <div className="back_button">
+                        <Link to="/#service">
+                            <button>back</button>
+                        </Link>
+                    </div> */}
 
-                <div className="form_section">
-                    <div className="form_content">
-                        <div className="form_title">
-                            <i className="bx bx-info-circle"></i>
-                            <h4>Tell us about yourself</h4>
+                    <div className="row image_row">
+                        <div className="col-xl-7 col-lg-7 col-12 content_col">
+                            <div className="content">
+                                <h3>
+                                    Get Your <span>Bike Insurance</span> Quote Today
+                                </h3>
+                                <p>
+                                    Fill out the form below to help us tailor the perfect bike insurance policy for your
+                                    needs. By providing accurate details about your motorcycle, riding history, and coverage
+                                    preferences, we can offer you the best options at competitive prices. It's quick,
+                                    secure, and hassle-free!
+                                </p>
+                            </div>
                         </div>
-                        <div className="container">
-                            <form onSubmit={handleSubmit}>
-                                <div className="row form_row">
-                                    <div className="col-lg-8 item">
-                                        <input
-                                            type="text"
-                                            name="bikeDetails"
-                                            placeholder="Enter your Make, Model, and Trim"
-                                            value={formData.bikeDetails}
-                                            onChange={handleChange}
-                                            required
-                                        />
+                        <div className="col-xl-5 col-lg-5 col-12 image_col">
+                            <div className="image_section">
+                                <img src="/images/bike-section/bike-image-10.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
 
-                                        {loading && <div className="spinner"></div>}
+                    {/* <div className="row title_row">
+                        <div className="col-12 title_col">
+                            <h1>
+                                Get your <span>Bike insurance</span> quotes
+                            </h1>
+                        </div>
+                    </div> */}
+                    <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
+                        {successMessage || " "}
+                    </p>
 
-                                        {suggestions.length > 0 && (
-                                            <ul className="suggestions">
-                                                {suggestions.map((car, index) => (
-                                                    <li
-                                                        key={index}
-                                                        onClick={() => handleSuggestionClick(car.make, car.model)}
-                                                    >
-                                                        {car.make} {car.model}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
-                                    <div className="col-lg-4 item">
-                                        <select
-                                            name="modelYear"
-                                            value={formData.modelYear}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled selected>
-                                                Model year
-                                            </option>
-                                            {modelYear.map((year, index) => (
-                                                <option key={index} value={year}>
-                                                    {year}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="row form_row">
-                                    <div className="col-lg-6 item">
-                                        <input
-                                            type="text"
-                                            name="fullName"
-                                            placeholder="Your full name"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="col-lg-6 item">
-                                        <select
-                                            name="nationality"
-                                            value={formData.nationality}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled>
-                                                Your nationality
-                                            </option>
-                                            {nationalities.map((nation, index) => (
-                                                <option key={index} value={nation}>
-                                                    {nation}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="row form_row">
-                                    <div className="col-lg-6 item">
-                                        <div className="birth">
-                                            <select name="day" value={formData.day} onChange={handleChange} required>
-                                                <option value="" disabled>
-                                                    Day
-                                                </option>
-                                                {days.map((day, index) => (
-                                                    <option key={index} value={day}>
-                                                        {day}
+                    <div className="form_section">
+                        <div className="form_content">
+                            <div className="form_title">
+                                <i className="bx bx-info-circle"></i>
+                                <h4>We’re Almost There! Just a Few Details Needed</h4>
+                            </div>
+                            <div className="container">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="row form_row">
+                                        <div className="col-lg-8 item">
+                                            <label htmlFor="">What bike do you drive ?</label>
+                                            <input
+                                                type="text"
+                                                name="bikeDetails"
+                                                placeholder="Enter your Make, Model, and Trim"
+                                                value={formData.bikeDetails}
+                                                onChange={handleChange}
+                                                required
+                                            />
+
+                                            {loading && <div className="spinner"></div>}
+
+                                            {suggestions.length > 0 && (
+                                                <ul className="suggestions">
+                                                    {suggestions.map((car, index) => (
+                                                        <li
+                                                            key={index}
+                                                            onClick={() => handleSuggestionClick(car.make, car.model)}
+                                                        >
+                                                            {car.make} {car.model}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </div>
+                                        <div className="col-lg-4 item">
+                                            <label htmlFor="">Select your bike model</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="modelYear"
+                                                    value={formData.modelYear}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Model year
                                                     </option>
-                                                ))}
-                                            </select>
-                                            <select name="month" value={formData.month} onChange={handleChange} required>
-                                                <option value="" disabled>
-                                                    Month
-                                                </option>
-                                                {months.map((month, index) => (
-                                                    <option key={index} value={month}>
-                                                        {month}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                            <select name="year" value={formData.year} onChange={handleChange} required>
-                                                <option value="" disabled>
-                                                    Year
-                                                </option>
-                                                {years.map((year, index) => (
-                                                    <option key={index} value={year}>
-                                                        {year}
-                                                    </option>
-                                                ))}
-                                            </select>
+                                                    {modelYear.map((year, index) => (
+                                                        <option key={index} value={year}>
+                                                            {year}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3 item">
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Your email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                        {/* {errors.email && (
+                                    <div className="row form_row">
+                                        <div className="col-lg-6 item">
+                                            <label htmlFor="">Your name as it appears on your driving license.</label>
+                                            <input
+                                                type="text"
+                                                name="fullName"
+                                                placeholder="Your full name"
+                                                value={formData.fullName}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-lg-6 item">
+                                            <label htmlFor="">Select the nationality as per your UAE driving license</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="nationality"
+                                                    value={formData.nationality}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Your nationality
+                                                    </option>
+                                                    {nationalities.map((nation, index) => (
+                                                        <option key={index} value={nation}>
+                                                            {nation}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="row form_row">
+                                        <div className="col-lg-6 item">
+                                            <label htmlFor="">Select your date of birth as per your Emirates ID</label>
+                                            <div className="birth">
+                                                <div className="custom-select-wrapper">
+                                                    <select
+                                                        name="day"
+                                                        value={formData.day}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Day
+                                                        </option>
+                                                        {days.map((day, index) => (
+                                                            <option key={index} value={day}>
+                                                                {day}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                                <div className="custom-select-wrapper">
+                                                    <select
+                                                        name="month"
+                                                        value={formData.month}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Month
+                                                        </option>
+                                                        {months.map((month, index) => (
+                                                            <option key={index} value={month}>
+                                                                {month}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                                <div className="custom-select-wrapper">
+                                                    <select
+                                                        name="year"
+                                                        value={formData.year}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Year
+                                                        </option>
+                                                        {years.map((year, index) => (
+                                                            <option key={index} value={year}>
+                                                                {year}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3 item">
+                                            <label htmlFor="">Enter your email</label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Your email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                            {/* {errors.email && (
                                             <p className="error-message" style={{ color: "red" }}>
                                                 {errors.email}
                                             </p>
                                         )} */}
+                                        </div>
+                                        <div className="col-lg-3 item">
+                                            <label htmlFor="">Select bike's registration Emirate</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="emirateRegistered"
+                                                    value={formData.emirateRegistered}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Emirate of registration
+                                                    </option>
+                                                    {emiratesOfRegistration.map((item, index) => (
+                                                        <option key={index} value={item}>
+                                                            {item}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="col-lg-3 item">
-                                        <select
-                                            name="emirateRegistered"
-                                            value={formData.emirateRegistered}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled>
-                                                Emirate of registration
-                                            </option>
-                                            {emiratesOfRegistration.map((item, index) => (
-                                                <option key={index} value={item}>
-                                                    {item}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="row form_row">
-                                    <div className="col-lg-6 item">
-                                        <input
-                                            type="text"
-                                            name="phone"
-                                            placeholder="Your Phone no"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                        {/* {errors.phone && (
+                                    <div className="row form_row">
+                                        <div className="col-lg-6 item">
+                                            <label htmlFor="">Enter your phone number</label>
+                                            <input
+                                                type="text"
+                                                name="phone"
+                                                placeholder="Your Phone no"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                            {/* {errors.phone && (
                                             <p className="error-message" style={{ color: "red" }}>
                                                 {errors.phone}
                                             </p>
                                         )} */}
+                                        </div>
+                                        <div className="col-lg-6 item">
+                                            <label htmlFor="">
+                                                Number of years have you had a UAE driving license for.
+                                            </label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="uaeLicenceHeld"
+                                                    value={formData.uaeLicenceHeld}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        UAE licence held for
+                                                    </option>
+                                                    {licenceHeldOptions.map((option, index) => (
+                                                        <option key={index} value={option}>
+                                                            {option}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="col-lg-6 item">
-                                        <select
-                                            name="uaeLicenceHeld"
-                                            value={formData.uaeLicenceHeld}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled>
-                                                UAE licence held for
-                                            </option>
-                                            {licenceHeldOptions.map((option, index) => (
-                                                <option key={index} value={option}>
-                                                    {option}
-                                                </option>
-                                            ))}
-                                        </select>
+                                    <div className="row form_row">
+                                        <div className="col-xl-2 col-lg-3 col-12 item">
+                                            <button type="submit">Submit</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="row form_row">
-                                    <div className="col-xl-2 col-lg-3 col-12 item">
-                                        <button type="submit">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />
+        </>
     );
 };
 

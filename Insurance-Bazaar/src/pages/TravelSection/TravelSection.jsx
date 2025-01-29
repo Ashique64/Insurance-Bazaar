@@ -6,9 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 const TravelSection = () => {
     const navigate = useNavigate();
+    const sectionColor = "linear-gradient(190deg, #e3bbbb2f, #ffd9007c)"
+    const copyright = "linear-gradient(190deg, #ffd9007c, #ffd9007c)"
 
     const handleGetQuotes = () => {
-        navigate("/form/car");
+        navigate("/form/travel");
     };
 
     useEffect(() => {
@@ -241,7 +243,7 @@ const TravelSection = () => {
                     </div>
                 </div>
             </div>
-            <Footer2 />
+            <Footer2 copyright={copyright} background={sectionColor}/>
         </>
     );
 };

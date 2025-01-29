@@ -6,6 +6,8 @@ import "./LifeSection.scss";
 
 const LifeSection = () => {
     const navigate = useNavigate();
+    const sectionColor = "linear-gradient(190deg, #e3bbbb2f, #ffd9007c)"
+    const copyright = "linear-gradient(190deg, #ffd9007c, #ffd9007c)"
     const handleGetQuotes = () => {
         navigate("/form/life");
     };
@@ -267,7 +269,7 @@ const LifeSection = () => {
                     </div>
                 </div>
             </div>
-            <Footer2 />
+            <Footer2 copyright={copyright} background={sectionColor}/>
         </>
     );
 };

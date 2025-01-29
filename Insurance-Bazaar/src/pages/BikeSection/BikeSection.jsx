@@ -6,6 +6,8 @@ import "../CarSection/CarSection.scss";
 
 const BikeSection = () => {
     const navigate = useNavigate();
+    const sectionColor = "linear-gradient(190deg, #e3bbbb2f, #ffd9007c)";
+    const copyright = "linear-gradient(190deg, #ffd9007c, #ffd9007c)";
     const handleGetQuotes = () => {
         navigate("/form/bike");
     };
@@ -61,7 +63,7 @@ const BikeSection = () => {
                                 <p>
                                     The coverage of your bike insurance policy depends on its type, but a typical
                                     Comprehensive bike insurance plan generally protects against a variety of risks. These
-                                    include damages or injuries caused by {" "}
+                                    include damages or injuries caused by{" "}
                                     <span>
                                         accidents, storms, floods, fire, theft, vandalism, explosions, lightning, and
                                         malicious damage
@@ -260,7 +262,7 @@ const BikeSection = () => {
                     </div>
                 </div>
             </div>
-            <Footer2 />
+            <Footer2 copyright={copyright} background={sectionColor} />
         </>
     );
 };

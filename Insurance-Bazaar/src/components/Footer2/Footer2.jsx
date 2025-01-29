@@ -71,7 +71,7 @@ const Footer2 = ({background, copyright, fontColor}) => {
                                 <div key={index} className="col-lg-3 col-md-4 footer_content_col">
                                     <div className="items">
                                         <div className="title">
-                                            <h4>{item.title}</h4>
+                                            <h4 style={{color: fontColor}}>{item.title}</h4>
                                         </div>
                                         <div className="item_list">
                                             <ul>
