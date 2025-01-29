@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { backendAPI } from "../../api/BackendApi";
 import { Link } from "react-router-dom";
-import '../FormCar/FormCar.scss'
+import "../FormCar/FormCar.scss";
+import NavBar2 from "../NavBar2/NavBar2";
+import Footer2 from "../Footer2/Footer2";
 
 const FormHealth = () => {
+    const formBackground = "var(--tp-common-black)";
+    const formCopyright = "var(--tp-common-black)";
+    const formFontColor = "var(--tp-common-white)";
+
     const [successMessage, setSuccessMessage] = useState("");
     const categories = ["Individual", "Family", "Group of Employees"];
     const residentTypes = [
@@ -376,441 +382,482 @@ const FormHealth = () => {
     }, []);
 
     return (
-        <div className="form">
-            <div className="container-fluid">
-                <div className="back_button">
-                    <Link to="/#service">
-                        <button>back</button>
-                    </Link>
-                </div>
-                <div className="row title_row">
-                    <div className="col-12 title_col">
-                        <h1>
-                            Get your <span>Health insurance</span> quotes
-                        </h1>
-                    </div>
-                </div>
-                <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
-                    {successMessage || " "}
-                </p>
+        <>
+            <NavBar2 />
+            <div className="form">
+                <div className="container-fluid">
+                    {/* <div className="back_button">
+                        <Link to="/#service">
+                            <button>back</button>
+                        </Link>
+                    </div> */}
 
-                <div className="form_section">
-                    <div className="form_content">
-                        <div className="form_title">
-                            <i className="bx bx-info-circle"></i>
-                            <h4>Tell us about yourself</h4>
+                    <div className="row image_row">
+                        <div className="col-xl-7 col-lg-7 col-12 content_col">
+                            <div className="content">
+                                <h3>
+                                    Get Your <span>Health Insurance</span> Quote Today
+                                </h3>
+                                <p>
+                                    Fill out the form below to help us tailor the perfect health insurance policy for your
+                                    needs. By providing accurate details about your medical history, lifestyle, and coverage
+                                    preferences, we can offer you the best options at competitive prices. It's quick,
+                                    secure, and hassle-free!
+                                </p>
+                            </div>
                         </div>
-                        <div className="container">
-                            {category === "Individual" && (
-                                <form onSubmit={handleSubmit}>
-                                    <div className="row form_row">
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="category"
-                                                value={category}
-                                                onChange={handleCategoryChange}
-                                                required
-                                            >
-                                                <option value="" disabled selected>
-                                                    Select your category
-                                                </option>
-                                                {categories.map((item, index) => (
-                                                    <option key={index} value={item}>
-                                                        {item}
+                        <div className="col-xl-5 col-lg-5 col-12 image_col">
+                            <div className="image_section">
+                                <img src="/images/bike-section/bike-image-10.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <div className="row title_row">
+                        <div className="col-12 title_col">
+                            <h1>
+                                Get your <span>Health insurance</span> quotes
+                            </h1>
+                        </div>
+                    </div> */}
+                    <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
+                        {successMessage || " "}
+                    </p>
+
+                    <div className="form_section">
+                        <div className="form_content">
+                            <div className="form_title">
+                                <i className="bx bx-info-circle"></i>
+                                <h4>We’re Almost There! Just a Few Details Needed</h4>
+                            </div>
+                            <div className="container">
+                                {category === "Individual" && (
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="row form_row">
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="category"
+                                                    value={category}
+                                                    onChange={handleCategoryChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Select your category
                                                     </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="residentType"
-                                                value={formData.residentType}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled selected>
-                                                    Types of Resident
-                                                </option>
-                                                {residentTypes.map((type, index) => (
-                                                    <option key={index} value={type}>
-                                                        {type}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="row form_row">
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="emirateVisa"
-                                                value={formData.emirateVisa}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled selected>
-                                                    Emirate of Visa
-                                                </option>
-                                                {emirateVisa.map((type, index) => (
-                                                    <option key={index} value={type}>
-                                                        {type}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="nationality"
-                                                value={formData.nationality}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Your nationality
-                                                </option>
-                                                {nationalities.map((nation, index) => (
-                                                    <option key={index} value={nation}>
-                                                        {nation}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="row form_row">
-                                        <div className="col-lg-8 item">
-                                            <div className="birth">
-                                                <select name="day" value={formData.day} onChange={handleChange} required>
-                                                    <option value="" disabled>
-                                                        Day
-                                                    </option>
-                                                    {days.map((day, index) => (
-                                                        <option key={index} value={day}>
-                                                            {day}
+                                                    {categories.map((item, index) => (
+                                                        <option key={index} value={item}>
+                                                            {item}
                                                         </option>
                                                     ))}
                                                 </select>
+                                            </div>
+                                            <div className="col-lg-6 item">
                                                 <select
-                                                    name="month"
-                                                    value={formData.month}
+                                                    name="residentType"
+                                                    value={formData.residentType}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Types of Resident
+                                                    </option>
+                                                    {residentTypes.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className="row form_row">
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="emirateVisa"
+                                                    value={formData.emirateVisa}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Emirate of Visa
+                                                    </option>
+                                                    {emirateVisa.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="nationality"
+                                                    value={formData.nationality}
                                                     onChange={handleChange}
                                                     required
                                                 >
                                                     <option value="" disabled>
-                                                        Month
+                                                        Your nationality
                                                     </option>
-                                                    {months.map((month, index) => (
-                                                        <option key={index} value={month}>
-                                                            {month}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                <select name="year" value={formData.year} onChange={handleChange} required>
-                                                    <option value="" disabled>
-                                                        Year
-                                                    </option>
-                                                    {years.map((year, index) => (
-                                                        <option key={index} value={year}>
-                                                            {year}
+                                                    {nationalities.map((nation, index) => (
+                                                        <option key={index} value={nation}>
+                                                            {nation}
                                                         </option>
                                                     ))}
                                                 </select>
                                             </div>
                                         </div>
-                                        <div className="col-lg-4 item">
-                                            <select name="gender" value={formData.gender} onChange={handleChange} required>
-                                                <option value="" disabled>
-                                                    Your Gender
-                                                </option>
-                                                {Genders.map((gender, index) => (
-                                                    <option key={index} value={gender}>
-                                                        {gender}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="row form_row">
-                                        <div className="col-xl-2 col-lg-3 col-12 item">
-                                            <button type="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            )}
-                            {/* -------------------------------------------------------------------------------------------------------- */}
-                            {/* ======================================================================================================= */}
-                            {category === "Family" && (
-                                <form onSubmit={handleSubmit}>
-                                    <div className="row form_row">
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="category"
-                                                value={category}
-                                                onChange={handleCategoryChange}
-                                                required
-                                            >
-                                                <option value="" disabled selected>
-                                                    Select your category
-                                                </option>
-                                                {categories.map((item, index) => (
-                                                    <option key={index} value={item}>
-                                                        {item}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                        <div className="col-lg-6 item">
-                                            <input
-                                                type="text"
-                                                name="firstName"
-                                                placeholder="First Name"
-                                                value={familyFormData.firstName}
-                                                onChange={handleFamilyFormChange}
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="row form_row">
-                                        <div className="col-lg-6 item">
-                                            <input
-                                                type="text"
-                                                name="lastName"
-                                                placeholder="Last Name"
-                                                value={familyFormData.lastName}
-                                                onChange={handleFamilyFormChange}
-                                                required
-                                            />
-                                        </div>
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="nationality"
-                                                value={familyFormData.nationality}
-                                                onChange={handleFamilyFormChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Nationality
-                                                </option>
-                                                {nationalities.map((nation, index) => (
-                                                    <option key={index} value={nation}>
-                                                        {nation}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="row form_row">
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="emirateVisa"
-                                                value={familyFormData.emirateVisa}
-                                                onChange={handleFamilyFormChange}
-                                                required
-                                            >
-                                                <option value="" disabled selected>
-                                                    Emirate of Visa
-                                                </option>
-                                                {emirateVisa.map((type, index) => (
-                                                    <option key={index} value={type}>
-                                                        {type}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="relationToSponser"
-                                                value={familyFormData.relationToSponser}
-                                                onChange={handleFamilyFormChange}
-                                                required
-                                            >
-                                                <option value="" disabled selected>
-                                                    Relation to sponser
-                                                </option>
-                                                {residentTypes.map((nation, index) => (
-                                                    <option key={index} value={nation}>
-                                                        {nation}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="row form_row">
-                                        <div className="col-lg-8 item">
-                                            <div className="birth">
-                                                <select
-                                                    name="day"
-                                                    value={familyFormData.day}
-                                                    onChange={handleFamilyFormChange}
-                                                    required
-                                                >
-                                                    <option value="" disabled>
-                                                        Day
-                                                    </option>
-                                                    {days.map((day, index) => (
-                                                        <option key={index} value={day}>
-                                                            {day}
+                                        <div className="row form_row">
+                                            <div className="col-lg-8 item">
+                                                <div className="birth">
+                                                    <select
+                                                        name="day"
+                                                        value={formData.day}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Day
                                                         </option>
-                                                    ))}
-                                                </select>
-                                                <select
-                                                    name="month"
-                                                    value={familyFormData.month}
-                                                    onChange={handleFamilyFormChange}
-                                                    required
-                                                >
-                                                    <option value="" disabled>
-                                                        Month
-                                                    </option>
-                                                    {months.map((month, index) => (
-                                                        <option key={index} value={month}>
-                                                            {month}
+                                                        {days.map((day, index) => (
+                                                            <option key={index} value={day}>
+                                                                {day}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <select
+                                                        name="month"
+                                                        value={formData.month}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Month
                                                         </option>
-                                                    ))}
-                                                </select>
+                                                        {months.map((month, index) => (
+                                                            <option key={index} value={month}>
+                                                                {month}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <select
+                                                        name="year"
+                                                        value={formData.year}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Year
+                                                        </option>
+                                                        {years.map((year, index) => (
+                                                            <option key={index} value={year}>
+                                                                {year}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-4 item">
                                                 <select
-                                                    name="year"
-                                                    value={familyFormData.year}
-                                                    onChange={handleFamilyFormChange}
+                                                    name="gender"
+                                                    value={formData.gender}
+                                                    onChange={handleChange}
                                                     required
                                                 >
                                                     <option value="" disabled>
-                                                        Year
+                                                        Your Gender
                                                     </option>
-                                                    {years.map((year, index) => (
-                                                        <option key={index} value={year}>
-                                                            {year}
+                                                    {Genders.map((gender, index) => (
+                                                        <option key={index} value={gender}>
+                                                            {gender}
                                                         </option>
                                                     ))}
                                                 </select>
                                             </div>
                                         </div>
-                                        <div className="col-lg-4 item">
-                                            <select
-                                                name="gender"
-                                                value={familyFormData.gender}
-                                                onChange={handleFamilyFormChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Your Gender
-                                                </option>
-                                                {Genders.map((gender, index) => (
-                                                    <option key={index} value={gender}>
-                                                        {gender}
+
+                                        <div className="row form_row">
+                                            <div className="col-xl-2 col-lg-3 col-12 item">
+                                                <button type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                )}
+                                {/* -------------------------------------------------------------------------------------------------------- */}
+                                {/* ======================================================================================================= */}
+                                {category === "Family" && (
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="row form_row">
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="category"
+                                                    value={category}
+                                                    onChange={handleCategoryChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Select your category
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {categories.map((item, index) => (
+                                                        <option key={index} value={item}>
+                                                            {item}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                            <div className="col-lg-6 item">
+                                                <input
+                                                    type="text"
+                                                    name="firstName"
+                                                    placeholder="First Name"
+                                                    value={familyFormData.firstName}
+                                                    onChange={handleFamilyFormChange}
+                                                    required
+                                                />
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <div className="row form_row">
-                                        <div className="col-xl-2 col-lg-3 col-12 item">
-                                            <button type="submit">Submit</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            )}
-
-                            {/* ======================================================================================================================= */}
-
-                            {category === "Group of Employees" && (
-                                <form onSubmit={handleSubmit}>
-                                    <div className="row form_row">
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="category"
-                                                value={category}
-                                                onChange={handleCategoryChange}
-                                                required
-                                            >
-                                                <option value="" disabled selected>
-                                                    Select your category
-                                                </option>
-                                                {categories.map((item, index) => (
-                                                    <option key={index} value={item}>
-                                                        {item}
+                                        <div className="row form_row">
+                                            <div className="col-lg-6 item">
+                                                <input
+                                                    type="text"
+                                                    name="lastName"
+                                                    placeholder="Last Name"
+                                                    value={familyFormData.lastName}
+                                                    onChange={handleFamilyFormChange}
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="nationality"
+                                                    value={familyFormData.nationality}
+                                                    onChange={handleFamilyFormChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Nationality
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {nationalities.map((nation, index) => (
+                                                        <option key={index} value={nation}>
+                                                            {nation}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div className="col-lg-6 item">
-                                            <input
-                                                type="text"
-                                                name="firstName"
-                                                placeholder="First Name"
-                                                value={groupFormData.firstName}
-                                                onChange={handleGroupFormChange}
-                                                required
-                                            />
+                                        <div className="row form_row">
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="emirateVisa"
+                                                    value={familyFormData.emirateVisa}
+                                                    onChange={handleFamilyFormChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Emirate of Visa
+                                                    </option>
+                                                    {emirateVisa.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="relationToSponser"
+                                                    value={familyFormData.relationToSponser}
+                                                    onChange={handleFamilyFormChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Relation to sponser
+                                                    </option>
+                                                    {residentTypes.map((nation, index) => (
+                                                        <option key={index} value={nation}>
+                                                            {nation}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="row form_row">
-                                        <div className="col-lg-6 item">
-                                            <input
-                                                type="text"
-                                                name="lastName"
-                                                placeholder="Last Name"
-                                                value={groupFormData.lastName}
-                                                onChange={handleGroupFormChange}
-                                                required
-                                            />
+                                        <div className="row form_row">
+                                            <div className="col-lg-8 item">
+                                                <div className="birth">
+                                                    <select
+                                                        name="day"
+                                                        value={familyFormData.day}
+                                                        onChange={handleFamilyFormChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Day
+                                                        </option>
+                                                        {days.map((day, index) => (
+                                                            <option key={index} value={day}>
+                                                                {day}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <select
+                                                        name="month"
+                                                        value={familyFormData.month}
+                                                        onChange={handleFamilyFormChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Month
+                                                        </option>
+                                                        {months.map((month, index) => (
+                                                            <option key={index} value={month}>
+                                                                {month}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <select
+                                                        name="year"
+                                                        value={familyFormData.year}
+                                                        onChange={handleFamilyFormChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            Year
+                                                        </option>
+                                                        {years.map((year, index) => (
+                                                            <option key={index} value={year}>
+                                                                {year}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-4 item">
+                                                <select
+                                                    name="gender"
+                                                    value={familyFormData.gender}
+                                                    onChange={handleFamilyFormChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Your Gender
+                                                    </option>
+                                                    {Genders.map((gender, index) => (
+                                                        <option key={index} value={gender}>
+                                                            {gender}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div className="col-lg-6 item">
-                                            <input
-                                                type="text"
-                                                name="companyName"
-                                                placeholder="Company Name"
-                                                value={groupFormData.companyName}
-                                                onChange={handleGroupFormChange}
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="row form_row">
-                                        <div className="col-lg-4 item">
-                                            <input
-                                                type="text"
-                                                name="employeesNumber"
-                                                placeholder="No. of employees"
-                                                value={groupFormData.employeesNumber}
-                                                onChange={handleGroupFormChange}
-                                                required
-                                            />
-                                        </div>
-                                        <div className="col-lg-4 item">
-                                            <input
-                                                type="text"
-                                                name="phoneNumber"
-                                                placeholder="Phone Number"
-                                                value={groupFormData.phoneNumber}
-                                                onChange={handleGroupFormChange}
-                                                required
-                                            />
-                                        </div>
-                                        <div className="col-lg-4 item">
-                                            <input
-                                                type="text"
-                                                name="email"
-                                                placeholder="E-mail"
-                                                value={groupFormData.email}
-                                                onChange={handleGroupFormChange}
-                                                required
-                                            />
-                                        </div>
-                                    </div>
 
-                                    <div className="row form_row">
-                                        <div className="col-xl-2 col-lg-3 col-12 item">
-                                            <button type="submit">Submit</button>
+                                        <div className="row form_row">
+                                            <div className="col-xl-2 col-lg-3 col-12 item">
+                                                <button type="submit">Submit</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
-                            )}
+                                    </form>
+                                )}
+
+                                {/* ======================================================================================================================= */}
+
+                                {category === "Group of Employees" && (
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="row form_row">
+                                            <div className="col-lg-6 item">
+                                                <select
+                                                    name="category"
+                                                    value={category}
+                                                    onChange={handleCategoryChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled selected>
+                                                        Select your category
+                                                    </option>
+                                                    {categories.map((item, index) => (
+                                                        <option key={index} value={item}>
+                                                            {item}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                            <div className="col-lg-6 item">
+                                                <input
+                                                    type="text"
+                                                    name="firstName"
+                                                    placeholder="First Name"
+                                                    value={groupFormData.firstName}
+                                                    onChange={handleGroupFormChange}
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="row form_row">
+                                            <div className="col-lg-6 item">
+                                                <input
+                                                    type="text"
+                                                    name="lastName"
+                                                    placeholder="Last Name"
+                                                    value={groupFormData.lastName}
+                                                    onChange={handleGroupFormChange}
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="col-lg-6 item">
+                                                <input
+                                                    type="text"
+                                                    name="companyName"
+                                                    placeholder="Company Name"
+                                                    value={groupFormData.companyName}
+                                                    onChange={handleGroupFormChange}
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="row form_row">
+                                            <div className="col-lg-4 item">
+                                                <input
+                                                    type="text"
+                                                    name="employeesNumber"
+                                                    placeholder="No. of employees"
+                                                    value={groupFormData.employeesNumber}
+                                                    onChange={handleGroupFormChange}
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="col-lg-4 item">
+                                                <input
+                                                    type="text"
+                                                    name="phoneNumber"
+                                                    placeholder="Phone Number"
+                                                    value={groupFormData.phoneNumber}
+                                                    onChange={handleGroupFormChange}
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="col-lg-4 item">
+                                                <input
+                                                    type="text"
+                                                    name="email"
+                                                    placeholder="E-mail"
+                                                    value={groupFormData.email}
+                                                    onChange={handleGroupFormChange}
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="row form_row">
+                                            <div className="col-xl-2 col-lg-3 col-12 item">
+                                                <button type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer2 />
+        </>
     );
 };
 

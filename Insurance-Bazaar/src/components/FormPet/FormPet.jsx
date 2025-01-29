@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react";
 import { backendAPI } from "../../api/BackendApi";
 import { Link } from "react-router-dom";
 import "../FormCar/FormCar.scss";
+import NavBar2 from "../NavBar2/NavBar2";
+import Footer2 from "../Footer2/Footer2";
 
 const FormPet = () => {
+    const formBackground = "var(--tp-common-black)";
+    const formCopyright = "var(--tp-common-black)";
+    const formFontColor = "var(--tp-common-white)";
+
     const petTypes = ["Dog", "Cat", "Other"];
     const petGenders = ["Male", "Female"];
     const petAges = ["Less than 1 year old"];
@@ -128,21 +134,44 @@ const FormPet = () => {
     }, []);
 
     return (
-        <div>
+        <>
+            <NavBar2 />
             <div className="form">
                 <div className="container-fluid">
-                    <div className="back_button">
+                    {/* <div className="back_button">
                         <Link to="/#service">
                             <button>back</button>
                         </Link>
+                    </div> */}
+
+                    <div className="row image_row">
+                        <div className="col-xl-7 col-lg-7 col-12 content_col">
+                            <div className="content">
+                                <h3>
+                                    Get Your <span>Pet Insurance</span> Quote Today
+                                </h3>
+                                <p>
+                                    Fill out the form below to help us tailor the perfect pet insurance policy for your
+                                    furry friend. By providing accurate details about your pet’s breed, age, and health
+                                    history, we can offer you the best options at competitive prices. It's quick, secure,
+                                    and hassle-free!
+                                </p>
+                            </div>
+                        </div>
+                        <div className="col-xl-5 col-lg-5 col-12 image_col">
+                            <div className="image_section">
+                                <img src="/images/bike-section/bike-image-10.png" alt="" />
+                            </div>
+                        </div>
                     </div>
-                    <div className="row title_row">
+
+                    {/* <div className="row title_row">
                         <div className="col-12 title_col">
                             <h1>
                                 Get your <span>Pet insurance</span> quotes
                             </h1>
                         </div>
-                    </div>
+                    </div> */}
                     <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
                         {successMessage || " "}
                     </p>
@@ -151,7 +180,7 @@ const FormPet = () => {
                         <div className="form_content">
                             <div className="form_title">
                                 <i className="bx bx-info-circle"></i>
-                                <h4>Tell us about yourself</h4>
+                                <h4>We’re Almost There! Just a Few Details Needed</h4>
                             </div>
                             <div className="container">
                                 <form onSubmit={handleSubmit}>
@@ -203,13 +232,14 @@ const FormPet = () => {
                                                 required
                                             />
 
-                                            {errors.phoneNumber && (
+                                            {/* {errors.phoneNumber && (
                                                 <p className="error-message" style={{ color: "red" }}>
                                                     {errors.phoneNumber}
                                                 </p>
-                                            )}
+                                            )} */}
                                         </div>
                                         <div className="col-lg-6 item">
+                                        <div className="custom-select-wrapper">
                                             <select
                                                 name="petType"
                                                 value={formData.petType}
@@ -225,11 +255,13 @@ const FormPet = () => {
                                                     </option>
                                                 ))}
                                             </select>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div className="row form_row">
                                         <div className="col-lg-4 item">
+                                        <div className="custom-select-wrapper">
                                             <select name="petAge" value={formData.petAge} onChange={handleChange} required>
                                                 <option value="" disabled>
                                                     Age of Pet
@@ -240,6 +272,7 @@ const FormPet = () => {
                                                     </option>
                                                 ))}
                                             </select>
+                                            </div>
                                         </div>
 
                                         <div className="col-lg-4 item">
@@ -254,6 +287,7 @@ const FormPet = () => {
                                         </div>
 
                                         <div className="col-lg-4 item">
+                                        <div className="custom-select-wrapper">
                                             <select
                                                 name="petGender"
                                                 value={formData.petGender}
@@ -269,6 +303,7 @@ const FormPet = () => {
                                                     </option>
                                                 ))}
                                             </select>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -319,7 +354,8 @@ const FormPet = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer2 />
+        </>
     );
 };
 

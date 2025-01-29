@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react";
 import { backendAPI } from "../../api/BackendApi";
 import { Link } from "react-router-dom";
 import "../FormCar/FormCar.scss";
+import NavBar2 from "../NavBar2/NavBar2";
+import Footer2 from "../Footer2/Footer2";
 
 const FormBusiness = () => {
+    const formBackground = "var(--tp-common-black)";
+    const formCopyright = "var(--tp-common-black)";
+    const formFontColor = "var(--tp-common-white)";
+
     const insuranceTypes = [
         "I need several insurances for my business",
         "Office Insurance Package",
@@ -136,110 +142,143 @@ const FormBusiness = () => {
     }, []);
 
     return (
-        <div className="form">
-            <div className="container-fluid">
-                <div className="back_button">
-                    <Link to="/#service">
-                        <button>back</button>
-                    </Link>
-                </div>
-                <div className="row title_row">
-                    <div className="col-12 title_col">
-                        <h1>
-                            Get your <span>Business insurance</span> quotes
-                        </h1>
-                    </div>
-                </div>
-                <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
-                    {successMessage || " "}
-                </p>
+        <>
+            <NavBar2 />
+            <div className="form">
+                <div className="container-fluid">
+                    {/* <div className="back_button">
+                        <Link to="/#service">
+                            <button>back</button>
+                        </Link>
+                    </div> */}
 
-                <div className="form_section">
-                    <div className="form_content">
-                        <div className="form_title">
-                            <i className="bx bx-info-circle"></i>
-                            <h4>Tell us about yourself</h4>
+                    <div className="row image_row">
+                        <div className="col-xl-7 col-lg-7 col-12 content_col">
+                            <div className="content">
+                                <h3>
+                                    Get Your <span>Business Insurance</span> Quote Today
+                                </h3>
+                                <p>
+                                    Fill out the form below to help us tailor the perfect business insurance policy for your
+                                    needs. By providing accurate details about your business type, industry, and coverage
+                                    preferences, we can offer you the best options at competitive prices. It's quick,
+                                    secure, and hassle-free!
+                                </p>
+                            </div>
                         </div>
-                        <div className="container">
-                            <form onSubmit={handleSubmit}>
-                                <div className="row form_row">
-                                    <div className="col-lg-4 item">
-                                        <input
-                                            type="text"
-                                            name="firstName"
-                                            placeholder="First Name"
-                                            value={formData.firstName}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="col-lg-4 item">
-                                        <input
-                                            type="text"
-                                            name="lastName"
-                                            placeholder="Last Name"
-                                            value={formData.lastName}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="col-lg-4 item">
-                                        <input
-                                            type="text"
-                                            name="companyName"
-                                            placeholder="Company Name"
-                                            value={formData.companyName}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className="row form_row">
-                                    <div className="col-lg-5 item">
-                                        <input
-                                            type="text"
-                                            name="phoneNumber"
-                                            placeholder="Phone Number"
-                                            value={formData.phoneNumber}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                        {errors.phoneNumber && (
-                                            <p className="error-message" style={{ color: "red" }}>
-                                                {errors.phoneNumber}
-                                            </p>
-                                        )}
-                                    </div>
-                                    <div className="col-lg-7 item">
-                                        <select
-                                            name="insuranceType"
-                                            value={formData.insuranceType}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled>
-                                                Type of Insurance
-                                            </option>
-                                            {insuranceTypes.map((type, index) => (
-                                                <option key={index} value={type}>
-                                                    {type}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                </div>
+                        <div className="col-xl-5 col-lg-5 col-12 image_col">
+                            <div className="image_section">
+                                <img src="/images/bike-section/bike-image-10.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
 
-                                <div className="row form_row">
-                                    <div className="col-xl-2 col-lg-3 col-12 item">
-                                        <button type="submit">Submit</button>
+                    {/* <div className="row title_row">
+                        <div className="col-12 title_col">
+                            <h1>
+                                Get your <span>Business insurance</span> quotes
+                            </h1>
+                        </div>
+                    </div> */}
+                    <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
+                        {successMessage || " "}
+                    </p>
+
+                    <div className="form_section">
+                        <div className="form_content">
+                            <div className="form_title">
+                                <i className="bx bx-info-circle"></i>
+                                <h4>We’re Almost There! Just a Few Details Needed</h4>
+                            </div>
+                            <div className="container">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="row form_row">
+                                        <div className="col-lg-4 item">
+                                            <label htmlFor="">What's Your First Name?</label>
+                                            <input
+                                                type="text"
+                                                name="firstName"
+                                                placeholder="First Name"
+                                                value={formData.firstName}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-lg-4 item">
+                                            <label htmlFor="">And Your Last Name?</label>
+                                            <input
+                                                type="text"
+                                                name="lastName"
+                                                placeholder="Last Name"
+                                                value={formData.lastName}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-lg-4 item">
+                                            <label htmlFor="">What Is Your Company Name?</label>
+                                            <input
+                                                type="text"
+                                                name="companyName"
+                                                placeholder="Company Name"
+                                                value={formData.companyName}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                    <div className="row form_row">
+                                        <div className="col-lg-5 item">
+                                            <label htmlFor="">Best Contact Number to Reach You</label>
+                                            <input
+                                                type="text"
+                                                name="phoneNumber"
+                                                placeholder="Phone Number"
+                                                value={formData.phoneNumber}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                            {/* {errors.phoneNumber && (
+                                                <p className="error-message" style={{ color: "red" }}>
+                                                    {errors.phoneNumber}
+                                                </p>
+                                            )} */}
+                                        </div>
+                                        <div className="col-lg-7 item">
+                                            <label htmlFor="">Choose Your Coverage Type</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="insuranceType"
+                                                    value={formData.insuranceType}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        Type of Insurance
+                                                    </option>
+                                                    {insuranceTypes.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="row form_row">
+                                        <div className="col-xl-2 col-lg-3 col-12 item">
+                                            <button type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer2 />
+        </>
     );
 };
 
