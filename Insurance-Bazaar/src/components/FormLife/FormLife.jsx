@@ -256,7 +256,7 @@ const FormLife = () => {
                     </div>
                 </div>
             </div>
-            <Footer2 />
+            <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />
         </>
     );
 };
