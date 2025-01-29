@@ -7,6 +7,7 @@ import "./CarSection.scss";
 const CarSection = () => {
     const navigate = useNavigate();
     const sectionColor = "linear-gradient(190deg, #e3bbbb2f, #ffd9007c)"
+    const copyright = "linear-gradient(190deg, #ffd9007c, #ffd9007c)"
 
     const handleGetQuotes = () => {
         navigate("/form/car");
@@ -244,7 +245,7 @@ const CarSection = () => {
                     </div>
                 </div>
             </div>
-            <Footer2 background={sectionColor} />
+            <Footer2 copyright={copyright} background={sectionColor} />
         </>
     );
 };

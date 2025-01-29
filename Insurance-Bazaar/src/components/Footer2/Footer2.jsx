@@ -1,14 +1,12 @@
 import React from "react";
 import "./Footer2.scss";
 
-const Footer2 = ({background, fontColor}) => {
+
+const Footer2 = ({background, copyright, fontColor}) => {
     const footerItems = [
         {
             title: "Our company",
-            items: [
-                // { name: "Our Story", link: "#our-story" },
-                // { name: "News & Blog", link: "#news-blog" },
-                // { name: "Careers", link: "#careers" },
+            items: [ 
                 { name: "Customer support", link: "#get_insurance" },
                 { name: "Contact us", link: "#get_insurance" },
             ],
@@ -17,10 +15,7 @@ const Footer2 = ({background, fontColor}) => {
             title: "Our offer",
             items: [
                 { name: "Insurance Plans", link: "#service" },
-                // { name: "Special Discounts", link: "#special-discounts" },
-                // { name: "Customer Testimonials", link: "#testimonials" },
-                // { name: "Partners", link: "#partners" },
-                // { name: "FAQs", link: "#faqs" },
+                
             ],
         },
         {
@@ -29,8 +24,6 @@ const Footer2 = ({background, fontColor}) => {
                 { name: "Email Us", link: "mailto:salesinsurancebasaar@gmail.com" },
                 { name: "Call Support", link: "tel:+971566900471" },
                 { name: "Find Us", link: "https://wa.me/971566900471" },
-                // { name: "Working Hours", link: "#working-hours" },
-                // { name: "Feedback", link: "#feedback" },
             ],
         },
     ];
@@ -48,21 +41,10 @@ const Footer2 = ({background, fontColor}) => {
             icon: "bx bxl-instagram",
             link: "https://www.instagram.com/",
         },
-        // {
-        //     icon: "bx bxl-youtube",
-        //     link: "https://www.youtube.com/",
-        // },
-        // {
-        //     icon: "bx bxl-linkedin",
-        //     link: "https://www.linkedin.com/",
-        // },
     ];
     return (
         <>
             <div className="footer2" style={{background: background}}>
-                {/* <div className="footer-shape">
-                    <img src="/images/slider/02_Shape.png" alt=""></img>
-                </div> */}
                 <div className="container">
                     <div className="row logo_row">
                         <div className="col-12 logo_col">
@@ -107,7 +89,7 @@ const Footer2 = ({background, fontColor}) => {
                     </div>
                 </div>
             </div>
-            <div className="copy_right2" style={{background: background}}>
+            <div className="copy_right2" style={{background: copyright}}>
                 <div className="container">
                     <div className="col-xl-12 copy_col">
                         <div className="copy_content">

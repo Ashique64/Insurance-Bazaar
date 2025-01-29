@@ -40,7 +40,7 @@ const NavBar2 = () => {
                     
                     <div className="col-xl-4 col-lg-2 col-6  nav_col3">
                         <div className="items">
-                            <div className="call_us">
+                            <div className="call_us_items">
                                 <i className="bx bxs-phone-call"></i>
                                 <a href="tel:+971566900471">+971 56 690 0471</a>
                             </div>

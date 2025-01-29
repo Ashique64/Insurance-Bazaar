@@ -121,9 +121,7 @@
 }
 
 .copy_right2 {
-    padding: 25px 0 60px 0;
-    // background-color: var(--tp-common-black);
-    background: linear-gradient(345deg, #edd7577c, #ffd9007c);
+    padding: 25px 0 40px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.484);
 
     .container {
@@ -149,7 +147,7 @@
 }
 
 @media (max-width: 767px) {
-    .footer {
+    .footer2 {
         padding-top: 100px;
         .container {
             margin: 0;
@@ -158,21 +156,28 @@
                 .logo_col {
                     .logo_items {
                         display: flex;
-                        flex-direction: column;
+                        // flex-direction: column;
                         align-items: start;
 
                         .logo {
                             margin-bottom: 25px;
                             margin-left: 8px;
+                            width: 130px;
                         }
 
                         .social {
                             display: flex;
+                            justify-content: center;
+                            align-items: center;
                             a {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
                                 text-decoration: none;
+                                height: 35px;
+                                width: 35px;
+                                font-size: 6px;
+                                margin-left: 4px;
                             }
                         }
                     }
