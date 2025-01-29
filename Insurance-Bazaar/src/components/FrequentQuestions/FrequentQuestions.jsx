@@ -7,9 +7,10 @@ const FrequentQuestions = () => {
             <div className="row question-row">
                 <div className="col-12 question-col">
                     <div className="question-content">
-                        <h2>
-                            <i className="bx bx-help-circle"></i> Frequently Asked Questions
-                        </h2>
+                        <div className="title">
+                            <i className="bx bx-help-circle"></i>
+                            <h2>Frequently Asked Questions</h2>
+                        </div>
                         <div className="item">
                             <h3>
                                 <i className="bx bx-chevron-down"></i>Is Car Insurance Transferable in Dubai?

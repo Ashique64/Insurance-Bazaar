@@ -10,6 +10,7 @@ const FormCar = () => {
     const [successMessage, setSuccessMessage] = useState("");
 
     const formBackground = "var(--tp-common-black)";
+    const formCopyright = "var(--tp-common-black)";
     const formFontColor = "var(--tp-common-white)";
     const modelYear = [
         2025,
@@ -716,7 +717,7 @@ const FormCar = () => {
                     <FrequentQuestions/>
                 </div>
             </div>
-            <Footer2 background={formBackground} fontColor={formFontColor} />
+            <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />
         </>
     );
 };
