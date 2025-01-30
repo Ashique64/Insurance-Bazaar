@@ -269,6 +269,15 @@
                                 }
                             }
 
+                            input[type="checkbox"] {
+                                    margin: 0;
+                                    width: 5%;
+                                    height: 25%;
+                                    margin-right: 10px;
+                                    margin-left: 5px;
+                                
+                            }
+
                             label {
                                 display: flex;
                                 align-items: center;

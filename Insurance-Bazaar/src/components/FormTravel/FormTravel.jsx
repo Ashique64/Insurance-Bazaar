@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 import { backendAPI } from "../../api/BackendApi";
 import { Link } from "react-router-dom";
 import "../FormCar/FormCar.scss";
+import NavBar2 from "../NavBar2/NavBar2";
+import Footer2 from "../Footer2/Footer2";
 
 const FormTravel = () => {
     const [successMessage, setSuccessMessage] = useState("");
+
+    const formBackground = "var(--tp-common-black)";
+    const formCopyright = "var(--tp-common-black)";
+    const formFontColor = "var(--tp-common-white)";
+
     const journeyTypes = ["You are travelling from the UAE", "You are travelling to the UAE"];
     const Genders = ["Male", "Female", "Other"];
     const nationalities = [
@@ -220,43 +227,43 @@ const FormTravel = () => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
 
-        if (name === "email") validateEmail(value);
-        if (name === "phoneNumber") validatePhone(value);
+        // if (name === "email") validateEmail(value);
+        // if (name === "phoneNumber") validatePhone(value);
     };
 
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setErrors((prev) => ({ ...prev, email: "Invalid email address" }));
-        } else {
-            setErrors((prev) => {
-                const { email, ...rest } = prev;
-                return rest;
-            });
-        }
-    };
+    // const validateEmail = (email) => {
+    //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //     if (!emailRegex.test(email)) {
+    //         setErrors((prev) => ({ ...prev, email: "Invalid email address" }));
+    //     } else {
+    //         setErrors((prev) => {
+    //             const { email, ...rest } = prev;
+    //             return rest;
+    //         });
+    //     }
+    // };
 
-    const validatePhone = (phone) => {
-        const phoneRegex = /^(?:\+971|971)\d{7,8}$/;
+    // const validatePhone = (phone) => {
+    //     const phoneRegex = /^(?:\+971|971)\d{7,8}$/;
 
-        if (!phoneRegex.test(phone)) {
-            setErrors((prev) => ({
-                ...prev,
-                phone: "Phone number must start with +971 or 971 and contain only digits and max 8 digits",
-            }));
-        } else {
-            setErrors((prev) => {
-                const { phone, ...rest } = prev;
-                return rest;
-            });
-        }
-    };
+    //     if (!phoneRegex.test(phone)) {
+    //         setErrors((prev) => ({
+    //             ...prev,
+    //             phone: "Phone number must start with +971 or 971 and contain only digits and max 8 digits",
+    //         }));
+    //     } else {
+    //         setErrors((prev) => {
+    //             const { phone, ...rest } = prev;
+    //             return rest;
+    //         });
+    //     }
+    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        validateEmail(formData.email);
-        validatePhone(formData.phoneNumber);
+        // validateEmail(formData.email);
+        // validatePhone(formData.phoneNumber);
 
         if (Object.keys(errors).length > 0) {
             setSuccessMessage("Please fix the errors before submitting.");
@@ -311,176 +318,230 @@ const FormTravel = () => {
     }, []);
 
     return (
-        <div className="form">
-            <div className="container-fluid">
-                <div className="back_button">
+        <>
+            <NavBar2 />
+            <div className="form">
+                <div className="container-fluid">
+                    {/* <div className="back_button">
                     <Link to="/#service">
                         <button>back</button>
                     </Link>
-                </div>
-                <div className="row title_row">
+                </div> */}
+
+                    <div className="row image_row">
+                        <div className="col-xl-7 col-lg-7 col-12 content_col">
+                            <div className="content">
+                                <h3>
+                                    Get Your <span>Travel Insurance</span> Quote Today
+                                </h3>
+                                <p>
+                                    Whether you're traveling for leisure or business, ensure you're covered for unexpected
+                                    situations. Fill out the form below to get a customized travel insurance plan that
+                                    includes medical emergencies, trip cancellations, lost baggage, and more. Safe travels
+                                    start with the right protection!
+                                </p>
+                            </div>
+                        </div>
+                        <div className="col-xl-5 col-lg-5 col-12 image_col">
+                            <div className="image_section">
+                                <img src="/images/travel-section/travel-image-10.png" alt="Travel Insurance" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <div className="row title_row">
                     <div className="col-12 title_col">
                         <h1>
                             Get your <span>Travel insurance</span> quotes
                         </h1>
                     </div>
-                </div>
-                <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
-                    {successMessage || " "}
-                </p>
+                </div> */}
+                    <p className={`success-message ${successMessage ? `show ${getMessageClass()}` : ""}`}>
+                        {successMessage || " "}
+                    </p>
 
-                <div className="form_section">
-                    <div className="form_content">
-                        <div className="form_title">
-                            <i className="bx bx-info-circle"></i>
-                            <h4>Tell us about yourself</h4>
-                        </div>
-                        <div className="container">
-                            <form onSubmit={handleSubmit}>
-                                <div className="row form_row">
-                                    <div className="col-lg-6 item">
-                                        <select
-                                            name="journeyType"
-                                            value={formData.journeyType}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled>
-                                                Your journey take you
-                                            </option>
-                                            {journeyTypes.map((type, index) => (
-                                                <option key={index} value={type}>
-                                                    {type}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                    {formData.journeyType === "You are travelling from the UAE" && (
+                    <div className="form_section">
+                        <div className="form_content">
+                            <div className="form_title">
+                                <i className="bx bx-info-circle"></i>
+                                <h4>Tell us about yourself</h4>
+                            </div>
+                            <div className="container">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="row form_row">
                                         <div className="col-lg-6 item">
-                                            <select
-                                                name="travelDestination"
-                                                value={formData.travelDestination}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Travel Destination
-                                                </option>
-                                                {nationalities.map((nation, index) => (
-                                                    <option key={index} value={nation}>
-                                                        {nation}
+                                            <label>Your journey's starting point 🚀</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="journeyType"
+                                                    value={formData.journeyType}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        {" "}
+                                                        Your journey take you{" "}
                                                     </option>
-                                                ))}
-                                            </select>
+                                                    {journeyTypes.map((type, index) => (
+                                                        <option key={index} value={type}>
+                                                            {type}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                         </div>
-                                    )}
-                                    {formData.journeyType === "You are travelling to the UAE" && (
-                                        <div className="col-lg-6 item">
-                                            <select
-                                                name="departingFrom"
-                                                value={formData.departingFrom}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="" disabled>
-                                                    Departing From
-                                                </option>
-                                                {nationalities.map((nation, index) => (
-                                                    <option key={index} value={nation}>
-                                                        {nation}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    )}
-                                </div>
-
-                                <div className="row form_row">
-                                    <div className="col-lg-6 item">
-                                        <input
-                                            type="text"
-                                            name="fullName"
-                                            placeholder="Name as per passport"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="col-lg-6 item">
-                                        <input
-                                            type="text"
-                                            name="phoneNumber"
-                                            placeholder="Phone Number"
-                                            value={formData.phoneNumber}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                        {errors.phoneNumber && (
-                                            <p className="error-message" style={{ color: "red" }}>
-                                                {errors.phoneNumber}
-                                            </p>
+                                        {formData.journeyType === "You are travelling from the UAE" && (
+                                            <div className="col-lg-6 item">
+                                                <label>Your travel destination awaits ✈️</label>
+                                                <div className="custom-select-wrapper">
+                                                    <select
+                                                        name="travelDestination"
+                                                        value={formData.travelDestination}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            {" "}
+                                                            Travel Destination{" "}
+                                                        </option>
+                                                        {nationalities.map((nation, index) => (
+                                                            <option key={index} value={nation}>
+                                                                {nation}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        )}
+                                        {formData.journeyType === "You are travelling to the UAE" && (
+                                            <div className="col-lg-6 item">
+                                                <label>Where are you departing from? 🌍</label>
+                                                <div className="custom-select-wrapper">
+                                                    <select
+                                                        name="departingFrom"
+                                                        value={formData.departingFrom}
+                                                        onChange={handleChange}
+                                                        required
+                                                    >
+                                                        <option value="" disabled>
+                                                            {" "}
+                                                            Departing From{" "}
+                                                        </option>
+                                                        {nationalities.map((nation, index) => (
+                                                            <option key={index} value={nation}>
+                                                                {nation}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+                                            </div>
                                         )}
                                     </div>
-                                </div>
 
-                                <div className="row form_row">
-                                    <div className="col-lg-4 item">
-                                        <input
-                                            type="text"
-                                            name="email"
-                                            placeholder="Your E-mail"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                        {errors.email && (
-                                            <p className="error-message" style={{ color: "red" }}>
-                                                {errors.email}
-                                            </p>
-                                        )}
+                                    <div className="row form_row">
+                                        <div className="col-lg-6 item">
+                                            <label>Your full name as on passport 🛂</label>
+                                            <input
+                                                type="text"
+                                                name="fullName"
+                                                placeholder="Name as per passport"
+                                                value={formData.fullName}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-lg-6 item">
+                                            <label>Stay connected! Your phone number 📞</label>
+                                            <input
+                                                type="text"
+                                                name="phoneNumber"
+                                                placeholder="Phone Number"
+                                                value={formData.phoneNumber}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                            {errors.phoneNumber && (
+                                                <p className="error-message" style={{ color: "red" }}>
+                                                    {errors.phoneNumber}
+                                                </p>
+                                            )}
+                                        </div>
                                     </div>
-                                    <div className="col-lg-4 item">
-                                        <select
-                                            name="nationality"
-                                            value={formData.nationality}
-                                            onChange={handleChange}
-                                            required
-                                        >
-                                            <option value="" disabled>
-                                                Your nationality
-                                            </option>
-                                            {nationalities.map((nation, index) => (
-                                                <option key={index} value={nation}>
-                                                    {nation}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                    <div className="col-lg-4 item">
-                                        <select name="gender" value={formData.gender} onChange={handleChange} required>
-                                            <option value="" disabled>
-                                                Your Gender
-                                            </option>
-                                            {Genders.map((gender, index) => (
-                                                <option key={index} value={gender}>
-                                                    {gender}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div className="row form_row">
-                                    <div className="col-xl-2 col-lg-3 col-12 item">
-                                        <button type="submit">Submit</button>
+                                    <div className="row form_row">
+                                        <div className="col-lg-4 item">
+                                            <label>Your best contact email 📩</label>
+                                            <input
+                                                type="text"
+                                                name="email"
+                                                placeholder="Your E-mail"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                            {errors.email && (
+                                                <p className="error-message" style={{ color: "red" }}>
+                                                    {errors.email}
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="col-lg-4 item">
+                                            <label>Where are you from? 🏳️</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="nationality"
+                                                    value={formData.nationality}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        {" "}
+                                                        Your nationality{" "}
+                                                    </option>
+                                                    {nationalities.map((nation, index) => (
+                                                        <option key={index} value={nation}>
+                                                            {nation}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-4 item">
+                                            <label>How do you identify? ⚧️</label>
+                                            <div className="custom-select-wrapper">
+                                                <select
+                                                    name="gender"
+                                                    value={formData.gender}
+                                                    onChange={handleChange}
+                                                    required
+                                                >
+                                                    <option value="" disabled>
+                                                        {" "}
+                                                        Your Gender{" "}
+                                                    </option>
+                                                    {Genders.map((gender, index) => (
+                                                        <option key={index} value={gender}>
+                                                            {gender}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+
+                                    <div className="row form_row">
+                                        <div className="col-xl-2 col-lg-3 col-12 item">
+                                            <button type="submit">Submit 📤</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />
+        </>
     );
 };
 
