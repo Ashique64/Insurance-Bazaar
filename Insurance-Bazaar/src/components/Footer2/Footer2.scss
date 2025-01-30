@@ -52,7 +52,7 @@
                             height: 50px;
                             width: 50px;
                             border-radius: 50%;
-                            background-color: rgba(169, 102, 8, 0.722);
+                            background-color: rgba(52, 117, 238, 0.8);
                             line-height: 50px;
                             color: var(--tp-common-white);
                             display: inline-block;
@@ -64,7 +64,7 @@
                             box-shadow: none;
 
                             &:hover {
-                                box-shadow: inset 0px 0px 20px rgba(192, 120, 3, 0.722);
+                                box-shadow: inset 0px 0px 20px rgba(1, 79, 223, 0.959);
                                 transform: scale(1.15);
                             }
                         }

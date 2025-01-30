@@ -122,8 +122,7 @@
                     .item_col {
                         margin: 10px 0;
                         .item {
-                            // background-color: rgba(192, 156, 24, 0.505);
-                            background-color: rgba(216, 185, 75, 0.505);
+                            background-color: var(--tp-color-2);
                             padding: 20px;
                             border-radius: 10px;
                             height: 160px;
@@ -131,8 +130,8 @@
                             transition: 0.3s ease-in-out;
 
                             p {
-                                color: var(--tp-common-black);
                                 strong {
+                                    color: var(--tp-common-white);
                                     font-size: 16px;
                                 }
                             }
@@ -172,7 +171,7 @@
                 .item_col {
                     margin: 10px 0;
                     .item {
-                        background-color: rgba(216, 185, 75, 0.505);
+                        background-color: var(--tp-color-2);
                         padding: 20px;
                         height: 300px;
                         width: 100%;
@@ -197,7 +196,7 @@
                         }
 
                         h6 {
-                            color: var(--tp-common-black);
+                            color: var(--tp-common-white);
                             font-weight: 800;
                             font-size: 20px;
                             text-align: center;
@@ -262,7 +261,7 @@
 
                 .item1 {
                     padding: 15px;
-                    background: linear-gradient(90deg, #ffa6007a, #ffd9007c);
+                    background: linear-gradient(235deg, rgba(46, 107, 221, 0.4), rgba(185, 200, 229, 0.556));
                     margin: 6px 0;
                     border-radius: 10px;
                     cursor: default;
@@ -291,8 +290,8 @@
                     width: 100%;
                     padding: 30px;
                     border-radius: 10px;
-                    background: linear-gradient(90deg, #ffa6007a, #ffd9007c);
-                    box-shadow: 0px 5px 10px rgba(144, 115, 8, 0.505);
+                    background: linear-gradient(235deg, rgba(46, 107, 221, 0.4), rgba(185, 200, 229, 0.556));
+                    box-shadow: 0px 5px 10px rgba(8, 60, 144, 0.505);
 
                     i {
                         color: var(--tp-common-white);
@@ -306,7 +305,7 @@
                         font-size: 20px;
                         font-weight: 600;
                         margin: 0 15px;
-                        color: white;
+                        color: var(--tp-common-black);
                     }
 
                     button {

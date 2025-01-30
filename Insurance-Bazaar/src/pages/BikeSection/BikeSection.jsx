@@ -6,8 +6,8 @@ import "../CarSection/CarSection.scss";
 
 const BikeSection = () => {
     const navigate = useNavigate();
-    const sectionColor = "linear-gradient(190deg, #e3bbbb2f, #ffd9007c)";
-    const copyright = "linear-gradient(190deg, #ffd9007c, #ffd9007c)";
+    const sectionColor = "linear-gradient(0deg, rgba(100, 149, 237, 0.4), rgba(255, 255, 255, 0.8))"
+    const copyright = "linear-gradient(180deg, rgba(100, 149, 237, 0.4), rgba(100, 149, 237, 0.4))"
     const handleGetQuotes = () => {
         navigate("/form/bike");
     };
