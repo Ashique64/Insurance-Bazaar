@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./AddCarData.scss";
 
 const AddCarData = () => {
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [newCarData, setNewCarData] = useState({
         "Make Name": "",
         "Model Name": "",
@@ -46,6 +45,13 @@ const AddCarData = () => {
     };
 
     const addCarData = async () => {
+        if (!newCarData["Make Name"] || !newCarData["Model Name"] || !newCarData["Trim Name"]) {
+            setSuccessMessage("Please fill the fields.");
+            setTimeout(() => {
+                setSuccessMessage("");
+            }, 3000);
+            return;
+        }
         setIsLoading(true);
         try {
             const response = await axios.post(`${backendAPI}/admins/add_car/`, newCarData, {
@@ -74,6 +80,9 @@ const AddCarData = () => {
                 setSuccessMessage("");
             }, 3000);
         } finally {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 3000);
             setIsLoading(false);
         }
     };
@@ -114,7 +123,7 @@ const AddCarData = () => {
 
     const handleBackNavigate = () => {
         navigate("/admin_panel");
-    }
+    };
 
     return (
         <div className="add-car-form">

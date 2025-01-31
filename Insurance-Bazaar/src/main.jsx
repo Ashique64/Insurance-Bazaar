@@ -5,6 +5,8 @@ import './index.css'
 import './assets/css/bootstrap.min.css'
 import './assets/css/font-awesome-pro.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'normalize.css';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

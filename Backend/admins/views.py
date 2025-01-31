@@ -13,8 +13,10 @@ from django.conf import settings
 import os
 from datetime import datetime
 import uuid
+from sentmail.models import Car
 
 # Create your views here.
+
 
 class AdminLoginView(GenericAPIView):
     serializer_class = AdminLoginSerializer
@@ -83,24 +85,14 @@ class AddCarDataView(APIView):
     def post(self, request):
         try:
             new_car_data = request.data
-            new_car_data["id"] = str(uuid.uuid4())
-            new_car_data["added_at"] = datetime.now().isoformat()
 
-            json_file_path = os.path.join(
-                settings.REACT_PUBLIC_DIR, "carAPI.json")
+            car = Car.objects.create(
+                makename=new_car_data.get("Make Name"),
+                modelname=new_car_data.get("Model Name"),
+                trimname=new_car_data.get("Trim Name"),
+            )
 
-            if os.path.exists(json_file_path):
-                with open(json_file_path, "r") as file:
-                    data = json.load(file)
-            else:
-                data = []
-
-            data.append(new_car_data)
-
-            with open(json_file_path, "w") as file:
-                json.dump(data, file, indent=4)
-
-            return Response({"message": "Car data added successfully.", "car": new_car_data}, status=status.HTTP_201_CREATED)
+            return Response({"message": "Car data added successfully.", "car": {"id": car.id, "Make Name": car.makename, "Model Name": car.modelname, "Trim Name": car.trimname}}, status=status.HTTP_201_CREATED)
 
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -111,22 +103,13 @@ class RecentlyAddedCarsView(APIView):
 
     def get(self, request):
         try:
-            json_file_path = os.path.join(
-                settings.REACT_PUBLIC_DIR, "carAPI.json")
 
-            if os.path.exists(json_file_path):
-                with open(json_file_path, "r") as file:
-                    data = json.load(file)
+            recent_cars = Car.objects.all().order_by('-id')
 
-                    recent_cars = sorted(
-                        [car for car in data if "id" in car],
-                        key=lambda x: x.get("added_at", ""),
-                        reverse=True
-                    )
+            car_list = [{"id": car.id, "Make Name": car.makename,
+                         "Model Name": car.modelname, "Trim Name": car.trimname} for car in recent_cars]
 
-                return Response(recent_cars, status=status.HTTP_200_OK)
-            else:
-                return Response([], status=status.HTTP_200_OK)
+            return Response(car_list[:10], status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -137,28 +120,19 @@ class EditCarDataView(APIView):
     def put(self, request, car_id):
         try:
             updated_car_data = request.data
-            json_file_path = os.path.join(settings.REACT_PUBLIC_DIR, "carAPI.json")
+            try:   
+                car = Car.objects.get(id=car_id)
 
-            if os.path.exists(json_file_path):
-                with open(json_file_path, "r") as file:
-                    data = json.load(file)
+                car.makename = updated_car_data.get("Make Name", car.makename)
+                car.modelname = updated_car_data.get(
+                    "Model Name", car.modelname)
+                car.trimname = updated_car_data.get("Trim Name", car.trimname)
+                car.save()
 
-                car_found = False
-                for car in data:
-                    if car.get("id") == car_id:
-                        car.update(updated_car_data)
-                        car_found = True
-                        break
+                return Response({"message": "Car data updated successfully.", "car": {"id": car.id, "Make Name": car.makename, "Model Name": car.modelname, "Trim Name": car.trimname}}, status=status.HTTP_200_OK)
 
-                if not car_found:
-                    return Response({"error": "Car with specified ID not found."}, status=status.HTTP_404_NOT_FOUND)
-
-                with open(json_file_path, "w") as file:
-                    json.dump(data, file, indent=4)
-
-                return Response({"message": "Car data updated successfully.", "car": updated_car_data}, status=status.HTTP_200_OK)
-
-            return Response({"error": "Data file not found."}, status=status.HTTP_404_NOT_FOUND)
+            except Car.DoesNotExist:
+                return Response({"error": "Car with specified ID not found."}, status=status.HTTP_404_NOT_FOUND)
 
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
