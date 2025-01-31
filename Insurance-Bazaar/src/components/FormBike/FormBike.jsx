@@ -6,7 +6,6 @@ import NavBar2 from "../NavBar2/NavBar2";
 import Footer2 from "../Footer2/Footer2";
 import BikeFrequentQuestions from "../BikeFrequentQuestions/BikeFrequentQuestions";
 
-
 const FormBike = () => {
     const [successMessage, setSuccessMessage] = useState("");
     const formBackground = "var(--tp-common-black)";
@@ -298,14 +297,24 @@ const FormBike = () => {
             setLoading(true);
             setTimeout(async () => {
                 try {
-                    const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${value}`, {
-                        headers: {
-                            "X-Api-Key": "uDGutevA2jH6i42kTqzLRg==8uvbwqtMptteYxMt",
-                        },
-                    });
+                    const response = await fetch(`${backendAPI}/api/motorcycle/search/?query=${value}`);
                     if (response.ok) {
                         const data = await response.json();
-                        setSuggestions(data);
+                        const filteredSuggestions = data
+                            .map((bike) => ({
+                                brand: bike.brand_name,
+                                model: bike.model_name,
+                                category: bike.category,
+                            }))
+                            .filter(
+                                (value, index, self) =>
+                                    index ===
+                                    self.findIndex(
+                                        (t) => t.brand === value.brand && t.model === value.model && t.category === value.category
+                                    )
+                            );
+
+                        setSuggestions(filteredSuggestions);
                     } else {
                         setSuggestions([]);
                     }
@@ -349,8 +358,8 @@ const FormBike = () => {
     //     }
     // };
 
-    const handleSuggestionClick = (make, model) => {
-        setFormData({ ...formData, bikeDetails: `${make} ${model}` });
+    const handleSuggestionClick = (brand, model, category) => {
+        setFormData({ ...formData, bikeDetails: `${brand} ${model} ${category}` });
         setSuggestions([]);
     };
 
@@ -484,12 +493,19 @@ const FormBike = () => {
 
                                             {suggestions.length > 0 && (
                                                 <ul className="suggestions">
-                                                    {suggestions.map((car, index) => (
+                                                    {suggestions.map((bike, index) => (
                                                         <li
                                                             key={index}
-                                                            onClick={() => handleSuggestionClick(car.make, car.model)}
+                                                            onClick={() =>
+                                                                handleSuggestionClick(
+                                                                    bike.brand,
+                                                                    bike.model,
+                                                                    bike.category,
+                        
+                                                                )
+                                                            }
                                                         >
-                                                            {car.make} {car.model}
+                                                            {bike.brand} {bike.model} {bike.category} 
                                                         </li>
                                                     ))}
                                                 </ul>
@@ -529,7 +545,9 @@ const FormBike = () => {
                                             />
                                         </div>
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">Select the nationality as per your UAE driving license 🌎</label>
+                                            <label htmlFor="">
+                                                Select the nationality as per your UAE driving license 🌎
+                                            </label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="nationality"
@@ -623,7 +641,7 @@ const FormBike = () => {
                                         )} */}
                                         </div>
                                         <div className="col-lg-3 item">
-                                            <label htmlFor="">Select Emirate of registration  📍</label>
+                                            <label htmlFor="">Select Emirate of registration 📍</label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="emirateRegistered"
@@ -692,7 +710,7 @@ const FormBike = () => {
                             </div>
                         </div>
                     </div>
-                    <BikeFrequentQuestions/>
+                    <BikeFrequentQuestions />
                 </div>
             </div>
             <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />

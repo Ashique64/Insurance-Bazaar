@@ -7,6 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Car
 from .serializers import CarSerializer
+from .models import Motorcycle
+from .serializers import MotorcycleSerializer
 
 
 def send_email(data, subject, fields):
@@ -101,6 +103,7 @@ class CarSearchView(APIView):
         serializer = CarSerializer(cars, many=True)
         return Response(serializer.data)
 
+
 @csrf_exempt
 def bike_send_email(request):
     if request.method == "POST":
@@ -118,6 +121,25 @@ def bike_send_email(request):
         }
         return send_email(data, "New Bike Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+class MotorcycleSearchView(APIView):
+    def get(self, request, format=None):
+        query = request.query_params.get('query', '').lower()
+
+        if query:
+            motorcycles = Motorcycle.objects.filter(
+                brand_name__icontains=query
+            ) | Motorcycle.objects.filter(
+                model_name__icontains=query
+            ) | Motorcycle.objects.filter(
+                category__icontains=query
+            ) 
+        else:
+            motorcycles = Motorcycle.objects.all()
+
+        serializer = MotorcycleSerializer(motorcycles, many=True)
+        return Response(serializer.data)
 
 
 @csrf_exempt
@@ -221,9 +243,9 @@ def home_send_email(request):
         fields = {
             "I am": "i_Am",
             "Live in": "liveIn",
-            "Contents(AED)":"contentsPrice",
-            "Personal(AED)":"personalPrice",
-            "Building(AED)":"buildingPrice",
+            "Contents(AED)": "contentsPrice",
+            "Personal(AED)": "personalPrice",
+            "Building(AED)": "buildingPrice",
             "First Name": "firstName",
             "Last Name": "lastName",
             "E-mail": 'email',
@@ -242,18 +264,17 @@ def travel_send_email(request):
         fields = {
             "Your journey take you": "journeyType",
             "Travel Destination": "travelDestination",
-            "Departing From":"departingFrom",
-            "Name as per passport":"fullName",
-            "E-mail":"email",
+            "Departing From": "departingFrom",
+            "Name as per passport": "fullName",
+            "E-mail": "email",
             "Phone Number": "phoneNumber",
             "Nationality": "nationality",
             "Gender": "gender",
-            
+
         }
 
         return send_email(data, "New Travel Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
-
 
 
 @csrf_exempt
@@ -262,10 +283,10 @@ def contact_send_email(request):
         data = json.loads(request.body)
         fields = {
             "Your Full Name": "fullName",
-            "E-mail":"email",
+            "E-mail": "email",
             "Insurance Type": "insuranceType",
             "Message for You": "message",
-            
+
         }
 
         return send_email(data, "New Contact Form Submission", fields)

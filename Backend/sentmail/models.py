@@ -19,4 +19,4 @@ class Motorcycle(models.Model):
     category = models.CharField(max_length=255)
 
     def __str__(self):
-        return f"{self.brand_name} {self.model_name} ({self.year})"
+        return f"{self.brand_name} {self.model_name} {self.category} ({self.year})"
