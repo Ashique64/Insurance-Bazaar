@@ -300,21 +300,15 @@ const FormCar = () => {
 
             setTimeout(async () => {
                 try {
-                    const response = await fetch("/carAPI.json");
+                    const response = await fetch(`${backendAPI}/api/car/search/?query=${value}`);
                     if (response.ok) {
                         const data = await response.json();
 
                         const filteredSuggestions = data
-                            .filter(
-                                (car) =>
-                                    car["Make Name"].toLowerCase().includes(value.toLowerCase()) ||
-                                    car["Model Name"].toLowerCase().includes(value.toLowerCase()) ||
-                                    car["Trim Name"].toLowerCase().includes(value.toLowerCase())
-                            )
                             .map((car) => ({
-                                make: car["Make Name"],
-                                model: car["Model Name"],
-                                trim: car["Trim Name"],
+                                make: car.makename,
+                                model: car.modelname,
+                                trim: car.trimname,
                             }))
                             .filter(
                                 (value, index, self) =>
@@ -547,7 +541,9 @@ const FormCar = () => {
                                             />
                                         </div>
                                         <div className="col-lg-6 item">
-                                            <label htmlFor="">Select the nationality as per your UAE driving license 🌍</label>
+                                            <label htmlFor="">
+                                                Select the nationality as per your UAE driving license 🌍
+                                            </label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="nationality"
@@ -643,7 +639,7 @@ const FormCar = () => {
                                         </div>
 
                                         <div className="col-lg-3 item">
-                                            <label htmlFor="">Select Emirate of registration  🏙️</label>
+                                            <label htmlFor="">Select Emirate of registration 🏙️</label>
                                             <div className="custom-select-wrapper">
                                                 <select
                                                     name="emirateRegistered"
@@ -713,7 +709,7 @@ const FormCar = () => {
                             </div>
                         </div>
                     </div>
-                    <FrequentQuestions/>
+                    <FrequentQuestions />
                 </div>
             </div>
             <Footer2 copyright={formCopyright} background={formBackground} fontColor={formFontColor} />

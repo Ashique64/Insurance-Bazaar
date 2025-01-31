@@ -3,6 +3,10 @@ from django.core.mail import EmailMessage
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.conf import settings
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import Car
+from .serializers import CarSerializer
 
 
 def send_email(data, subject, fields):
@@ -79,6 +83,23 @@ def car_send_email(request):
         return send_email(data, "New Car Form Submission", fields)
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
+
+class CarSearchView(APIView):
+    def get(self, request, format=None):
+        query = request.query_params.get('query', '').lower()
+        if query:
+            cars = Car.objects.filter(
+                makename__icontains=query
+            ) | Car.objects.filter(
+                modelname__icontains=query
+            ) | Car.objects.filter(
+                trimname__icontains=query
+            )
+        else:
+            cars = Car.objects.all()
+
+        serializer = CarSerializer(cars, many=True)
+        return Response(serializer.data)
 
 @csrf_exempt
 def bike_send_email(request):
