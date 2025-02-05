@@ -94,9 +94,9 @@ const Hero = () => {
                                     <a href="#service">
                                         <button className="btn1">GET STARTED</button>
                                     </a>
-                                    <a href="#get_insurance">
+                                    {/* <a href="#get_insurance">
                                         <button className="btn2">CONTACT US TODAY</button>
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                         </div>
