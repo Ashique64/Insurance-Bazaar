@@ -69,21 +69,29 @@ def send_email(data, subject, fields):
 
 @csrf_exempt
 def car_send_email(request):
-    if request.method == "POST":
-        data = json.loads(request.body)
-        fields = {
-            "Car Details": "carDetails",
-            "Model Year": "modelYear",
-            "Name": "fullName",
-            "Nationality": "nationality",
-            "Birth Date": "birthDate",
-            "Email": "email",
-            "Phone": "phone",
-            "Emirate Registered": "emirateRegistered",
-            "UAE Licence Held": "uaeLicenceHeld",
-        }
-        return send_email(data, "New Car Form Submission", fields)
-    return JsonResponse({"error": "Invalid request method."}, status=400)
+    try:
+        if request.method == "POST":
+            data = json.loads(request.body)
+
+            fields = {
+                "Car Details": "carDetails",
+                "Model Year": "modelYear",
+                "Name": "fullName",
+                "Nationality": "nationality",
+                "Birth Date": "birthDate",
+                "Email": "email",
+                "Phone": "phone",
+                "Emirate Registered": "emirateRegistered",
+                "UAE Licence Held": "uaeLicenceHeld",
+            }
+
+            return send_email(data, "New Car Form Submission", fields)
+
+        else:
+            return JsonResponse({"error": "Invalid request method."}, status=400)
+
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
 
 
 class CarSearchView(APIView):
@@ -134,7 +142,7 @@ class MotorcycleSearchView(APIView):
                 model_name__icontains=query
             ) | Motorcycle.objects.filter(
                 category__icontains=query
-            ) 
+            )
         else:
             motorcycles = Motorcycle.objects.all()
 
