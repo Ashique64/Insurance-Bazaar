@@ -70,14 +70,6 @@ def send_email(data, subject, fields):
 @csrf_exempt
 def car_send_email(request):
     try:
-        if request.method == "OPTIONS":
-            # Allow preflight requests
-            response = JsonResponse({"message": "CORS preflight successful"})
-            response["Access-Control-Allow-Origin"] = "*"
-            response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
-            response["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Requested-With, X-CSRFToken"
-            return response
-
         if request.method == "POST":
             data = json.loads(request.body)
 
