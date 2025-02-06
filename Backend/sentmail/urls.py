@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import car_send_email, life_send_email, bike_send_email, business_send_email, pet_send_email, health_send_email, home_send_email, travel_send_email, contact_send_email, CarSearchView, MotorcycleSearchView
+from .views import CarSendEmail, life_send_email, bike_send_email, business_send_email, pet_send_email, health_send_email, home_send_email, travel_send_email, contact_send_email,\
+      CarSearchView, MotorcycleSearchView
 
 urlpatterns = [
-    path('car/send-email/', car_send_email, name='car_send_email'),
+    path('car/send-email/', CarSendEmail.as_view(), name='car_send_email'),
     path('bike/send-email/', bike_send_email, name='bike_send_email'),
     path('life/send-email/', life_send_email, name='life_send_email'),
     path('business/send-email/', business_send_email, name='business_send_email'),
