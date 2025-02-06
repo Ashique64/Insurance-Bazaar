@@ -99,6 +99,7 @@ CORS_ALLOW_HEADERS = [
     'responsetype' 
 ]
 CORS_ALLOWED_ORIGINS = [
+    "https://insurancebasaar.com",
     'http://*',
     'https://*'
 ]
