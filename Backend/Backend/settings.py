@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-735q^5e7%rw#5@0a(c#f_mm&-kf7w6%+#r+3dl@_hh4v2i21%h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -59,10 +59,30 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173",
+# ]
+
+
+CORS_ALLOW_ALL_ORIGINS = True # If this is used then CORS_ALLOWED_ORIGINS will not have any effect
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'X-Password-Hash',
+]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    'http://*',
+    'https://*',
 ]
 
 
