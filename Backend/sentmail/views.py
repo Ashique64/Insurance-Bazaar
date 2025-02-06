@@ -72,7 +72,6 @@ def car_send_email(request):
     try:
         if request.method == "POST":
             data = json.loads(request.body)
-
             fields = {
                 "Car Details": "carDetails",
                 "Model Year": "modelYear",
@@ -84,11 +83,13 @@ def car_send_email(request):
                 "Emirate Registered": "emirateRegistered",
                 "UAE Licence Held": "uaeLicenceHeld",
             }
-
             return send_email(data, "New Car Form Submission", fields)
-
+        
+        elif request.method == "OPTIONS":
+            return JsonResponse({}, status=200)
+        
         else:
-            return JsonResponse({"error": "Invalid request method."}, status=400)
+            return JsonResponse({"error": "Invalid request method."}, status=405)
 
     except Exception as e:
         import traceback
