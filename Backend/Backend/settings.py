@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from pathlib import Path
 from dotenv import load_dotenv
 
 # env = environ.Env()
