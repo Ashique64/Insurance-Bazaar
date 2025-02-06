@@ -91,6 +91,8 @@ def car_send_email(request):
             return JsonResponse({"error": "Invalid request method."}, status=400)
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return JsonResponse({"error": str(e)}, status=500)
 
 
