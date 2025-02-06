@@ -31,9 +31,9 @@ REACT_PUBLIC_DIR = os.path.join(BASE_DIR, "../Insurance-Bazaar/public")
 SECRET_KEY = 'django-insecure-735q^5e7%rw#5@0a(c#f_mm&-kf7w6%+#r+3dl@_hh4v2i21%h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["basaarinsurance.tortillon.in", "insurancebasaar.com"]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.getenv('EMAIL_HOST')
