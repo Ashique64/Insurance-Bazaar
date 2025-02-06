@@ -9,7 +9,11 @@ from .models import Car
 from .serializers import CarSerializer
 from .models import Motorcycle
 from .serializers import MotorcycleSerializer
-
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework import status
+import json
 
 def send_email(data, subject, fields):
     try:
@@ -67,11 +71,11 @@ def send_email(data, subject, fields):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-@csrf_exempt
-def car_send_email(request):
-    try:
-        if request.method == "POST":
-            data = json.loads(request.body)
+
+class CarSendEmail(APIView):
+    def post(self, request):
+        try:
+            data = request.data
 
             fields = {
                 "Car Details": "carDetails",
@@ -85,16 +89,10 @@ def car_send_email(request):
                 "UAE Licence Held": "uaeLicenceHeld",
             }
 
+            # Your logic for sending email goes here
             return send_email(data, "New Car Form Submission", fields)
-
-        else:
-            return JsonResponse({"error": "Invalid request method."}, status=400)
-
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return JsonResponse({"error": str(e)}, status=500)
-
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class CarSearchView(APIView):
     def get(self, request, format=None):
