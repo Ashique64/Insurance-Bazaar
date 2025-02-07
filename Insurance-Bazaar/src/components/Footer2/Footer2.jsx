@@ -7,14 +7,14 @@ const Footer2 = ({background, copyright, fontColor}) => {
         {
             title: "Our company",
             items: [ 
-                { name: "Customer support", link: "#get_insurance" },
-                { name: "Contact us", link: "#get_insurance" },
+                { name: "Customer support", link: "tel:+971566900471" },
+                { name: "Contact us", link: "/#get_insurance" },
             ],
         },
         {
             title: "Our offer",
             items: [
-                { name: "Insurance Plans", link: "#service" },
+                { name: "Insurance Plans", link: "/#service" },
                 
             ],
         },
