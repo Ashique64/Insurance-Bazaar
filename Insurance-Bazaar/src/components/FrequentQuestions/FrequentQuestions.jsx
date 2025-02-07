@@ -12,9 +12,10 @@ const FrequentQuestions = () => {
                             <h2>Frequently Asked Questions</h2>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Is Car Insurance Transferable in Dubai?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Is Car Insurance Transferable in Dubai?</h3>
+                            </div>
                             <p>
                                 Yes, in Dubai, car insurance is typically transferable when selling a vehicle. The new owner
                                 must provide their details, such as name and contact information, to the insurance company
@@ -23,10 +24,10 @@ const FrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Key Factors to Consider When Buying a Car Insurance
-                                Policy
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Key Factors to Consider When Buying a Car Insurance Policy</h3>
+                            </div>
                             <p>
                                 When purchasing car insurance, keep these important factors in mind:
                                 <ul>
@@ -49,10 +50,10 @@ const FrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Much Does Comprehensive Car Insurance Cost in the
-                                UAE?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Much Does Comprehensive Car Insurance Cost in the UAE?</h3>
+                            </div>
                             <p>
                                 The cost of comprehensive car insurance in the UAE ranges from AED 500 to AED 2,000
                                 annually. The exact cost depends on factors like the insurance provider, level of coverage,
@@ -62,10 +63,10 @@ const FrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Do You Need Car Insurance to Renew Vehicle
-                                Registration in Dubai?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Do You Need Car Insurance to Renew Vehicle Registration in Dubai?</h3>
+                            </div>
                             <p>
                                 Yes, car insurance is mandatory for renewing vehicle registration in Dubai. Without
                                 insurance, you cannot renew your registration, and your car will be classified as
@@ -74,10 +75,10 @@ const FrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Documents Are Required to Get Car Insurance in
-                                Dubai?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Documents Are Required to Get Car Insurance in Dubai?</h3>
+                            </div>
                             <p>
                                 To obtain car insurance in Dubai, you will typically need the following documents:
                                 <ul>

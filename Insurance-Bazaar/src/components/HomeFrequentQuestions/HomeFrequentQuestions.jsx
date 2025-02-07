@@ -3,7 +3,7 @@ import "./HomeFrequentQuestions.scss";
 
 const HomeFrequentQuestions = () => {
     return (
-        <div className="bike-question-section">
+        <div className="home-question-section">
             <div className="row question-row">
                 <div className="col-12 question-col">
                     <div className="question-content">
@@ -12,9 +12,10 @@ const HomeFrequentQuestions = () => {
                             <h2>Home Insurance - Frequently Asked Questions</h2>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Does Home Insurance Cover?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Does Home Insurance Cover?</h3>
+                            </div>
                             <p>
                                 Home insurance typically covers damages caused by fire, theft, natural disasters, and
                                 liability for injuries occurring on your property. Some policies may also include coverage
@@ -22,9 +23,10 @@ const HomeFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Is Home Insurance Mandatory in the UAE?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Is Home Insurance Mandatory in the UAE?</h3>
+                            </div>
                             <p>
                                 Home insurance is not legally required in the UAE, but it is highly recommended. If you have
                                 a mortgage, your lender may require you to have a policy in place to protect their
@@ -32,9 +34,10 @@ const HomeFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Factors Affect Home Insurance Premiums?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Factors Affect Home Insurance Premiums?</h3>
+                            </div>
                             <p>
                                 <ul>
                                     <li>
@@ -55,18 +58,20 @@ const HomeFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Can I Customize My Home Insurance Policy?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Can I Customize My Home Insurance Policy?</h3>
+                            </div>
                             <p>
                                 Yes, most insurance providers allow customization. You can add coverage for high-value
                                 items, home office equipment, and even accidental damage.
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Do I File a Home Insurance Claim?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Do I File a Home Insurance Claim?</h3>
+                            </div>
                             <p>
                                 To file a claim, contact your insurance provider, provide necessary documents (police
                                 reports, photos, proof of ownership), and follow their assessment process. Claims are

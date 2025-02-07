@@ -12,9 +12,10 @@ const BusinessFrequentQuestions = () => {
                             <h2>Frequently Asked Questions about Business Insurance</h2>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Is Business Insurance?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Is Business Insurance?</h3>
+                            </div>
                             <p>
                                 Business insurance is designed to protect companies from financial losses caused by risks
                                 such as accidents, natural disasters, lawsuits, and theft. It helps businesses stay
@@ -22,9 +23,10 @@ const BusinessFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Are the Types of Business Insurance?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Are the Types of Business Insurance?</h3>
+                            </div>
                             <p>
                                 The common types of business insurance include:
                                 <ul>
@@ -44,9 +46,10 @@ const BusinessFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Much Does Business Insurance Cost?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Much Does Business Insurance Cost?</h3>
+                            </div>
                             <p>
                                 The cost of business insurance varies based on factors such as the size of the business, the
                                 type of coverage required, and the industry. On average, small businesses pay between $500
@@ -55,9 +58,10 @@ const BusinessFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Is Business Insurance Mandatory?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Is Business Insurance Mandatory?</h3>
+                            </div>
                             <p>
                                 While business insurance is not mandatory in all cases, certain types of coverage are
                                 legally required in many states. For example, workers' compensation insurance is mandatory
@@ -66,9 +70,10 @@ const BusinessFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Do I Choose the Right Business Insurance?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Do I Choose the Right Business Insurance?</h3>
+                            </div>
                             <p>
                                 To choose the right business insurance, assess the specific risks your business faces.
                                 Consider factors like industry, location, size, and employee numbers. It’s also advisable to

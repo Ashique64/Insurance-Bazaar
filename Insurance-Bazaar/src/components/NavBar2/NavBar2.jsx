@@ -45,7 +45,8 @@ const NavBar2 = () => {
                                 <a href="tel:+971566900471">+971 56 690 0471</a>
                             </div>
                             <div className="nav_button">
-                                <a href="#service">
+                                <a href=""> 
+                                    {/* if you want to redirect to service section put "#service" inside href*/}
                                     <i onClick={handleNavigateHome} className="bx bxs-home-heart"></i>
                                 </a>
                             </div>

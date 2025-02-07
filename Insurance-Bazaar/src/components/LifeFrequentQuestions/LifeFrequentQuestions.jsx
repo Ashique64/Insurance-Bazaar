@@ -12,9 +12,10 @@ const LifeFrequentQuestions = () => {
                             <h2>Frequently Asked Questions about Life Insurance</h2>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Is Life Insurance and How Does It Work?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Is Life Insurance and How Does It Work?</h3>
+                            </div>
                             <p>
                                 Life insurance provides financial protection to your beneficiaries in case of your death. It
                                 ensures that your loved ones are financially supported, covering living expenses, debts, and
@@ -22,9 +23,10 @@ const LifeFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Are the Types of Life Insurance?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Are the Types of Life Insurance?</h3>
+                            </div>
                             <p>
                                 The main types of life insurance are:
                                 <ul>
@@ -44,9 +46,10 @@ const LifeFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Do I Choose the Right Life Insurance?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Do I Choose the Right Life Insurance?</h3>
+                            </div>
                             <p>
                                 To choose the right life insurance, evaluate your financial obligations, the number of
                                 dependents, and the duration of coverage you need. Term life insurance is ideal for
@@ -55,9 +58,10 @@ const LifeFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Is the Cost of Life Insurance?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Is the Cost of Life Insurance?</h3>
+                            </div>
                             <p>
                                 The cost of life insurance varies depending on factors like age, health, coverage amount,
                                 and policy type. On average, term life insurance is cheaper than whole life insurance. It is
@@ -65,9 +69,10 @@ const LifeFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Can I Change My Life Insurance Policy After Purchase?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Can I Change My Life Insurance Policy After Purchase?</h3>
+                            </div>
                             <p>
                                 Yes, depending on the policy type, you may be able to make changes such as increasing the
                                 coverage amount, converting a term policy to a permanent one, or adjusting beneficiaries.

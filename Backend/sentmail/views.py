@@ -91,6 +91,7 @@ def car_send_email(request):
             return JsonResponse({"error": "Invalid request method."}, status=400)
 
     except Exception as e:
+        print("error:", e)
         return JsonResponse({"error": str(e)}, status=500)
 
 

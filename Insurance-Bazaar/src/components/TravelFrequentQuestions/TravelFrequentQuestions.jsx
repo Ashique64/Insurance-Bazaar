@@ -12,18 +12,20 @@ const TravelFrequentQuestions = () => {
                             <h2>Travel Insurance - Frequently Asked Questions</h2>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Does Travel Insurance Cover?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Does Travel Insurance Cover?</h3>
+                            </div>
                             <p>
                                 Travel insurance typically covers medical emergencies, trip cancellations, lost baggage, and
                                 flight delays. Some policies also include coverage for COVID-19-related issues.
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Is Travel Insurance Mandatory for Visiting the UAE?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Is Travel Insurance Mandatory for Visiting the UAE?</h3>
+                            </div>
                             <p>
                                 Travel insurance is not mandatory for all visitors, but some visa categories require it. It
                                 is highly recommended for international travelers to cover unexpected medical expenses and
@@ -31,9 +33,10 @@ const TravelFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Much Does Travel Insurance Cost?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Much Does Travel Insurance Cost?</h3>
+                            </div>
                             <p>
                                 The cost of travel insurance varies based on the destination, duration, and level of
                                 coverage. On average, plans range from AED 50 to AED 500, depending on the provider and
@@ -41,9 +44,10 @@ const TravelFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Does Travel Insurance Cover Pre-existing Conditions?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Does Travel Insurance Cover Pre-existing Conditions?</h3>
+                            </div>
                             <p>
                                 Some travel insurance policies cover pre-existing conditions, but this is not standard. You
                                 may need to declare your condition and purchase additional coverage for medical expenses
@@ -51,9 +55,10 @@ const TravelFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Do I File a Travel Insurance Claim?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Do I File a Travel Insurance Claim?</h3>
+                            </div>
                             <p>
                                 To file a claim, contact your insurer, submit required documents (medical reports, receipts,
                                 police reports), and follow their claim process. Most claims are processed within a few

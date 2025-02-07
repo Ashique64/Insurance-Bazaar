@@ -12,9 +12,10 @@ const HealthFrequentQuestions = () => {
                             <h2>Frequently Asked Questions about Health Insurance</h2>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Is Health Insurance and How Does It Work?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Is Health Insurance and How Does It Work?</h3>
+                            </div>
                             <p>
                                 Health insurance helps cover the costs of medical care, including doctor visits, hospital
                                 stays, medications, and preventive services. It can be provided by employers or purchased
@@ -22,10 +23,10 @@ const HealthFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Are the Different Types of Health Insurance
-                                Plans?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Are the Different Types of Health Insurance Plans?</h3>
+                            </div>
                             <p>
                                 There are several types of health insurance plans:
                                 <ul>
@@ -45,10 +46,10 @@ const HealthFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Is the Difference Between In-Network and
-                                Out-of-Network Providers?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Is the Difference Between In-Network and Out-of-Network Providers?</h3>
+                            </div>
                             <p>
                                 In-network providers are those who have agreements with your insurance company to offer
                                 services at a reduced cost. Out-of-network providers do not have such agreements, which
@@ -56,9 +57,10 @@ const HealthFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Are Premiums, Deductibles, and Copayments?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Are Premiums, Deductibles, and Copayments?</h3>
+                            </div>
                             <p>
                                 <ul>
                                     <li>
@@ -69,16 +71,17 @@ const HealthFrequentQuestions = () => {
                                         your insurance starts covering costs.
                                     </li>
                                     <li>
-                                        <strong>Copayment:</strong> A fixed amount you pay for a covered health care service,
-                                        typically at the time of service.
+                                        <strong>Copayment:</strong> A fixed amount you pay for a covered health care
+                                        service, typically at the time of service.
                                     </li>
                                 </ul>
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Can I Lower My Health Insurance Costs?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Can I Lower My Health Insurance Costs?</h3>
+                            </div>
                             <p>
                                 You can lower your health insurance costs by:
                                 <ul>

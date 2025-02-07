@@ -11,10 +11,12 @@ const BikeFrequentQuestions = () => {
                             <i className="bx bx-help-circle"></i>
                             <h2>Frequently Asked Questions</h2>
                         </div>
+
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Is Bike Insurance Transferable in Dubai?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Is Bike Insurance Transferable in Dubai?</h3>
+                            </div>
                             <p>
                                 Yes, bike insurance in Dubai is transferable when selling a motorcycle. The new owner must
                                 provide their details, including name and contact information, to the insurance company to
@@ -22,11 +24,12 @@ const BikeFrequentQuestions = () => {
                                 details with the insurer to ensure continuous coverage.
                             </p>
                         </div>
+
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Key Factors to Consider When Buying a Bike Insurance
-                                Policy
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Key Factors to Consider When Buying a Bike Insurance Policy</h3>
+                            </div>
                             <p>
                                 When purchasing bike insurance, consider these important factors:
                                 <ul>
@@ -48,11 +51,12 @@ const BikeFrequentQuestions = () => {
                                 </ul>
                             </p>
                         </div>
+
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Much Does Comprehensive Bike Insurance Cost in the
-                                UAE?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Much Does Comprehensive Bike Insurance Cost in the UAE?</h3>
+                            </div>
                             <p>
                                 The cost of comprehensive bike insurance in the UAE typically ranges from AED 300 to AED
                                 1,500 annually. The exact cost depends on factors such as the insurer, coverage level,
@@ -60,11 +64,12 @@ const BikeFrequentQuestions = () => {
                                 discounts, such as no-claim bonuses or safe rider rewards.
                             </p>
                         </div>
+
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Do You Need Bike Insurance to Renew Vehicle
-                                Registration in Dubai?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Do You Need Bike Insurance to Renew Vehicle Registration in Dubai?</h3>
+                            </div>
                             <p>
                                 Yes, bike insurance is mandatory to renew your motorcycle’s registration in Dubai. Without
                                 valid insurance, you cannot complete the renewal process, and your bike will be considered
@@ -72,11 +77,12 @@ const BikeFrequentQuestions = () => {
                                 ensure your bike insurance is up to date before renewing your registration.
                             </p>
                         </div>
+
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Documents Are Required to Get Bike Insurance in
-                                Dubai?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Documents Are Required to Get Bike Insurance in Dubai?</h3>
+                            </div>
                             <p>
                                 To obtain bike insurance in Dubai, you will typically need the following documents:
                                 <ul>

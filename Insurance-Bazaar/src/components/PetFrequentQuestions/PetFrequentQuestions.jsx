@@ -12,9 +12,10 @@ const PetFrequentQuestions = () => {
                             <h2>Frequently Asked Questions about Pet Insurance</h2>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Is Pet Insurance and Why Do You Need It?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Is Pet Insurance and Why Do You Need It?</h3>
+                            </div>
                             <p>
                                 Pet insurance helps cover medical expenses for your pets, including accidents, illnesses,
                                 and preventive care. It ensures that your pets receive the necessary care without worrying
@@ -22,9 +23,10 @@ const PetFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>What Does Pet Insurance Cover?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>What Does Pet Insurance Cover?</h3>
+                            </div>
                             <p>
                                 Pet insurance typically covers:
                                 <ul>
@@ -42,32 +44,36 @@ const PetFrequentQuestions = () => {
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Much Does Pet Insurance Cost?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Much Does Pet Insurance Cost?</h3>
+                            </div>
                             <p>
-                                The cost of pet insurance varies based on factors like the age, breed, and health of your pet,
-                                as well as the level of coverage you choose. On average, it can range from $20 to $50 per month
-                                for dogs, and $10 to $30 per month for cats.
+                                The cost of pet insurance varies based on factors like the age, breed, and health of your
+                                pet, as well as the level of coverage you choose. On average, it can range from $20 to $50
+                                per month for dogs, and $10 to $30 per month for cats.
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>Are Pre-Existing Conditions Covered by Pet Insurance?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>Are Pre-Existing Conditions Covered by Pet Insurance?</h3>
+                            </div>
                             <p>
-                                Most pet insurance policies do not cover pre-existing conditions. However, some insurers may offer
-                                limited coverage for pre-existing conditions if they have been cured or are in remission.
+                                Most pet insurance policies do not cover pre-existing conditions. However, some insurers may
+                                offer limited coverage for pre-existing conditions if they have been cured or are in
+                                remission.
                             </p>
                         </div>
                         <div className="item">
-                            <h3>
-                                <i className="bx bx-chevron-down"></i>How Do I File a Pet Insurance Claim?
-                            </h3>
+                            <div className="title">
+                                <i className="bx bx-chevron-down"></i>
+                                <h3>How Do I File a Pet Insurance Claim?</h3>
+                            </div>
                             <p>
-                                To file a pet insurance claim, you'll typically need to submit a claim form along with your pet’s
-                                medical records and receipts from the veterinary office. Some insurers allow online claim submission
-                                through their website or mobile app.
+                                To file a pet insurance claim, you'll typically need to submit a claim form along with your
+                                pet’s medical records and receipts from the veterinary office. Some insurers allow online
+                                claim submission through their website or mobile app.
                             </p>
                         </div>
                     </div>
