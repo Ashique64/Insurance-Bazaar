@@ -91,7 +91,7 @@ const GetInsurance = () => {
                     <div className="col-xl-6 col-lg-6 col-md-12 item1">
                         <div className="title_section">
                             <h3 className="title">
-                            A quote now to Instant Quote <span>with One Click!</span>
+                            Instant Quote with<span> One Click!</span>
                             </h3>
                         </div>
 
