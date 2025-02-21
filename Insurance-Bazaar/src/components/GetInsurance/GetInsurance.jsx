@@ -91,7 +91,7 @@ const GetInsurance = () => {
                     <div className="col-xl-6 col-lg-6 col-md-12 item1">
                         <div className="title_section">
                             <h3 className="title">
-                                Get an Insurance Quote <span>to get started!</span>
+                            A quote now to Instant Quote <span>with One Click!</span>
                             </h3>
                         </div>
 
@@ -187,7 +187,7 @@ const GetInsurance = () => {
                                             ></textarea>
                                         </div>
                                         <div className="form_button">
-                                            <button type="submit"> Instant Quote with One Click</button>
+                                            <button type="submit"> get a quote now</button>
                                         </div>
                                     </form>
                                 </div>
