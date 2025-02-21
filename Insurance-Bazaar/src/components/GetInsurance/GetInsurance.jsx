@@ -10,7 +10,7 @@ const GetInsurance = () => {
     const [formData, setFormData] = useState({
         fullName: "",
         email: "",
-        insuranceType: "",
+        phoneNumber: "",
         message: "",
     });
 
@@ -62,7 +62,7 @@ const GetInsurance = () => {
                 setFormData({
                     fullName: "",
                     email: "",
-                    insuranceType: "",
+                    phoneNumber: "",
                     message: "",
                 });
             } else {
@@ -150,22 +150,30 @@ const GetInsurance = () => {
                                                 required
                                             />
                                         </div>
-                                        <div className="form_select">
-                                            <select
+                                        <div className="form_input">
+                                            {/* <select
                                                 name="insuranceType"
                                                 value={formData.insuranceType}
                                                 onChange={handleChange}
                                                 required
                                             >
                                                 <option value="" disabled selected>
-                                                    Property Type
+                                                    Type of Insurance
                                                 </option>
                                                 {tabItems.map((type, index) => (
                                                     <option key={index} value={type.title}>
                                                         {type.title}
                                                     </option>
                                                 ))}
-                                            </select>
+                                            </select> */}
+                                            <input
+                                                type="text"
+                                                name="phoneNumber"
+                                                value={formData.phoneNumber}
+                                                onChange={handleChange}
+                                                placeholder="Enter Phone Number"
+                                                required
+                                            />
                                         </div>
                                         <div className="form_textarea">
                                             <textarea
@@ -179,7 +187,7 @@ const GetInsurance = () => {
                                             ></textarea>
                                         </div>
                                         <div className="form_button">
-                                            <button type="submit">Get a Quote now</button>
+                                            <button type="submit"> Instant Quote with One Click</button>
                                         </div>
                                     </form>
                                 </div>
