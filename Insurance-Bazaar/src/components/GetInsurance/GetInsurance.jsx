@@ -40,8 +40,14 @@ const GetInsurance = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        if (name === "phoneNumber") {
+            const digitsOnly = value.replace(/\D/g, "");
+            setFormData({ ...formData, [name]: digitsOnly });
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
     };
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -172,6 +178,7 @@ const GetInsurance = () => {
                                                 value={formData.phoneNumber}
                                                 onChange={handleChange}
                                                 placeholder="Enter Phone Number"
+                                                pattern="\d*"
                                                 required
                                             />
                                         </div>
